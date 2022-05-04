@@ -1,0 +1,13 @@
+{
+  "name": "kc-bakery",
+  "authors": [
+    {
+      "name": "Keny Dutton",
+      "email": "dutton-gillespie.keny@student.greenriver.edu"
+    }
+  ],
+  "require":
+  {
+    "bcosca/fatfree-core": "dev-master"
+  }
+}
