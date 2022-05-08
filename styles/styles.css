@@ -1,0 +1,34 @@
+/*body*/
+body{
+    height: 1200px;
+    background: linear-gradient(to bottom right,  rgba(22, 54, 215, 0.48) 17%, rgb(127, 73, 145) 72%, rgba(109,66,192,1) 100%);
+}
+h1{
+    font-size: 75px;
+    color: white;
+    font-family: "Gill Sans"!important;
+}
+.login-container{
+    margin-left: 115px;
+}
+.jumbotron{
+    height: 90px;
+    background-color: orange;
+}
+
+.mt-2{
+    height: 900px;
+    border: 2px solid white;
+    background-color: #f5e9af;
+}
+#logo{
+    position: absolute;
+    right: 559px;
+    bottom: 40px;
+}
+#strawberry{
+    position: absolute;
+    top: 120px;
+    right: 562px;
+    transform: rotate(10deg);
+}
