@@ -1,5 +1,6 @@
 /*body*/
 body{
+    margin: auto;
     height: 1200px;
     background: linear-gradient(to bottom right,  rgba(22, 54, 215, 0.48) 17%, rgb(127, 73, 145) 72%, rgba(109,66,192,1) 100%);
 }
