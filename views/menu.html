@@ -1,3 +1,9 @@
+<!--
+Author: Keny Dutton-Gillespie and Cherie Menchaca
+File Name: menu.html
+File Description: Menu page for KC Bakery site
+-->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,7 +29,7 @@
     <nav class="navbar navbar-expand-md mt-5 bg-dark"> <!-- NAV BAR -->
         <ul id="myNav" class="navbar-nav">
             <li class="nav-item">
-                <a class="nav ml-3 bg-white px-4" href="{{ @BASE }}">Home</a>
+                <a href="{{ @BASE }}" class="nav ml-3 bg-white px-4">Home</a>
             </li>
             <li class="nav-item">
                 <a class="nav ml-3 bg-white px-4">Menu</a>
@@ -65,27 +71,27 @@
     <br>
     <div class="row text-center m-5"> <!-- PASTRIES START -->
         <div class="col-md-12">
-            <h4>Pastries</h4>
+            <h4 class="submenu_title">Pastries</h4>
             <div class="row">
                 <div class="col-md-3">
                     <img class="menu-item" alt="croissant" src="images/almond.png"/>
                     <h5>Croissant</h5>
-                    <button type="button" class="btn btn-danger">+</button>
+                    <button type="button" class="add-btn btn btn-danger">+</button>
                 </div>
                 <div class="col-md-3">
                     <img class="menu-item" alt="blueberry muffin" src="images/blueberry_muffin.png"/>
                     <h5>Blueberry Muffin</h5>
-                    <button type="button" class="btn btn-danger">+</button>
+                    <button type="button" class="add-btn btn btn-danger">+</button>
                 </div>
                 <div class="col-md-3">
                     <img class="menu-item" alt="scone" src="images/scone.jpeg"/>
                     <h5>Scone</h5>
-                    <button type="button" class="btn btn-danger">+</button>
+                    <button type="button" class="add-btn btn btn-danger">+</button>
                 </div>
                 <div class="col-md-3">
                     <img class="menu-item" alt="danish" src="images/danish.jpeg"/>
                     <h5>Danish</h5>
-                    <button type="button" class="btn btn-danger">+</button>
+                    <button type="button" class="add-btn btn btn-danger">+</button>
                 </div>
             </div>
         </div>
@@ -95,27 +101,27 @@
 
     <div class="row text-center m-5"> <!-- DONUT START -->
         <div class="col-md-12">
-            <h4>Donut</h4>
+            <h4 class="submenu_title">Donut</h4>
             <div class="row">
                 <div class="col-md-3">
                     <img class="menu-item" alt="cinnamon sugar donut" src="images/cin_donut.png"/>
                     <h5>Cinnamon Sugar</h5>
-                    <button type="button" class="btn btn-danger">+</button>
+                    <button type="button" class="add-btn btn btn-danger">+</button>
                 </div>
                 <div class="col-md-3">
                     <img class="menu-item" alt="mochi donut" src="images/mochi_donut.png"/>
                     <h5>Mochi Donut</h5>
-                    <button type="button" class="btn btn-danger">+</button>
+                    <button type="button" class="add-btn btn btn-danger">+</button>
                 </div>
                 <div class="col-md-3">
                     <img class="menu-item" alt="chocolate sprinkle donut" src="images/choc_sprink_donut.png"/>
                     <h5>Chocolate Sprinkle</h5>
-                    <button type="button" class="btn btn-danger">+</button>
+                    <button type="button" class="add-btn btn btn-danger">+</button>
                 </div>
                 <div class="col-md-3">
                     <img class="menu-item" alt="coconut cream donut" src="images/coconut_donut.png"/>
                     <h5>Coconut Cream Donut</h5>
-                    <button type="button" class="btn btn-danger">+</button>
+                    <button type="button" class="add-btn btn btn-danger">+</button>
                 </div>
             </div>
         </div>
@@ -125,27 +131,27 @@
 
     <div class="row text-center m-5">  <!-- SANDWICH START -->
         <div class="col-md-12">
-            <h4>Sandwiches</h4>
+            <h4 class="submenu_title">Sandwiches</h4>
             <div class="row">
                 <div class="col-md-3">
                     <img class="menu-item" alt="katsu sandwich" src="images/katsu_sandwich.png"/>
                     <h5>Katsu</h5>
-                    <button type="button" class="btn btn-danger">+</button>
+                    <button type="button" class="add-btn btn btn-danger">+</button>
                 </div>
                 <div class="col-md-3">
                     <img class="menu-item" alt="strawberry sandwich" src="images/strawberry_sandwich.png"/>
                     <h5>Strawberry</h5>
-                    <button type="button" class="btn btn-danger">+</button>
+                    <button type="button" class="add-btn btn btn-danger">+</button>
                 </div>
                 <div class="col-md-3">
                     <img class="menu-item" alt="potato sandwich" src="images/potato_sandwich.png"/>
                     <h5>Potato</h5>
-                    <button type="button" class="btn btn-danger">+</button>
+                    <button type="button" class="add-btn btn btn-danger">+</button>
                 </div>
                 <div class="col-md-3">
                     <img class="menu-item" alt="egg salad sandwich" src="images/egg_salad.jpeg"/>
                     <h5>Egg Salad Sandwich</h5>
-                    <button type="button" class="btn btn-danger">+</button>
+                    <button type="button" class="add-btn btn btn-danger">+</button>
                 </div>
             </div>
         </div>
@@ -155,27 +161,27 @@
 
     <div class="row text-center m-5"> <!-- SPECIALTY ITEMS -->
         <div class="col-md-12">
-            <h4>Specialty Items</h4>
+            <h4 class="submenu_title">Specialty Items</h4>
             <div class="row">
                 <div class="col-md-3">
                     <img class="menu-item" alt="tiramisu" src="images/tiramisu.png"/>
                     <h5>Tiramisu</h5>
-                    <button type="button" class="btn btn-danger">+</button>
+                    <button type="button" class="add-btn btn btn-danger">+</button>
                 </div>
                 <div class="col-md-3">
                     <img class="menu-item" alt="tart" src="images/tart_rasp.png"/>
                     <h5>Tart</h5>
-                    <button type="button" class="btn btn-danger">+</button>
+                    <button type="button" class="add-btn btn btn-danger">+</button>
                 </div>
                 <div class="col-md-3">
                     <img class="menu-item" alt="butter mochi" src="images/butter_mochi.png"/>
                     <h5>Butter Mochi</h5>
-                    <button type="button" class="btn btn-danger">+</button>
+                    <button type="button" class="add-btn btn btn-danger">+</button>
                 </div>
                 <div class="col-md-3">
                     <img class="menu-item" alt="meringue pie" src="images/tart.png"/>
                     <h5>Meringue Pie</h5>
-                    <button type="button" class="btn btn-danger">+</button>
+                    <button type="button" class="add-btn btn btn-danger">+</button>
                 </div>
             </div>
         </div>
@@ -185,27 +191,27 @@
 
     <div class="row text-center m-5">  <!-- DRINKS -->
         <div class="col-md-12">
-            <h4>Drinks</h4>
+            <h4 class="submenu_title">Drinks</h4>
             <div class="row">
                 <div class="col-md-3">
-                    <img class="menu-item" alt="coffee" src=""/>
+                    <img class="menu-item" alt="coffee" src="images/coffee.png"/>
                     <h5>Coffee</h5>
-                    <button type="button" class="btn btn-danger">+</button>
+                    <button type="button" class="add-btn btn btn-danger">+</button>
                 </div>
                 <div class="col-md-3">
-                    <img class="menu-item" alt="tea" src=""/>
+                    <img class="menu-item" alt="tea" src="images/black_tea.png"/>
                     <h5>Tea</h5>
-                    <button type="button" class="btn btn-danger">+</button>
+                    <button type="button" class="add-btn btn btn-danger">+</button>
                 </div>
                 <div class="col-md-3">
-                    <img class="menu-item" alt="hot chocolate" src=""/>
+                    <img class="menu-item" alt="hot chocolate" src="images/hotchocolate.jpeg"/>
                     <h5>Hot Chocolate</h5>
-                    <button type="button" class="btn btn-danger">+</button>
+                    <button type="button" class="add-btn btn btn-danger">+</button>
                 </div>
                 <div class="col-md-3">
-                    <img class="menu-item" alt="lemonade" src=""/>
-                    <h5>Lemonade</h5>
-                    <button type="button" class="btn btn-danger">+</button>
+                    <img class="menu-item" alt="london fog" src="images/london_fog.png"/>
+                    <h5>London Fog</h5>
+                    <button type="button" class="add-btn btn btn-danger">+</button>
                 </div>
             </div>
         </div>
