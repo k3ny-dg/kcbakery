@@ -33,3 +33,8 @@ h1{
     right: 562px;
     transform: rotate(10deg);
 }
+
+.menu-item
+{
+    width: 200px;
+}
