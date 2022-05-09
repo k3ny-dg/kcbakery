@@ -1,8 +1,13 @@
-/*body*/
+
 body{
     margin: auto;
     height: 1200px;
-    background: linear-gradient(to bottom right,  rgba(22, 54, 215, 0.48) 17%, rgb(127, 73, 145) 72%, rgba(109,66,192,1) 100%);
+    height: 100%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background: linear-gradient(to bottom right, rgba(22, 54, 215, 0.48) 17%, rgb(127, 73, 145) 72%, rgba(109, 66, 192, 1) 100%) no-repeat;
 }
 h1{
     font-size: 75px;
@@ -37,4 +42,24 @@ h1{
 .menu-item
 {
     width: 200px;
+    border: solid 2px mediumpurple;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.submenu_title
+{
+    margin-bottom: 20px;
+    font-family: cursive;
+    font-size: 45px;
+}
+
+.add-btn
+{
+    margin-top: 10px;
+}
+
+.btn-danger
+{
+    background-color: orangered;
 }
