@@ -15,7 +15,7 @@ h1{
     font-family: "Gill Sans"!important;
 }
 .login-container{
-    margin-left: 115px;
+    margin-left: 300px;
 }
 .jumbotron{
     height: 90px;
@@ -29,14 +29,20 @@ h1{
 }
 #logo{
     position: absolute;
-    right: 559px;
-    bottom: 40px;
+    right: 20px;
+    top: 865px;
+
 }
 #strawberry{
     position: absolute;
-    top: 120px;
-    right: 562px;
+    top: 140px;
+    right: 18px;
     transform: rotate(10deg);
+}
+#mochi_donut{
+    position: absolute;
+    top: 820px;
+    left: 18px;
 }
 
 .menu-item
@@ -46,6 +52,7 @@ h1{
     border-radius: 10px;
     margin-bottom: 20px;
 }
+
 
 .submenu_title
 {
