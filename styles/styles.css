@@ -13,6 +13,14 @@ h1{
     color: white;
     font-family: "Gill Sans"!important;
 }
+h4{
+    padding-left: 200px;
+    padding-right: 200px;
+}
+h5{
+    padding-left: 200px;
+    padding-right: 200px;
+}
 .login-container{
     margin-left: 115px;
 }
@@ -33,18 +41,25 @@ h1{
     top: 400px;
     width: 500px;
 }
+#strawberry {
+    position: absolute;
+    top: 150px;
+    right: 20px;
+    z-index: 1000;
+
+}
+#mochi_donut{
+    border-radius: 10px;
+    position: absolute;
+    left: -50px;
+}
+
 
 img {
     ertical-align: middle;
     border-style: none;
 }
 
-#strawberry {
-    position: absolute;
-    top: 300px;
-    right: 750px;
-    transform: rotate(10deg);
-}
 
 .menu-item
 {
@@ -69,4 +84,10 @@ img {
 .btn-danger
 {
     background-color: orangered;
+}
+.nav-item:hover {
+    color: black;
+}
+a.nav{
+    color: black;
 }
