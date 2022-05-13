@@ -99,3 +99,8 @@ a.nav{
     padding-left: 200px;
     padding-right: 100px;
 }
+
+#favicon
+{
+    width: 60px;
+}
