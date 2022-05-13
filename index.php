@@ -1,5 +1,9 @@
 <?php
-
+/* Author:  Cherie Menchaca & Keny Dutton-Gillespie
+* File Name: index.php
+* File Description: Controller Page for our Bakery Website (KC Bakery)
+*
+*/
 // Turn on error reporting
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
