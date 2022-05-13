@@ -13,14 +13,7 @@ h1{
     color: white;
     font-family: "Gill Sans"!important;
 }
-h4{
-    padding-left: 200px;
-    padding-right: 200px;
-}
-h5{
-    padding-left: 200px;
-    padding-right: 200px;
-}
+
 .login-container{
     margin-left: 115px;
 }
@@ -38,7 +31,7 @@ h5{
 #logo {
     position: absolute;
     right: -150px;
-    top: 400px;
+    top: 380px;
     width: 500px;
 }
 #strawberry {
@@ -49,9 +42,7 @@ h5{
 
 }
 #mochi_donut{
-    border-radius: 10px;
-    position: absolute;
-    left: -50px;
+    border-radius: 30px;
 }
 
 
@@ -90,4 +81,16 @@ img {
 }
 a.nav{
     color: black;
+}
+
+#welcome-mess
+{
+    padding-left: 200px;
+    padding-right: 100px;
+}
+
+#special-mess
+{
+    padding-left: 200px;
+    padding-right: 100px;
 }
