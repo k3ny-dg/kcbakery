@@ -31,6 +31,9 @@ $f3->route('GET /',function() {
 // Define a menu route
 $f3->route('POST|GET /menu', function() {
 
+
+
+
     $view  = new Template();
     echo $view->render('views/menu.html');
 });
@@ -75,7 +78,7 @@ $f3->route('POST|GET /sign_up', function($f3) {
             $f3->set('errors["city"]', 'Please enter a valid city with letters.');
         }
         //phone
-        $phoneNumber = $_POST['phoneNUmber'];
+        $phoneNumber = $_POST['phoneNumber'];
         $f3->set('phoneNumber', $phoneNumber);
 
         $phone = isset($_POST['phoneNumber']) ? $_POST['phoneNumber'] : "";
