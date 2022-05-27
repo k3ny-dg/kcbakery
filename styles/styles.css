@@ -104,10 +104,13 @@ a.nav{
 {
     width: 60px;
 }
-div#passWord, #userName{
-    background-color: lightgrey;
-    width: 30px;
+#passWord, #userName{
+    width: 15px;
 }
 p{
     font-size: 10px;
+}
+.err{
+    color: red;
+
 }
