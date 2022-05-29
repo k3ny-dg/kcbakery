@@ -21,3 +21,28 @@ function getLocation()
         "South Dakota", "Tennessee", "Texas", "Utah", "Vermont", "Virginia",
         "Washington", "West Virginia", "Wisconsin", "Wyoming");
 }
+
+function getPastryItem()
+{
+    return array("Croissant", "Blueberry Muffin", "Scone", "Danish");
+}
+
+function getDonut()
+{
+    return array("Cinnamon Sugar", "Mochi", "Chocolate Sprinkle", "Coconut Cream Donut");
+}
+
+function getSandwich()
+{
+    return array("Katsu", "Strawberry", "Potato", "Egg Salad");
+}
+
+function getSpecialty()
+{
+    return array("Tiramisu", "Tart", "Butter Mochi", "Meringue");
+}
+
+function getDrink()
+{
+    return array("Coffee", "Tea", "Hot Chocolate", "London Fog");
+}
