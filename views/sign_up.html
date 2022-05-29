@@ -9,6 +9,7 @@
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="styles/styles.css">
     <title>KC Bakery</title>
+
 </head>
 <body class="container">
 <div class="row mt-3">
@@ -16,7 +17,7 @@
         <!--Sign Up Title Form-->
         <h2 class="text-center">Sign Up</h2>
         <hr>
-        <form action="#" method="post" class="form-group">
+        <form action="#" method="post" class="form-group" id="signup-form">
             <!--Get data-->
             <div class="row">
                 <div class="col-6">
@@ -24,7 +25,7 @@
                         <div class="col-12">
                             <label for="first" class="control-label mt-1">First Name:</label>
                             <input class="form-control" type="text"
-                                   name="first" id="first" placeholder="First Name"  value="{{ @firstName }}">
+                                   name="first" id="first" placeholder="First Name" value="{{ @firstName }}">
                         </div>
                         <div class="col-12">
                             <check if="{{ isset(@errors['first']) }}">
@@ -35,7 +36,7 @@
                         <div class="col-12">
                             <label for="last" class="control-label mt-4">Last Name:</label>
                             <input class="form-control" type="text"
-                                   name="last" id="last" placeholder="Last Name"  value="{{ @lastName }}">
+                                   name="last" id="last" placeholder="Last Name" value="{{ @lastName }}">
                         </div>
                         <div class="col-12">
                             <check if="{{ isset(@errors['last']) }}">
@@ -46,7 +47,8 @@
                         <div class="col-12">
                             <label for="phoneNumber" class="control-label mt-4">Phone Number:</label>
                             <input class="form-control" type="text"
-                                   name="phoneNumber" id="phoneNumber" placeholder="Phone Number" value="{{ @phoneNumber }}">
+                                   name="phoneNumber" id="phoneNumber" placeholder="Phone Number"
+                                   value="{{ @phoneNumber }}">
                         </div>
                         <div class="col-12">
                             <check if="{{ isset(@errors['phoneNumber']) }}">
@@ -62,7 +64,7 @@
                         <div class="col-12">
                             <label for="city" class="control-label mt-4">City:</label>
                             <input class="form-control" type="text"
-                                   name="city" id="city" placeholder="City"  value="{{ @city }}">
+                                   name="city" id="city" placeholder="City" value="{{ @city }}">
                         </div>
                         <div class="col-12">
                             <check if="{{ isset(@errors['city']) }}">
@@ -87,7 +89,8 @@
 
                         <div class="col-md-12">
                             <label for="emailAdd">Email:</label>
-                            <input type="text" class="form-control" name="emailAdd" id="emailAdd" placeholder="Email input"
+                            <input type="text" class="form-control" name="emailAdd" id="emailAdd"
+                                   placeholder="Email input"
                                    value="{{ @emailAdd }}">
                         </div>
                         <!--display error if there is one -->
@@ -96,7 +99,7 @@
                         </check>
                         <br>
                         <div class="col-12">
-                            <label class="control-label mt-4">Would you like to join our Membership? </label>
+                            <label class="control-label mt-4">Would you like to join our Premium Membership? </label>
                             <div class="form-check">
                                 <repeat group="{{ @memberships }}" value="{{ @membership }}">
                                     <label class="form-check-label" for="inlineCheckbox1"><input
@@ -110,51 +113,37 @@
                                 </repeat>
                             </div>
                         </div>
-                        <div class="col-12">
-                            <label class="control-label mt-4">Would you like to upgrade to platinum membership? </label>
-                            <div class="form-check">
-                                <repeat group="{{ @upgrades }}" value="{{ @upgrade }}">
-                                    <label class="form-check-label" for="inlineCheckbox"><input
-                                            class="form-check-input mx-5"
-                                            type="radio"
-                                            name="account"
-                                            id="inlineCheckbox"
-                                            value="{{ @upgrade }}"
-                                    >
-                                        {{ ucfirst(@upgrade) }}</label><br>
-                                </repeat>
-                            </div>
-                        </div>
-                        <div class="col-12">
-                            <label for="user" class="control-label">Create Username:</label>
-                            <input class="form-control mt-1" type="text"
-                                   name="user" id="user" placeholder="username" value="{{ @username }}">
-                        </div>
-                        <div id="userName" class="col-12 border bg-light mt-3 form-control">
-                            <p>**Please enter a username that contains letters and numbers. Must be 8 characters
-                                long. It is not case-sensitive.</p>
-                        </div>
+                    </div>
+                    <div class="col-12">
+                        <label for="user" class="control-label">Create Username:</label>
+                        <input class="form-control mt-1" type="text"
+                               name="user" id="user" placeholder="username" value="{{ @username }}">
+                    </div>
+                    <div id="userName" class="col-12 border bg-light mt-3 form-control">
+                        <p>**Please enter a username that contains letters and numbers. Must be 8 characters
+                            long. It is not case-sensitive.</p>
+                    </div>
 
-                        <div class="col-12">
-                            <label for="pass" class="control-label mt-3">Create Password:</label>
-                            <input class="form-control mt-1" type="text"
-                                   name="pass" id="pass" placeholder="password" value="{{ @password }}">
-                        </div>
-                        <div id="passWord" class="col-12 border bg-light mt-3 form-control">
-                            <p>**Please enter a password that contains letters and numbers. Must be 8 characters
-                                long. It is not case-sensitive.</p>
-                        </div>
-                    </div><!--End of Row-->
+                    <div class="col-12">
+                        <label for="pass" class="control-label mt-3">Create Password:</label>
+                        <input class="form-control mt-1" type="text"
+                               name="pass" id="pass" placeholder="password" value="{{ @password }}">
+                    </div>
+                    <div id="passWord" class="col-12 border bg-light mt-3 form-control">
+                        <p>**Please enter a password that contains letters and numbers. Must be 8 characters
+                            long. It is not case-sensitive.</p>
+                    </div>
+                </div><!--End of Row-->
 
-                    <div class="row">
-                        <div class="col-12">
-                            <button class="btn btn-success float-right my-4 px-5" type="submit">Next</button>
-                        </div>
+                <div class="row">
+                    <div class="col-12">
+                        <button class="btn btn-success float-right my-4 px-5" onclick="sigup_form" type="submit">Next</button>
                     </div>
                 </div>
             </div>
         </form>
     </div>
 </div>
+<script src="script/valid_form.js"></script>
 </body>
 </html>

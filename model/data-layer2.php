@@ -4,10 +4,7 @@ function getMembership()
 {
     return array("yes", "no");
 }
-function getUpgrade()
-{
-    return array("yes", "no", "maybe");
-}
+
 function getLocation()
 {
     return array("Alabama", "Alaska", "Arizona", "Arkansas", "California",
