@@ -15,13 +15,13 @@ session_start();
 // Require the autoload file
 require_once('vendor/autoload.php');
 require_once('model/data-layer2.php');
-require_once ('model/validation2.php');
+require_once('model/validation2.php');
 
 // Create an instance of the Base class
 $f3 = Base::instance();
 
 // Define a default route
-$f3->route('GET /',function() {
+$f3->route('GET /', function () {
 
     $view = new Template();
     echo $view->render('views/home.html');
@@ -29,44 +29,121 @@ $f3->route('GET /',function() {
 });
 
 // Define a menu route
-$f3->route('POST|GET /menu', function($f3) {
+$f3->route('POST|GET /menu', function ($f3) {
 
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-    // PASTRIES
-    $pastryItems = "";
-    if (empty($_POST['pastryItem'])) {
-        $pastryItems = "no pastries selected";
-    } else {
-        $pastryItem = implode(", ", $_POST['pastryItem']);
+        $pastries = "";
+        if (empty($_POST['pastries'])) {
+            $pastries = "no pastries selected";
+        } else {
+            $pastries = implode(", ", $_POST['pastries']);
+
+            if (!validPastry($_POST['pastries'])) {
+
+                //$f3->set('errors["pastries"]', 'No spoofing please!');
+                //var_dump($_POST);
+            }
+            var_dump($_POST);
+        }
+        $_SESSION['pastries'] = $pastries;
+
+
+        // DONUTS
+        $donuts = "";
+        if (empty($_POST['donuts'])) {
+            $donuts = "no donuts selected";
+        } else {
+            $donuts = implode(", ", $_POST['donuts']);
+
+            /*
+            if (!validDonut($_POST['donuts'])) {
+
+                //$f3->set('errors["donuts"]', 'No spoofing please!');
+                //var_dump($_POST);
+            }
+            */
+            var_dump($_POST);
+        }
+        $_SESSION['donuts'] = $donuts;
+
+
+        // SANDWICHES
+        $sandwiches = "";
+        if (empty($_POST['sandwiches'])) {
+            $sandwiches = "no pastries selected";
+        } else {
+            $sandwiches = implode(", ", $_POST['sandwiches']);
+
+            /*
+            if (!validSandwich($_POST['sandwiches'])) {
+
+                //$f3->set('errors["sandwiches"]', 'No spoofing please!');
+                //var_dump($_POST);
+            }
+            */
+            var_dump($_POST);
+        }
+        $_SESSION['sandwiches'] = $sandwiches;
+
+        //SPECIALTY
+        $specialtyItems = "";
+        if (empty($_POST['specialtyItems'])) {
+            $specialtyItems = "no specialty items selected";
+        } else {
+            $specialtyItems = implode(", ", $_POST['specialtyItems']);
+
+            /*
+            if (!validSpecialty($_POST['specialtyItems'])) {
+
+                //$f3->set('errors["specialtyItems"]', 'No spoofing please!');
+                //var_dump($_POST);
+            }
+            */
+            var_dump($_POST);
+        }
+        $_SESSION['specialtyItems'] = $specialtyItems;
+
+        // DRINKS
+        $drinks = "";
+        if (empty($_POST['drinks'])) {
+            $drinks = "no drinks selected";
+        } else {
+            $drinks = implode(", ", $_POST['drinks']);
+
+            /*
+            if (!validDrinks($_POST['drinks'])) {
+
+                //$f3->set('errors["drinks"]', 'No spoofing please!');
+                //var_dump($_POST);
+            }
+            */
+            var_dump($_POST);
+        }
+        $_SESSION['drinks'] = $drinks;
+
+        //If there are no errors...
+        if (empty($f3->get('errors'))) {
+            //Redirect
+            header('location: cart');
+        }
     }
-    $_SESSION['pastryItems'] = $pastryItems;
-
-
-
-
-
-    //Redirect to summary route if there are no errors
-    if (empty($f3->get('errors'))) {
-        header("location: cart");
-    }
-}
     $f3->set('pastry', getPastryItem());
     $f3->set('pastryImage', getPastryImage());
     $f3->set('donut', getDonutItem());
     $f3->set('donutImage', getDonutImage());
     $f3->set('sandwich', getSandwich());
-    $f3->set('sandwichImage',getSandwichImage());
+    $f3->set('sandwichImage', getSandwichImage());
     $f3->set('specialty', getSpecialty());
-    $f3->set('specialityImage',getSpecialtyImage());
+    $f3->set('specialityImage', getSpecialtyImage());
     $f3->set('drink', getDrink());
     $f3->set('drinkImage', getDrinkImage());
 
-    $view  = new Template();
+    $view = new Template();
     echo $view->render('views/menu.html');
 });
 
-$f3->route('POST|GET /sign_up', function($f3) {
+$f3->route('POST|GET /sign_up', function ($f3) {
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 
@@ -138,15 +215,22 @@ $f3->route('POST|GET /sign_up', function($f3) {
         $f3->set('userMembership', $membership);
         $_SESSION['membership'] = $membership;
 
-
     }
     //Add states data to hive
     $f3->set('locations', getLocation());
     $f3->set('memberships', getMembership());
 
 
-    $view  = new Template();
+    $view = new Template();
     echo $view->render('views/sign_up.html');
+});
+
+// Define a default route
+$f3->route('GET|POST /cart', function () {
+
+    $view = new Template();
+    echo $view->render('views/cart.html');
+
 });
 
 

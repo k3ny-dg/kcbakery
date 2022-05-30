@@ -30,3 +30,18 @@ function validEmailaddr($email)
         return false;
     }
 }
+
+//Validate condiments
+function validPastry($userPastryArray)  //"mustard", "sarin gas"
+{
+    $validPastryArray = DataLayer::getCondiments();
+
+    //Make sure each user selection is in the array of valid options
+    foreach($userPastryArray as $userPastry) {
+        if (!in_array($userPastry, $validPastryArray)) {
+            return false;
+        }
+    }
+
+    return true;
+}
