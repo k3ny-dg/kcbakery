@@ -1,11 +1,18 @@
 <?php
 
-function getMembership()
+/*
+ * kcbakery/model/data-layer2.php
+ * Returns data for the diner app
+ */
+
+class DataLayer{
+
+static function getMembership()
 {
     return array("yes", "no");
 }
 
-function getLocation()
+static function getLocation()
 {
     return array("Alabama", "Alaska", "Arizona", "Arkansas", "California",
         "Colorado", "Connecticut", "Delaware", "District of Columbia",
@@ -19,53 +26,55 @@ function getLocation()
         "Washington", "West Virginia", "Wisconsin", "Wyoming");
 }
 
-function getPastryItem()
+static function getPastryItem()
 {
     return array('Croissant','Blueberry Muffin', 'Scone', 'Danish');
 
 }
 
-function getPastryImage()
+static function getPastryImage()
 {
     return array('almond.png', 'blueberry_muffin.png', 'scone.jpeg', 'danish.jpeg');
 }
 
-function getDonutItem()
+static function getDonutItem()
 {
     return array('Cinnamon Sugar', 'Mochi', 'Chocolate Sprinkle', 'Coconut Cream Donut');
 }
 
-function getDonutImage()
+static function getDonutImage()
 {
     return array('cin_donut.png', 'mochi_donut.png','choc_sprink_donut.png','coconut_donut.png');
 }
 
-function getSandwich()
+static function getSandwich()
 {
     return array('Katsu', 'Strawberry', 'Potato', 'Egg Salad');
 }
 
-function getSandwichImage()
+static function getSandwichImage()
 {
     return array('katsu_sandwich.png', 'strawberry_sandwich.png','potato_sandwich.png','egg_salad.jpeg');
 }
 
-function getSpecialty()
+static function getSpecialty()
 {
     return array('Tiramisu', 'Tart', 'Butter Mochi', 'Meringue');
 }
 
-function getSpecialtyImage()
+static function getSpecialtyImage()
 {
     return array('tiramisu.png', 'tart_rasp.png', 'butter_mochi.png', 'tart.png');
 }
 
-function getDrink()
+static function getDrink()
 {
     return array('Coffee', 'Tea', 'Hot Chocolate', 'London Fog');
 }
 
-function getDrinkImage()
+static function getDrinkImage()
 {
    return array('coffee.png', 'black_tea.png', 'hotchocolate.jpeg', 'london_fog.png') ;
+}
+
 }

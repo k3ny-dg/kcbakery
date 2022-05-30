@@ -34,7 +34,7 @@ function validEmailaddr($email)
 //Validate condiments
 function validPastry($userPastryArray)  //"mustard", "sarin gas"
 {
-    $validPastryArray = DataLayer::getCondiments();
+    $validPastryArray = DataLayer::getPastryItem();
 
     //Make sure each user selection is in the array of valid options
     foreach($userPastryArray as $userPastry) {
