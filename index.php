@@ -33,14 +33,18 @@ $f3->route('POST|GET /menu', function($f3) {
 
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
+    // PASTRIES
     $pastryItems = "";
     if (empty($_POST['pastryItem'])) {
         $pastryItems = "no pastries selected";
     } else {
         $pastryItem = implode(", ", $_POST['pastryItem']);
-
     }
     $_SESSION['pastryItems'] = $pastryItems;
+
+
+
+
 
     //Redirect to summary route if there are no errors
     if (empty($f3->get('errors'))) {
@@ -49,7 +53,14 @@ $f3->route('POST|GET /menu', function($f3) {
 }
     $f3->set('pastry', getPastryItem());
     $f3->set('pastryImage', getPastryImage());
-
+    $f3->set('donut', getDonutItem());
+    $f3->set('donutImage', getDonutImage());
+    $f3->set('sandwich', getSandwich());
+    $f3->set('sandwichImage',getSandwichImage());
+    $f3->set('specialty', getSpecialty());
+    $f3->set('specialityImage',getSpecialtyImage());
+    $f3->set('drink', getDrink());
+    $f3->set('drinkImage', getDrinkImage());
 
     $view  = new Template();
     echo $view->render('views/menu.html');

@@ -115,6 +115,25 @@ File Description: Menu page for KC Bakery site
         <div class="col-md-12">
             <h4 class="submenu_title">Donut</h4>
             <div class="row">
+
+                <repeat group="{{ @donutImage }}" value="{{ @image }}">
+                    <div class="col-md-3 item-holder">
+                        <img class="menu-item" src="{{ 'images/'.@image }}">
+                    </div>
+                </repeat>
+
+                <repeat group="{{ @donut }}" value="{{ @donutTag }}">
+                    <div class="col-md-3 item-holder">
+                        <!--<h5>{{@pastryTag}}</h5> -->
+                        <label><input type="checkbox" name="donuts[]" class="form-check-input menu-check" value="{{@donutTag}}">
+                            {{ucfirst(@donutTag)}}</label>
+                        <!--<button type="button" class="add-btn btn btn-danger" value="Donut">+</button> -->
+                    </div>
+                </repeat>
+
+
+                <!--
+
                 <div class="col-md-3">
                     <img class="menu-item" alt="cinnamon sugar donut" src="images/cin_donut.png"/>
                     <h5>Cinnamon Sugar</h5>
@@ -135,6 +154,8 @@ File Description: Menu page for KC Bakery site
                     <h5>Coconut Cream Donut</h5>
                     <button type="button" class="add-btn btn btn-danger" value="Coconut Cream Donut">+</button>
                 </div>
+
+                -->
             </div>
         </div>
     </div> <!-- END OF DONUT -->
@@ -145,6 +166,22 @@ File Description: Menu page for KC Bakery site
         <div class="col-md-12">
             <h4 class="submenu_title">Sandwiches</h4>
             <div class="row">
+
+                <repeat group="{{ @sandwichImage }}" value="{{ @image }}">
+                    <div class="col-md-3 item-holder">
+                        <img class="menu-item" src="{{ 'images/'.@image }}">
+                    </div>
+                </repeat>
+
+                <repeat group="{{ @sandwich }}" value="{{ @sandwichTag }}">
+                    <div class="col-md-3 item-holder">
+                        <!--<h5>{{@pastryTag}}</h5> -->
+                        <label><input type="checkbox" name="sandwiches[]" class="form-check-input menu-check" value="{{@sandwichTag}}">
+                            {{ucfirst(@sandwichTag)}}</label>
+                        <!--<button type="button" class="add-btn btn btn-danger" value="Donut">+</button> -->
+                    </div>
+                </repeat>
+                <!--
                 <div class="col-md-3">
                     <img class="menu-item" alt="katsu sandwich" src="images/katsu_sandwich.png"/>
                     <h5>Katsu</h5>
@@ -165,6 +202,7 @@ File Description: Menu page for KC Bakery site
                     <h5>Egg Salad Sandwich</h5>
                     <button type="button" class="add-btn btn btn-danger" value="Egg Salad Sandwich">+</button>
                 </div>
+                -->
             </div>
         </div>
     </div><!-- END OF SANDWICHES -->
@@ -175,6 +213,23 @@ File Description: Menu page for KC Bakery site
         <div class="col-md-12">
             <h4 class="submenu_title">Specialty Items</h4>
             <div class="row">
+
+                <repeat group="{{ @specialityImage }}" value="{{ @image }}">
+                    <div class="col-md-3 item-holder">
+                        <img class="menu-item" src="{{ 'images/'.@image }}">
+                    </div>
+                </repeat>
+
+                <repeat group="{{ @sandwich }}" value="{{ @specialtyTag }}">
+                    <div class="col-md-3 item-holder">
+                        <!--<h5>{{@pastryTag}}</h5> -->
+                        <label><input type="checkbox" name="specialtyItems[]" class="form-check-input menu-check" value="{{@specialtyTag}}">
+                            {{ucfirst(@specialtyTag)}}</label>
+                        <!--<button type="button" class="add-btn btn btn-danger" value="Donut">+</button> -->
+                    </div>
+                </repeat>
+
+                <!--
                 <div class="col-md-3">
                     <img class="menu-item" alt="tiramisu" src="images/tiramisu.png"/>
                     <h5>Tiramisu</h5>
@@ -195,6 +250,7 @@ File Description: Menu page for KC Bakery site
                     <h5>Meringue Pie</h5>
                     <button type="button" class="add-btn btn btn-danger">+</button>
                 </div>
+                -->
             </div>
         </div>
     </div> <!-- END OF SPECIALTY -->
@@ -205,6 +261,23 @@ File Description: Menu page for KC Bakery site
         <div class="col-md-12">
             <h4 class="submenu_title">Drinks</h4>
             <div class="row">
+
+                <repeat group="{{ @drinkImage }}" value="{{ @image }}">
+                    <div class="col-md-3 item-holder">
+                        <img class="menu-item" src="{{ 'images/'.@image }}">
+                    </div>
+                </repeat>
+
+                <repeat group="{{ @drink }}" value="{{ @drinkTag }}">
+                    <div class="col-md-3 item-holder">
+                        <!--<h5>{{@pastryTag}}</h5> -->
+                        <label><input type="checkbox" name="drinks[]" class="form-check-input menu-check" value="{{@drinkTag}}">
+                            {{ucfirst(@drinkTag)}}</label>
+                        <!--<button type="button" class="add-btn btn btn-danger" value="Donut">+</button> -->
+                    </div>
+                </repeat>
+
+                <!--
                 <div class="col-md-3">
                     <img class="menu-item" alt="coffee" src="images/coffee.png"/>
                     <h5>Coffee</h5>
@@ -225,6 +298,8 @@ File Description: Menu page for KC Bakery site
                     <h5>London Fog</h5>
                     <button type="button" class="add-btn btn btn-danger">+</button>
                 </div>
+
+                -->
             </div>
         </div>
     </div> <!-- END OF DRINKS -->
