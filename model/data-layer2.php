@@ -21,7 +21,13 @@ function getLocation()
 
 function getPastryItem()
 {
-    return array("Croissant", "Blueberry Muffin", "Scone", "Danish");
+    return array('Croissant','Blueberry Muffin', 'Scone', 'Danish');
+
+}
+
+function getPastryImage()
+{
+    return array('almond.png', 'blueberry_muffin.png', 'scone.jpeg', 'danish.jpeg');
 }
 
 function getDonut()

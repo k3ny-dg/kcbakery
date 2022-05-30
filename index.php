@@ -29,14 +29,32 @@ $f3->route('GET /',function() {
 });
 
 // Define a menu route
-$f3->route('POST|GET /menu', function() {
+$f3->route('POST|GET /menu', function($f3) {
 
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
+    $pastryItems = "";
+    if (empty($_POST['pastryItem'])) {
+        $pastryItems = "no pastries selected";
+    } else {
+        $pastryItem = implode(", ", $_POST['pastryItem']);
+
+    }
+    $_SESSION['pastryItems'] = $pastryItems;
+
+    //Redirect to summary route if there are no errors
+    if (empty($f3->get('errors'))) {
+        header("location: cart");
+    }
+}
+    $f3->set('pastry', getPastryItem());
+    $f3->set('pastryImage', getPastryImage());
 
 
     $view  = new Template();
     echo $view->render('views/menu.html');
 });
+
 $f3->route('POST|GET /sign_up', function($f3) {
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 

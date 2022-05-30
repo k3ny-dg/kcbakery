@@ -67,26 +67,44 @@ File Description: Menu page for KC Bakery site
         <div class="col-md-12">
             <h4 class="submenu_title">Pastries</h4>
             <div class="row">
+
+                    <repeat group="{{ @pastryImage }}" value="{{ @image }}">
+                        <div class="col-md-3 item-holder">
+                        <img class="menu-item" src="{{ 'images/'.@image }}">
+                        </div>
+                    </repeat>
+
+                <repeat group="{{ @pastry }}" value="{{ @pastryTag }}">
+                    <div class="col-md-3 item-holder">
+                        <!--<h5>{{@pastryTag}}</h5> -->
+                        <label><input type="checkbox" name="pastries[]" class="form-check-input menu-check" value="{{@pastryTag}}">
+                        {{ucfirst(@pastryTag)}}</label>
+                        <!--<button type="button" class="add-btn btn btn-danger" value="Croissant">+</button> -->
+                    </div>
+                </repeat>
+
+                <!--
                 <div class="col-md-3 item-holder">
                     <img class="menu-item" alt="croissant" src="images/almond.png"/>
                     <h5>Croissant</h5>
-                    <button type="button" class="add-btn btn btn-danger">+</button>
+                    <button type="button" class="add-btn btn btn-danger" value="Croissant">+</button>
                 </div>
                 <div class="col-md-3 item-holder">
                     <img class="menu-item" alt="blueberry muffin" src="images/blueberry_muffin.png"/>
                     <h5>Blueberry Muffin</h5>
-                    <button type="button" class="add-btn btn btn-danger">+</button>
+                    <button type="button" class="add-btn btn btn-danger" value="Blueberry Muffin">+</button>
                 </div>
                 <div class="col-md-3 item-holder">
                     <img class="menu-item" alt="scone" src="images/scone.jpeg"/>
                     <h5>Scone</h5>
-                    <button type="button" class="add-btn btn btn-danger">+</button>
+                    <button type="button" class="add-btn btn btn-danger" value="Scone">+</button>
                 </div>
                 <div class="col-md-3 item-holder">
                     <img class="menu-item" alt="danish" src="images/danish.jpeg"/>
                     <h5>Danish</h5>
-                    <button type="button" class="add-btn btn btn-danger">+</button>
+                    <button type="button" class="add-btn btn btn-danger" value="Danish">+</button>
                 </div>
+                -->
             </div>
         </div>
     </div> <!-- END OF PASTRIES -->
@@ -100,22 +118,22 @@ File Description: Menu page for KC Bakery site
                 <div class="col-md-3">
                     <img class="menu-item" alt="cinnamon sugar donut" src="images/cin_donut.png"/>
                     <h5>Cinnamon Sugar</h5>
-                    <button type="button" class="add-btn btn btn-danger">+</button>
+                    <button type="button" class="add-btn btn btn-danger" value="Cinnamon Sugar Donut">+</button>
                 </div>
                 <div class="col-md-3">
                     <img class="menu-item" alt="mochi donut" src="images/mochi_donut.png"/>
                     <h5>Mochi Donut</h5>
-                    <button type="button" class="add-btn btn btn-danger">+</button>
+                    <button type="button" class="add-btn btn btn-danger" value="Mochi Donut">+</button>
                 </div>
                 <div class="col-md-3">
                     <img class="menu-item" alt="chocolate sprinkle donut" src="images/choc_sprink_donut.png"/>
                     <h5>Chocolate Sprinkle</h5>
-                    <button type="button" class="add-btn btn btn-danger">+</button>
+                    <button type="button" class="add-btn btn btn-danger" value="Chocolate Sprinkle Donut">+</button>
                 </div>
                 <div class="col-md-3">
                     <img class="menu-item" alt="coconut cream donut" src="images/coconut_donut.png"/>
                     <h5>Coconut Cream Donut</h5>
-                    <button type="button" class="add-btn btn btn-danger">+</button>
+                    <button type="button" class="add-btn btn btn-danger" value="Coconut Cream Donut">+</button>
                 </div>
             </div>
         </div>
@@ -130,22 +148,22 @@ File Description: Menu page for KC Bakery site
                 <div class="col-md-3">
                     <img class="menu-item" alt="katsu sandwich" src="images/katsu_sandwich.png"/>
                     <h5>Katsu</h5>
-                    <button type="button" class="add-btn btn btn-danger">+</button>
+                    <button type="button" class="add-btn btn btn-danger" value="Katsu Sandwich">+</button>
                 </div>
                 <div class="col-md-3">
                     <img class="menu-item" alt="strawberry sandwich" src="images/strawberry_sandwich.png"/>
                     <h5>Strawberry</h5>
-                    <button type="button" class="add-btn btn btn-danger">+</button>
+                    <button type="button" class="add-btn btn btn-danger" value="Strawberry Sandwich">+</button>
                 </div>
                 <div class="col-md-3">
                     <img class="menu-item" alt="potato sandwich" src="images/potato_sandwich.png"/>
                     <h5>Potato</h5>
-                    <button type="button" class="add-btn btn btn-danger">+</button>
+                    <button type="button" class="add-btn btn btn-danger" value="Potato Sandwich">+</button>
                 </div>
                 <div class="col-md-3">
                     <img class="menu-item" alt="egg salad sandwich" src="images/egg_salad.jpeg"/>
                     <h5>Egg Salad Sandwich</h5>
-                    <button type="button" class="add-btn btn btn-danger">+</button>
+                    <button type="button" class="add-btn btn btn-danger" value="Egg Salad Sandwich">+</button>
                 </div>
             </div>
         </div>
@@ -160,7 +178,7 @@ File Description: Menu page for KC Bakery site
                 <div class="col-md-3">
                     <img class="menu-item" alt="tiramisu" src="images/tiramisu.png"/>
                     <h5>Tiramisu</h5>
-                    <button type="button" class="add-btn btn btn-danger">+</button>
+                    <button type="button" class="add-btn btn btn-danger" value="">+</button>
                 </div>
                 <div class="col-md-3">
                     <img class="menu-item" alt="tart" src="images/tart_rasp.png"/>
