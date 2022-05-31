@@ -31,4 +31,21 @@ class Validation2{
     }
 }
 
+<<<<<<< HEAD
 
+=======
+//Validate condiments
+function validPastry($userPastryArray)  //"mustard", "sarin gas"
+{
+    $validPastryArray = DataLayer::getPastryItem();
+
+    //Make sure each user selection is in the array of valid options
+    foreach($userPastryArray as $userPastry) {
+        if (!in_array($userPastry, $validPastryArray)) {
+            return false;
+        }
+    }
+
+    return true;
+}
+>>>>>>> 901477ed4f3c7787de4112cc6c667f8d80bea40e

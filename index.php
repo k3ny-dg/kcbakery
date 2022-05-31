@@ -15,37 +15,34 @@ session_start();
 // Require the autoload file
 require_once('vendor/autoload.php');
 require_once('model/data-layer2.php');
-require_once ('model/validation2.php');
+require_once('model/validation2.php');
 
 // Create an instance of the Base class
 $f3 = Base::instance();
 
-// Define a default route
-$f3->route('GET /',function() {
+$con = new Controller($f3);
 
-    $view = new Template();
-    echo $view->render('views/home.html');
+// Define a default route
+$f3->route('GET /', function () {
+
+    $GLOBALS['con']->home();
 
 });
 
 // Define a menu route
-$f3->route('POST|GET /menu', function() {
+$f3->route('POST|GET /menu', function ($f3) {
 
-
-
-
-    $view  = new Template();
-    echo $view->render('views/menu.html');
+    $GLOBALS['con']->menu();
 });
-$f3->route('POST|GET /sign_up', function($f3) {
-    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
+$f3->route('POST|GET /sign_up', function ($f3) {
+  $GLOBALS['con']->signup();
+});
 
-        //Get the data
-        //first
-        $first = $_POST['first'];
-        $f3->set('firstName', $first);
+// Define a default route
+$f3->route('GET|POST /cart', function () {
 
+<<<<<<< HEAD
         //require
         $first = isset($_POST['first']) ? $_POST['first'] : "";
         //If data is first name is valid
@@ -122,6 +119,11 @@ $f3->route('POST|GET /sign_up', function($f3) {
 
     $view  = new Template();
     echo $view->render('views/sign_up.html');
+=======
+    $view = new Template();
+    echo $view->render('views/cart.html');
+
+>>>>>>> 901477ed4f3c7787de4112cc6c667f8d80bea40e
 });
 
 

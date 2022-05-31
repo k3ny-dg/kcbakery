@@ -3,91 +3,35 @@ Author: Keny Dutton-Gillespie and Cherie Menchaca
 File Name: menu.html
 File Description: Menu page for KC Bakery site
 -->
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-
-    <!-- CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="styles/styles.css">
-
-    <!-- Favicon -->
-    <link rel = "icon" id="favicon" type = "image/png" href="images/roll.png">
-
-    <!-- TITLE -->
-    <title>KC Bakery</title>
-</head>
-
+<include href="views/header.html"></include>
 <body>
 
 <div class="container">
 
-    <nav class="navbar navbar-expand-md mt-5 bg-dark"> <!-- NAV BAR -->
-        <ul id="myNav" class="navbar-nav">
-            <li class="nav-item">
-                <a href="{{ @BASE }}" class="nav ml-3 bg-white px-4">Home</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav ml-3 bg-white px-4">Menu</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav ml-3 bg-white px-4">Membership</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav ml-3 bg-white px-4">Contact</a>
-            </li>
-        </ul>
-        <div class="login-container">
-            <form>
-                <input type="text" placeholder="Username" name="username">
-                <input type="text" placeholder="Password" name="psw">
-                <button type="submit">Login</button>
-            </form>
-        </div>
-        <div> <!-- CART BUTTON DIV -->
-            <button type="button" class="btn btn-success">
-                <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
-                    <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
-                </svg>
-            </button>
-        </div> <!-- END OF CART BUTTON DIV -->
-    </nav>
-
-    <div class="row"> <!-- PAGE TITLE -->
-        <div class="col-md-12 ml-5">
-            <h2>Menu</h2>
-        </div>
-    </div> <!-- END OF PAGE TITLE -->
+    <include href="views/navbar.html"></include>
 
     <br>
+    <form action="#" method="post">
     <div class="row text-center m-5"> <!-- PASTRIES START -->
         <div class="col-md-12">
-            <h4 class="submenu_title">Pastries</h4>
-            <div class="row">
-                <div class="col-md-3 item-holder">
-                    <img class="menu-item" alt="croissant" src="images/almond.png"/>
-                    <h5>Croissant</h5>
-                    <button type="button" class="add-btn btn btn-danger">+</button>
+                <h4 class="submenu_title">Pastries</h4>
+                <div class="row">
+                    <repeat group="{{ @pastryImage }}" value="{{ @image }}">
+                        <div class="col-md-3 item-holder">
+                            <img class="menu-item" src="{{ 'images/'.@image }}">
+                        </div>
+                    </repeat>
+
+                    <repeat group="{{ @pastry }}" value="{{ @pastryTag }}">
+                        <div class="col-md-3 item-holder">
+                            <!--<h5>{{@pastryTag}}</h5> -->
+                            <label><input type="checkbox" name="pastries[]" class="form-check-input menu-check"
+                                          value="{{@pastryTag}}">
+                                {{ucfirst(@pastryTag)}}</label>
+                            <!--<button type="button" class="add-btn btn btn-danger" value="Croissant">+</button> -->
+                        </div>
+                    </repeat>
                 </div>
-                <div class="col-md-3 item-holder">
-                    <img class="menu-item" alt="blueberry muffin" src="images/blueberry_muffin.png"/>
-                    <h5>Blueberry Muffin</h5>
-                    <button type="button" class="add-btn btn btn-danger">+</button>
-                </div>
-                <div class="col-md-3 item-holder">
-                    <img class="menu-item" alt="scone" src="images/scone.jpeg"/>
-                    <h5>Scone</h5>
-                    <button type="button" class="add-btn btn btn-danger">+</button>
-                </div>
-                <div class="col-md-3 item-holder">
-                    <img class="menu-item" alt="danish" src="images/danish.jpeg"/>
-                    <h5>Danish</h5>
-                    <button type="button" class="add-btn btn btn-danger">+</button>
-                </div>
-            </div>
         </div>
     </div> <!-- END OF PASTRIES -->
 
@@ -97,26 +41,22 @@ File Description: Menu page for KC Bakery site
         <div class="col-md-12">
             <h4 class="submenu_title">Donut</h4>
             <div class="row">
-                <div class="col-md-3">
-                    <img class="menu-item" alt="cinnamon sugar donut" src="images/cin_donut.png"/>
-                    <h5>Cinnamon Sugar</h5>
-                    <button type="button" class="add-btn btn btn-danger">+</button>
-                </div>
-                <div class="col-md-3">
-                    <img class="menu-item" alt="mochi donut" src="images/mochi_donut.png"/>
-                    <h5>Mochi Donut</h5>
-                    <button type="button" class="add-btn btn btn-danger">+</button>
-                </div>
-                <div class="col-md-3">
-                    <img class="menu-item" alt="chocolate sprinkle donut" src="images/choc_sprink_donut.png"/>
-                    <h5>Chocolate Sprinkle</h5>
-                    <button type="button" class="add-btn btn btn-danger">+</button>
-                </div>
-                <div class="col-md-3">
-                    <img class="menu-item" alt="coconut cream donut" src="images/coconut_donut.png"/>
-                    <h5>Coconut Cream Donut</h5>
-                    <button type="button" class="add-btn btn btn-danger">+</button>
-                </div>
+
+                <repeat group="{{ @donutImage }}" value="{{ @image }}">
+                    <div class="col-md-3 item-holder">
+                        <img class="menu-item" src="{{ 'images/'.@image }}">
+                    </div>
+                </repeat>
+
+                <repeat group="{{ @donut }}" value="{{ @donutTag }}">
+                    <div class="col-md-3 item-holder">
+                        <!--<h5>{{@pastryTag}}</h5> -->
+                        <label><input type="checkbox" name="donuts[]" class="form-check-input menu-check"
+                                      value="{{@donutTag}}">
+                            {{ucfirst(@donutTag)}}</label>
+                        <!--<button type="button" class="add-btn btn btn-danger" value="Donut">+</button> -->
+                    </div>
+                </repeat>
             </div>
         </div>
     </div> <!-- END OF DONUT -->
@@ -127,56 +67,48 @@ File Description: Menu page for KC Bakery site
         <div class="col-md-12">
             <h4 class="submenu_title">Sandwiches</h4>
             <div class="row">
-                <div class="col-md-3">
-                    <img class="menu-item" alt="katsu sandwich" src="images/katsu_sandwich.png"/>
-                    <h5>Katsu</h5>
-                    <button type="button" class="add-btn btn btn-danger">+</button>
-                </div>
-                <div class="col-md-3">
-                    <img class="menu-item" alt="strawberry sandwich" src="images/strawberry_sandwich.png"/>
-                    <h5>Strawberry</h5>
-                    <button type="button" class="add-btn btn btn-danger">+</button>
-                </div>
-                <div class="col-md-3">
-                    <img class="menu-item" alt="potato sandwich" src="images/potato_sandwich.png"/>
-                    <h5>Potato</h5>
-                    <button type="button" class="add-btn btn btn-danger">+</button>
-                </div>
-                <div class="col-md-3">
-                    <img class="menu-item" alt="egg salad sandwich" src="images/egg_salad.jpeg"/>
-                    <h5>Egg Salad Sandwich</h5>
-                    <button type="button" class="add-btn btn btn-danger">+</button>
-                </div>
+
+                <repeat group="{{ @sandwichImage }}" value="{{ @image }}">
+                    <div class="col-md-3 item-holder">
+                        <img class="menu-item" src="{{ 'images/'.@image }}">
+                    </div>
+                </repeat>
+
+                <repeat group="{{ @sandwich }}" value="{{ @sandwichTag }}">
+                    <div class="col-md-3 item-holder">
+                        <!--<h5>{{@pastryTag}}</h5> -->
+                        <label><input type="checkbox" name="sandwiches[]" class="form-check-input menu-check"
+                                      value="{{@sandwichTag}}">
+                            {{ucfirst(@sandwichTag)}}</label>
+                        <!--<button type="button" class="add-btn btn btn-danger" value="Donut">+</button> -->
+                    </div>
+                </repeat>
             </div>
         </div>
     </div><!-- END OF SANDWICHES -->
 
-     <br>
+    <br>
 
     <div class="row text-center m-5"> <!-- SPECIALTY ITEMS -->
         <div class="col-md-12">
             <h4 class="submenu_title">Specialty Items</h4>
             <div class="row">
-                <div class="col-md-3">
-                    <img class="menu-item" alt="tiramisu" src="images/tiramisu.png"/>
-                    <h5>Tiramisu</h5>
-                    <button type="button" class="add-btn btn btn-danger">+</button>
-                </div>
-                <div class="col-md-3">
-                    <img class="menu-item" alt="tart" src="images/tart_rasp.png"/>
-                    <h5>Tart</h5>
-                    <button type="button" class="add-btn btn btn-danger">+</button>
-                </div>
-                <div class="col-md-3">
-                    <img class="menu-item" alt="butter mochi" src="images/butter_mochi.png"/>
-                    <h5>Butter Mochi</h5>
-                    <button type="button" class="add-btn btn btn-danger">+</button>
-                </div>
-                <div class="col-md-3">
-                    <img class="menu-item" alt="meringue pie" src="images/tart.png"/>
-                    <h5>Meringue Pie</h5>
-                    <button type="button" class="add-btn btn btn-danger">+</button>
-                </div>
+
+                <repeat group="{{ @specialityImage }}" value="{{ @image }}">
+                    <div class="col-md-3 item-holder">
+                        <img class="menu-item" src="{{ 'images/'.@image }}">
+                    </div>
+                </repeat>
+
+                <repeat group="{{ @specialty }}" value="{{ @specialtyTag }}">
+                    <div class="col-md-3 item-holder">
+                        <!--<h5>{{@pastryTag}}</h5> -->
+                        <label><input type="checkbox" name="specialtyItems[]" class="form-check-input menu-check"
+                                      value="{{@specialtyTag}}">
+                            {{ucfirst(@specialtyTag)}}</label>
+                        <!--<button type="button" class="add-btn btn btn-danger" value="Donut">+</button> -->
+                    </div>
+                </repeat>
             </div>
         </div>
     </div> <!-- END OF SPECIALTY -->
@@ -187,29 +119,30 @@ File Description: Menu page for KC Bakery site
         <div class="col-md-12">
             <h4 class="submenu_title">Drinks</h4>
             <div class="row">
-                <div class="col-md-3">
-                    <img class="menu-item" alt="coffee" src="images/coffee.png"/>
-                    <h5>Coffee</h5>
-                    <button type="button" class="add-btn btn btn-danger">+</button>
-                </div>
-                <div class="col-md-3">
-                    <img class="menu-item" alt="tea" src="images/black_tea.png"/>
-                    <h5>Tea</h5>
-                    <button type="button" class="add-btn btn btn-danger">+</button>
-                </div>
-                <div class="col-md-3">
-                    <img class="menu-item" alt="hot chocolate" src="images/hotchocolate.jpeg"/>
-                    <h5>Hot Chocolate</h5>
-                    <button type="button" class="add-btn btn btn-danger">+</button>
-                </div>
-                <div class="col-md-3">
-                    <img class="menu-item" alt="london fog" src="images/london_fog.png"/>
-                    <h5>London Fog</h5>
-                    <button type="button" class="add-btn btn btn-danger">+</button>
-                </div>
+
+                <repeat group="{{ @drinkImage }}" value="{{ @image }}">
+                    <div class="col-md-3 item-holder">
+                        <img class="menu-item" src="{{ 'images/'.@image }}">
+                    </div>
+                </repeat>
+
+                <repeat group="{{ @drink }}" value="{{ @drinkTag }}">
+                    <div class="col-md-3 item-holder">
+                        <!--<h5>{{@pastryTag}}</h5> -->
+                        <label><input type="checkbox" name="drinks[]" class="form-check-input menu-check"
+                                      value="{{@drinkTag}}">
+                            {{ucfirst(@drinkTag)}}</label>
+                        <!--<button type="button" class="add-btn btn btn-danger" value="Donut">+</button> -->
+                    </div>
+                </repeat>
             </div>
         </div>
     </div> <!-- END OF DRINKS -->
+
+        <div class="col-xs-3 ">
+            <button class="btn justify-content-center" type="submit">Go to Cart</button>
+        </div>
+    </form>
 </div> <!-- END OF CONTAINER -->
 
 </body>
