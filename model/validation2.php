@@ -3,30 +3,32 @@
 /* kcbakery/model/validation.php
 * Validate user input from the dating app
 */
-//validate name
-function validTitle($name)
-{
-    if ($name=="") {
-        return false;
+class Validation2{
+    static function validTitle($name)
+    {
+        if ($name=="") {
+            return false;
+        }
+        else if (is_numeric($name)) {
+            return false;
+        }
+        else {
+            return true;
+        }
     }
-    else if (is_numeric($name)) {
-        return false;
+    static function validPhoneNumber($phoneNumber)
+    {
+        return strlen($phoneNumber) == 10;
     }
-    else {
-        return true;
-    }
-}
-function validPhoneNumber($phoneNumber)
-{
-    return strlen($phoneNumber) == 10;
-}
 //validate email
-function validEmailaddr($email)
-{
-    if(filter_var($email, FILTER_VALIDATE_EMAIL)){
-        return true;
-    }
-    else{
-        return false;
+    static function validEmailaddr($email)
+    {
+        if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }
+
+

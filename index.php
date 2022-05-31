@@ -47,56 +47,60 @@ $f3->route('POST|GET /sign_up', function($f3) {
         $f3->set('firstName', $first);
 
         //require
-//        $first = isset($_POST['first']) ? $_POST['first'] : "";
-//        //If data is first name is valid
-//        //if data is valid
-//        if (validTitle($first)) {
-//            $_SESSION['first'] = $first;
-//        } else {
-//            $f3->set('errors["first"]', 'Please enter your first name with letters.');
-//        }
+        $first = isset($_POST['first']) ? $_POST['first'] : "";
+        //If data is first name is valid
+        //if data is valid
+        if (validTitle($first)) {
+            $_SESSION['first'] = $first;
+        } else {
+            $f3->set('errors["first"]', 'Please enter your first name with letters.');
+        }
 
         //last
         $last = $_POST['last'];
         $f3->set('lastName', $last);
 
-//        $last = isset($_POST['last']) ? $_POST['last'] : "";
-//        if (validTitle($last)) {
-//            $_SESSION['last'] = $last;
-//        } else {
-//            $f3->set('errors["last"]', 'Please enter your last name with letters.');
-//        }
+        $last = isset($_POST['last']) ? $_POST['last'] : "";
+        if (validTitle($last)) {
+            $_SESSION['last'] = $last;
+        } else {
+            $f3->set('errors["last"]', 'Please enter your last name with letters.');
+        }
 
         //city
         $city = $_POST['city'];
         $f3->set('city', $city);
 
-//
+
 
         //phone
         $phoneNumber = $_POST['phoneNumber'];
         $f3->set('phoneNumber', $phoneNumber);
 
-//        $phoneNumber = isset($_POST['phoneNumber']) ? $_POST['phoneNumber'] : "";
-//        if (validPhoneNumber($phoneNumber)) {
-//            $_SESSION['phoneNumber'] = $phoneNumber;
-//        } else {
-//            $f3->set('errors["phoneNumber"]', 'Please enter your telephone number.');
-//        }
+        $phoneNumber = isset($_POST['phoneNumber']) ? $_POST['phoneNumber'] : "";
+        if (validPhoneNumber($phoneNumber)) {
+            $_SESSION['phoneNumber'] = $phoneNumber;
+        } else {
+            $f3->set('errors["phoneNumber"]', 'Please enter your telephone number.');
+        }
 
         //email
         $emailAdd = $_POST['emailAdd'];
         $f3->set('emailAdd', $emailAdd);
         $emailAdd = isset($_POST['emailAdd']) ? $_POST['emailAdd'] : "";
-//        if (validEmailaddr($emailAdd)) {
-//            $_SESSION['emailAdd'] = $emailAdd;
-//        } else {
-//            $f3->set('errors["emailAdd"]', 'Please enter a valid email.');
-//        }
+        if (validEmailaddr($emailAdd)) {
+            $_SESSION['emailAdd'] = $emailAdd;
+        } else {
+            $f3->set('errors["emailAdd"]', 'Please enter a valid email.');
+        }
         //Redirect to order2 route if there are no errors
-//        if (empty($f3->get('errors'))) {
-//            header('location: summary');
-//        }
+        if (empty($f3->get('errors'))) {
+            header('location: summary');
+        }
+        $add = $_POST['add'];
+        $f3->set('add', $add);
+        $_SESSION['add'] = $add;
+
         $city = $_POST['city'];
         $f3->set('city', $city);
         $_SESSION['city'] = $city;
