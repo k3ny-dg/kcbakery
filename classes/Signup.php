@@ -39,7 +39,7 @@ class Signup{
 
     }
 
-    /**
+    /**This function will getFirst name
      * @return string
      */
     public function getFirst(): string
@@ -47,7 +47,7 @@ class Signup{
         return $this->_first;
     }
 
-    /**
+    /**This function will setFirst name
      * @param string $first
      */
     public function setFirst(string $first): void
@@ -55,7 +55,7 @@ class Signup{
         $this->_first = $first;
     }
 
-    /**
+    /**This function will getLast name
      * @return string
      */
     public function getLast(): string
@@ -63,7 +63,7 @@ class Signup{
         return $this->_last;
     }
 
-    /**
+    /**This function will setLast name
      * @param string $last
      */
     public function setLast(string $last): void
@@ -71,7 +71,7 @@ class Signup{
         $this->_last = $last;
     }
 
-    /**
+    /**This function will get address
      * @return string
      */
     public function getAdd(): string
@@ -79,7 +79,7 @@ class Signup{
         return $this->_add;
     }
 
-    /**
+    /**This function will set the address
      * @param string $add
      */
     public function setAdd(string $add): void
@@ -87,7 +87,7 @@ class Signup{
         $this->_add = $add;
     }
 
-    /**
+    /**This function will getCity
      * @return string
      */
     public function getCity(): string
@@ -95,7 +95,7 @@ class Signup{
         return $this->_city;
     }
 
-    /**
+    /**This function will setCity
      * @param string $city
      */
     public function setCity(string $city): void
@@ -103,7 +103,7 @@ class Signup{
         $this->_city = $city;
     }
 
-    /**
+    /**This function will getPhoneNumber
      * @return string
      */
     public function getPhoneNumber(): string
@@ -111,7 +111,7 @@ class Signup{
         return $this->_phoneNumber;
     }
 
-    /**
+    /**This function will setPhoneNumber
      * @param string $phoneNumber
      */
     public function setPhoneNumber(string $phoneNumber): void
@@ -119,7 +119,7 @@ class Signup{
         $this->_phoneNumber = $phoneNumber;
     }
 
-    /**
+    /**This function will getLocation
      * @return string
      */
     public function getLocation(): string
@@ -127,7 +127,7 @@ class Signup{
         return $this->_location;
     }
 
-    /**
+    /**This function will setLocation
      * @param string $location
      */
     public function setLocation(string $location): void
@@ -135,7 +135,7 @@ class Signup{
         $this->_location = $location;
     }
 
-    /**
+    /**This function will getEmail
      * @return string
      */
     public function getEmail(): string
@@ -143,7 +143,7 @@ class Signup{
         return $this->_email;
     }
 
-    /**
+    /**This function will setEmail
      * @param string $email
      */
     public function setEmail(string $email): void
@@ -151,7 +151,7 @@ class Signup{
         $this->_email = $email;
     }
 
-    /**
+    /**This function will getMembership
      * @return string
      */
     public function getMembership(): string
@@ -159,7 +159,7 @@ class Signup{
         return $this->_membership;
     }
 
-    /**
+    /**This function will setMembership
      * @param string $membership
      */
     public function setMembership(string $membership): void
@@ -167,7 +167,7 @@ class Signup{
         $this->_membership = $membership;
     }
 
-    /**
+    /**This function will getUser
      * @return string
      */
     public function getUser(): string
@@ -175,7 +175,7 @@ class Signup{
         return $this->_user;
     }
 
-    /**
+    /**This function will setUser
      * @param string $user
      */
     public function setUser(string $user): void
@@ -183,7 +183,7 @@ class Signup{
         $this->_user = $user;
     }
 
-    /**
+    /**This function will getPassword
      * @return string
      */
     public function getPass(): string
@@ -191,7 +191,7 @@ class Signup{
         return $this->_pass;
     }
 
-    /**
+    /**This function will setPassword
      * @param string $pass
      */
     public function setPass(string $pass): void

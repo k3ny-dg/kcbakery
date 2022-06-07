@@ -31,9 +31,9 @@ class Validation2{
     }
 }
 
-<<<<<<< HEAD
 
-=======
+
+
 //Validate condiments
 function validPastry($userPastryArray)  //"mustard", "sarin gas"
 {
@@ -48,4 +48,4 @@ function validPastry($userPastryArray)  //"mustard", "sarin gas"
 
     return true;
 }
->>>>>>> 901477ed4f3c7787de4112cc6c667f8d80bea40e
+

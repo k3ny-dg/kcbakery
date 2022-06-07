@@ -161,90 +161,122 @@ class Controller
     function signup()
     {
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            //if is set to premium will have discounts in the summary
+            if (isset($_POST['premium'])) {
+                $profile = new Premium();
+            } else {
+                $profile = new Membership();
+            }
+            //set the object to $profile
+            $_SESSION['profile'] = $profile;
 
 
-            //Get the data
-            //first
-            $first = $_POST['first'];
-            $this->_f3->set('firstName', $first);
 
-            //require
-//        $first = isset($_POST['first']) ? $_POST['first'] : "";
-//        //If data is first name is valid
-//        //if data is valid
-//        if (validTitle($first)) {
-//            $_SESSION['first'] = $first;
-//        } else {
-//            $f3->set('errors["first"]', 'Please enter your first name with letters.');
-//        }
+        //Get the data
+        //first
+        $first = $_POST['first'];
+        $this->_f3->set('firstName', $first);
+
+        //If data is first name is valid
+        //if data is valid
+        if (Validation2::validTitle($first)) {
+            $profile->setFirst($first);
+
+            //Store the membership in the session array
+            $_SESSION['profile'] = $profile;
+
+            //store it in the session array
+            $_SESSION['first'] = $first;
+            $_SESSION['profile']->setFirst('first');
+        } else {
+            $this->_f3->set('errors["first"]', 'Please enter your first name with letters.');
+        }
 
             //last
             $last = $_POST['last'];
             $this->_f3->set('lastName', $last);
+        if (Validation2::validTitle($last)) {
+            $profile->setLast($last);
 
-//        $last = isset($_POST['last']) ? $_POST['last'] : "";
-//        if (validTitle($last)) {
-//            $_SESSION['last'] = $last;
-//        } else {
-//            $f3->set('errors["last"]', 'Please enter your last name with letters.');
-//        }
+            //Store the membership in the session array
+            $_SESSION['profile'] = $profile;
 
-            //city
-            $city = $_POST['city'];
-            $this->_f3->set('city', $city);
+            //store it in the session array
+            $_SESSION['last'] = $last;
+            $_SESSION['profile']->setLast('last');
+        } else {
+            $this->_f3->set('errors["last"]', 'Please enter your last name with letters.');
+        }
 
-//
+        //phone
+        $phoneNumber = $_POST['phoneNumber'];
+        $this->_f3->set('phoneNumber', $phoneNumber);
+        if (validPhoneNumber($phoneNumber)) {
+            $profile->setPhone($phoneNumber);
 
-            //phone
-            $phoneNumber = $_POST['phoneNumber'];
-            $this->_f3->set('phoneNumber', $phoneNumber);
+            //Store the membership in the session array
+            $_SESSION['profile'] = $profile;
 
-//        $phoneNumber = isset($_POST['phoneNumber']) ? $_POST['phoneNumber'] : "";
-//        if (validPhoneNumber($phoneNumber)) {
-//            $_SESSION['phoneNumber'] = $phoneNumber;
-//        } else {
-//            $f3->set('errors["phoneNumber"]', 'Please enter your telephone number.');
-//        }
+            //store it in the session array
+            $_SESSION['phoneNumber'] = $phoneNumber;
+            $_SESSION['profile']->setPhone('phone');
+        } else {
+            $this->_f3->set('errors["phoneNumber"]', 'Please enter your telephone number.');
+        }
 
-            //email
+        //email
+        $emailAdd = "";
+        if (isset($_POST['emailAdd'])) {
             $emailAdd = $_POST['emailAdd'];
-            $this->_f3->set('emailAdd', $emailAdd);
-            $emailAdd = isset($_POST['emailAdd']) ? $_POST['emailAdd'] : "";
-//        if (validEmailaddr($emailAdd)) {
-//            $_SESSION['emailAdd'] = $emailAdd;
-//        } else {
-//            $f3->set('errors["emailAdd"]', 'Please enter a valid email.');
-//        }
-            //Redirect to order2 route if there are no errors
-//        if (empty($f3->get('errors'))) {
-//            header('location: summary');
-//        }
+        }
+        //store it in the session array
+        $_SESSION['email'] = $emailAdd;
+
+        if (Validation::validEmail($emailAdd)) {
+
+            $_SESSION['profile']->setEmail($emailAdd);
+
+        } else {
+            $this->_f3->set('errors["email"]', 'Please enter a valid email.');
+        }
+
+        //city
+        $city = "";
+        if (isset($_POST['city'])) {
             $city = $_POST['city'];
-            $this->_f3->set('city', $city);
-            $_SESSION['city'] = $city;
+        }
+        $_SESSION['city'] = $city;
+        $_SESSION['profile']->setCity($city);
 
-            $location = $_POST['location'];
-            $this->_f3->set('userLocation', $location);
-            $_SESSION['location'] = $location;
+        //location->state
+        $location = "";
+        if (isset($_POST['location'])) {
+            $state = $_POST['location'];
+        }
 
-            $membership = $_POST['membership'];
-            $this->_f3->set('userMembership', $membership);
-            $_SESSION['membership'] = $membership;
+        $_SESSION['location'] = $location;
+        $_SESSION['profile']->setLocation($location);
 
+//        $membership = $_POST['membership'];
+//        $this->_f3->set('userMembership', $membership);
+//        $_SESSION['membership'] = $membership;
+
+        }
+        //redirect route if there are no errors
+        if (empty($this->_f3->get('errors'))) {
+            header('location: signup_summary');
         }
         //Add states data to hive
         $this->_f3->set('locations', DataLayer::getLocation());
-        $this->_f3->set('memberships', DataLayer::getMembership());
-
 
         $view = new Template();
         echo $view->render('views/sign_up.html');
     }
 
-    function summary()
+    function signup_summary()
     {
         $view = new Template();
-        echo $view->render('views/cart.html');
+        echo $view->render('views/signup_summary.html');
     }
 
 }

@@ -3,9 +3,9 @@
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
 
-//Start a session
-session_start();
 
+// Require the autoload file
+require_once('vendor/autoload.php');
 /*
 * Author:  Cherie Menchaca & Keny Dutton-Gillespie
 * File Name: index.php
@@ -14,9 +14,12 @@ session_start();
 
 // Require the autoload file
 require_once('vendor/autoload.php');
-require_once('model/data-layer2.php');
-require_once('model/validation2.php');
 
+//Start a session
+session_start();
+
+//Test dataLayer class
+$dataLayer = new DataLayer();
 // Create an instance of the Base class
 $f3 = Base::instance();
 
@@ -40,9 +43,9 @@ $f3->route('POST|GET /sign_up', function ($f3) {
 });
 
 // Define a default route
-$f3->route('GET|POST /cart', function () {
+$f3->route('GET|POST /cart', function ($f3) {
 
-<<<<<<< HEAD
+
         //require
         $first = isset($_POST['first']) ? $_POST['first'] : "";
         //If data is first name is valid
@@ -111,7 +114,7 @@ $f3->route('GET|POST /cart', function () {
         $_SESSION['membership'] = $membership;
 
 
-    }
+
     //Add states data to hive
     $f3->set('locations', getLocation());
     $f3->set('memberships', getMembership());
@@ -119,13 +122,18 @@ $f3->route('GET|POST /cart', function () {
 
     $view  = new Template();
     echo $view->render('views/sign_up.html');
-=======
+
     $view = new Template();
     echo $view->render('views/cart.html');
 
->>>>>>> 901477ed4f3c7787de4112cc6c667f8d80bea40e
 });
+//Define a summary route
+$f3->route('GET|POST /signup_summary', function(){
+    //var_dump($_SESSION);
+    var_dump($_SESSION['signup']);
+    $GLOBALS['con']->signup_summary();
 
+});
 
 // Run fat free
 $f3->run();
