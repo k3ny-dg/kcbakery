@@ -60,7 +60,7 @@ class Controller
                 $userDonuts = $_POST['donuts'];
 
                 // If condiments are valid, convert to string
-                if (Validation::validDonuts($userDonuts)) {
+                if (Validation::validDonut($userDonuts)) {
                     $donuts = implode(", ", $userDonuts);
                 }
                 else {
