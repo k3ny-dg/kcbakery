@@ -11,7 +11,7 @@ class MenuItem
         $this->_cost=0;
     }
 
-    /**
+    /** This function gets the item and
      * @return string
      */
     public function getItem(): string
@@ -19,7 +19,7 @@ class MenuItem
         return $this->_item;
     }
 
-    /**
+    /**This function will setItem
      * @param string $item
      */
     public function setItem(string $item): void
@@ -27,7 +27,7 @@ class MenuItem
         $this->_item = $item;
     }
 
-    /**
+    /**This function will getCost
      * @return string
      */
     public function getCost(): string
@@ -35,7 +35,7 @@ class MenuItem
         return $this->_cost;
     }
 
-    /**
+    /**This function will setCost
      * @param string $cost
      */
     public function setCost(string $cost): void
