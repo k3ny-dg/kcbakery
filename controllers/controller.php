@@ -261,11 +261,13 @@ class Controller
 //        $this->_f3->set('userMembership', $membership);
 //        $_SESSION['membership'] = $membership;
 
-        }
         //redirect route if there are no errors
         if (empty($this->_f3->get('errors'))) {
             header('location: signup_summary');
         }
+
+        }
+
         //Add states data to hive
         $this->_f3->set('locations', DataLayer::getLocation());
 
