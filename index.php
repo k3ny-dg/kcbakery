@@ -44,8 +44,10 @@ $f3->route('POST|GET /sign_up', function ($f3) {
 
 // Define a default route
 $f3->route('GET|POST /cart', function ($f3) {
+    $GLOBALS['con']->cart();
+});
 
-
+    /*
         //require
         $first = isset($_POST['first']) ? $_POST['first'] : "";
         //If data is first name is valid
@@ -126,7 +128,9 @@ $f3->route('GET|POST /cart', function ($f3) {
     $view = new Template();
     echo $view->render('views/cart.html');
 
-});
+}
+  */
+
 //Define a summary route
 $f3->route('GET|POST /signup_summary', function(){
     //var_dump($_SESSION);

@@ -3,11 +3,10 @@
 /* kcbakery/model/validation.php
 * Validate user input from the dating app
 */
-<<<<<<< HEAD
 
-class Validation
+class Validation2
 {
-//validate name
+
     static function validTitle($name)
     {
         if ($name == "") {
@@ -19,60 +18,23 @@ class Validation
         }
     }
 
-=======
-class Validation2{
-    static function validTitle($name)
-    {
-        if ($name=="") {
-            return false;
-        }
-        else if (is_numeric($name)) {
-            return false;
-        }
-        else {
-            return true;
-        }
-    }
->>>>>>> 10f24bd5f8033ca212592800f1c8f6ce29f8e5cd
     static function validPhoneNumber($phoneNumber)
     {
         return strlen($phoneNumber) == 10;
     }
-<<<<<<< HEAD
 
-=======
->>>>>>> 10f24bd5f8033ca212592800f1c8f6ce29f8e5cd
 //validate email
     static function validEmailaddr($email)
     {
         if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
             return true;
         } else {
-<<<<<<< HEAD
-=======
-            return false;
-        }
-    }
-}
-
-
-
-
-//Validate condiments
-function validPastry($userPastryArray)  //"mustard", "sarin gas"
-{
-    $validPastryArray = DataLayer::getPastryItem();
-
-    //Make sure each user selection is in the array of valid options
-    foreach($userPastryArray as $userPastry) {
-        if (!in_array($userPastry, $validPastryArray)) {
->>>>>>> 10f24bd5f8033ca212592800f1c8f6ce29f8e5cd
             return false;
         }
     }
 
-//Validate condiments
-    static function validPastry($userPastryArray)  //"mustard", "sarin gas"
+
+    static function validPastry($userPastryArray)
     {
         $validPastryArray = DataLayer::getPastryItem();
 
