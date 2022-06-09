@@ -13,13 +13,13 @@
 
 <h1> Summary </h1>
 <h3>Thank you for signing up!</h3>
-<p>Name: {{ @SESSION.first}} {{ @SESSION.last }}</p>
-<p>Phone Number: {{ @SESSION.phoneNumber}}</p>
-<p>Address: {{ @SESSION.add}}</p>
-<p>City: {{ @SESSION.city}}</p>
-<p>State: {{ @SESSION.state}}</p>
-<p>Email Address: {{ @SESSION.emailAdd}}</p>
-<p>Membership status: {{ @SESSION.membership}}</p>
+<p>Name: {{ @SESSION.signup->getFirst()}} {{ @SESSION.signup->getLast() }}</p>
+<p>Phone Number: {{ @SESSION.signup->getPhoneNumber() }}</p>
+<p>Address: {{ @SESSION.add }}</p>
+<p>City: {{ @SESSION.signup->getCity() }}</p>
+<p>State: {{ @SESSION.signup->getLocation() }}</p>
+<p>Email Address: {{ @SESSION.signup->getEmailAdd() }}</p>
+<p>Membership status: {{ @SESSION.signup->getMembership() }}</p>
 
 
 <a href="{{ @BASE }}">Return to Home</a>
