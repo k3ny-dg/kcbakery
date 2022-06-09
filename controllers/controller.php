@@ -232,6 +232,12 @@ class Controller
             $_SESSION['city'] = $city;
             $_SESSION['profile']->setCity($city);
 
+<<<<<<< HEAD
+        //location->state
+        $location = $_POST['location'];
+        $this->_f3->set('userLocation', $location);
+        $_SESSION['profile']->setLocation($location);
+=======
             //location->state
             $location = "";
             if (isset($_POST['location'])) {
@@ -239,6 +245,7 @@ class Controller
             }
             $_SESSION['location'] = $location;
             $_SESSION['profile']->setLocation($location);
+>>>>>>> 5e2214873882837befc59131f43f4a5cc1b88f39
 
 //        $membership = $_POST['membership'];
 //        $this->_f3->set('userMembership', $membership);
