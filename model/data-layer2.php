@@ -46,7 +46,7 @@ class DataLayer
 //        $statement->bindParam(':membership', $membership, PDO::PARAM_STR);
 
         //4. Execute the statement
-        $statement->execute();
+        //$statement->execute();
     }
 
 
