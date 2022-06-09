@@ -31,6 +31,10 @@ File Description: Menu page for KC Bakery site
                             <!--<button type="button" class="add-btn btn btn-danger" value="Croissant">+</button> -->
                         </div>
                     </repeat>
+                    <!-- display error if there is one -->
+                    <check if="{{ isset(@errors['pastry']) }}">
+                        <span class="text-danger">{{ @errors['pastry'] }}</span>
+                    </check>
                 </div>
         </div>
     </div> <!-- END OF PASTRIES -->
@@ -56,6 +60,11 @@ File Description: Menu page for KC Bakery site
                             {{ucfirst(@donutTag)}}</label>
                         <!--<button type="button" class="add-btn btn btn-danger" value="Donut">+</button> -->
                     </div>
+
+                    <!-- display error if there is one -->
+                    <check if="{{ isset(@errors['donut']) }}">
+                        <span class="text-danger">{{ @errors['donut'] }}</span>
+                    </check>
                 </repeat>
             </div>
         </div>
@@ -83,6 +92,10 @@ File Description: Menu page for KC Bakery site
                         <!--<button type="button" class="add-btn btn btn-danger" value="Donut">+</button> -->
                     </div>
                 </repeat>
+                <!-- display error if there is one -->
+                <check if="{{ isset(@errors['sandwich']) }}">
+                    <span class="text-danger">{{ @errors['sandwich'] }}</span>
+                </check>
             </div>
         </div>
     </div><!-- END OF SANDWICHES -->
@@ -109,6 +122,10 @@ File Description: Menu page for KC Bakery site
                         <!--<button type="button" class="add-btn btn btn-danger" value="Donut">+</button> -->
                     </div>
                 </repeat>
+                <!-- display error if there is one -->
+                <check if="{{ isset(@errors['specialty']) }}">
+                    <span class="text-danger">{{ @errors['specialty'] }}</span>
+                </check>
             </div>
         </div>
     </div> <!-- END OF SPECIALTY -->
@@ -135,6 +152,10 @@ File Description: Menu page for KC Bakery site
                         <!--<button type="button" class="add-btn btn btn-danger" value="Donut">+</button> -->
                     </div>
                 </repeat>
+                <!-- display error if there is one -->
+                <check if="{{ isset(@errors['drink']) }}">
+                    <span class="text-danger">{{ @errors['drink'] }}</span>
+                </check>
             </div>
         </div>
     </div> <!-- END OF DRINKS -->

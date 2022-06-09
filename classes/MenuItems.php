@@ -2,52 +2,96 @@
 
 class MenuItem
 {
-    private $_item;
-    private $_cost;
+    //private $_item;
+    //private $_cost;
+    private string $_pastry;
+    private string $_donut;
+    private string $_sandwich;
+    private string $_specialty;
+    private string $_drink;
 
-    public function __construct()
-    {
-        $this->_item="";
-        $this->_cost=0;
-    }
-
-    /** This function gets the item and
+    /**
      * @return string
      */
-    public function getItem(): string
+    public function getPastry(): string
     {
-        return $this->_item;
+        return $this->_pastry;
     }
 
-    /**This function will setItem
-     * @param string $item
+    /**
+     * @param string $pastry
      */
-    public function setItem(string $item): void
+    public function setPastry(string $pastry): void
     {
-        $this->_item = $item;
+        $this->_pastry = $pastry;
     }
 
-    /**This function will getCost
+    /**
      * @return string
      */
-    public function getCost(): string
+    public function getDonut(): string
     {
-        return $this->_cost;
+        return $this->_donut;
     }
 
-    /**This function will setCost
-     * @param string $cost
+    /**
+     * @param string $donut
      */
-    public function setCost(string $cost): void
+    public function setDonut(string $donut): void
     {
-        $this->_cost = $cost;
+        $this->_donut = $donut;
+    }
+
+    /**
+     * @return string
+     */
+    public function getSandwich(): string
+    {
+        return $this->_sandwich;
+    }
+
+    /**
+     * @param string $sandwich
+     */
+    public function setSandwich(string $sandwich): void
+    {
+        $this->_sandwich = $sandwich;
+    }
+
+    /**
+     * @return string
+     */
+    public function getSpecialty(): string
+    {
+        return $this->_specialty;
+    }
+
+    /**
+     * @param string $specialty
+     */
+    public function setSpecialty(string $specialty): void
+    {
+        $this->_specialty = $specialty;
+    }
+
+    /**
+     * @return string
+     */
+    public function getDrink(): string
+    {
+        return $this->_drink;
+    }
+
+    /**
+     * @param string $drink
+     */
+    public function setDrink(string $drink): void
+    {
+        $this->_drink = $drink;
     }
 
 
-    // if + button is pushed, quantity = + 1
-    // only display values over 0
-    // if - button is clicked, quantity = -1
-    // cannot be lower than 0
+
 
 
 

@@ -54,13 +54,12 @@
 
         <div class="row">
             <div class = "col">
-                <p>Pastries: {{ @SESSION.pastries }} </p>
-                <p>Donuts: {{ @SESSION.donuts }}</p>
-                <p>Sandwiches: {{ @SESSION.sandwiches }}</p>
-                <p>Specialty Items: {{ @SESSION.specialtyItems}}</p>
-                <p>Drinks: {{ @SESSION.drinks }}</p>
-
-                -->
+                <h2>Your cart includes:</h2>
+                <h3>Pastries: {{ @SESSION.order->getPastry() }} </h3>
+                <h3>Donuts: {{ @SESSION.order->getDonut() }}</h3>
+                <h3>Sandwiches: {{ @SESSION.order->getSandwich() }}</h3>
+                <h3>Specialty Items: {{ @SESSION.order->getSpecialty() }}</h3>
+                <h3>Drinks: {{ @SESSION.order->getDrink() }}</h3>
             </div>
         </div>
 

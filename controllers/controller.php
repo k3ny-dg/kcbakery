@@ -24,6 +24,8 @@ class Controller
     {
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
+            $order = new MenuItem();
+
             $pastries = "";
 
             // Pastries are not required
@@ -32,12 +34,12 @@ class Controller
             }
             // User selected pastries
             else {
-
                 // Get pastries from post array
                 $userPastries = $_POST['pastries'];
 
                 // If pastries are valid, convert to string
-                if (Validation::validPastry($userPastries)) {
+                if (Validation2::validPastry($userPastries)) {
+
                     $pastries = implode(", ", $userPastries);
                 }
                 else {
@@ -49,18 +51,16 @@ class Controller
 
             $donuts = "";
 
-            // Condiments are not required
             if (empty($_POST['donuts'])) {
                 $donuts = "none selected";
             }
-            // User selected condiments
             else {
 
                 // Get condiments from post array
                 $userDonuts = $_POST['donuts'];
 
                 // If condiments are valid, convert to string
-                if (Validation::validDonuts($userDonuts)) {
+                if (Validation2::validDonut($userDonuts)) {
                     $donuts = implode(", ", $userDonuts);
                 }
                 else {
@@ -79,11 +79,9 @@ class Controller
             // User selected condiments
             else {
 
-                // Get condiments from post array
                 $userSandwiches = $_POST['sandwiches'];
 
-                // If condiments are valid, convert to string
-                if (Validation::validSandwiches($userSandwiches)) {
+                if (Validation2::validSandwiches($userSandwiches)) {
                     $sandwiches = implode(", ", $userSandwiches);
                 }
                 else {
@@ -95,17 +93,13 @@ class Controller
 
             $specialtyItems = "";
 
-            // Condiments are not required
             if (empty($_POST['specialtyItems'])) {
                 $specialtyItems = "none selected";
             }
-            // User selected condiments
             else {
-                // Get condiments from post array
                 $userSpec = $_POST['specialtyItems'];
 
-                // If condiments are valid, convert to string
-                if (Validation::validSpecialty($userSpec)) {
+                if (Validation2::validSpecialty($userSpec)) {
                     $specialtyItems = implode(", ", $userSpec);
                 }
                 else {
@@ -117,18 +111,14 @@ class Controller
 
             $drinks = "";
 
-            // Condiments are not required
             if (empty($_POST['drinks'])) {
                 $drinks = "none selected";
             }
-            // User selected condiments
             else {
 
-                // Get condiments from post array
                 $userDrinks = $_POST['drinks'];
 
-                // If condiments are valid, convert to string
-                if (Validation::validDrink($userDrinks)) {
+                if (Validation2::validDrink($userDrinks)) {
                     $drinks = implode(", ", $userDrinks);
                 }
                 else {
@@ -139,7 +129,14 @@ class Controller
             //If there are no errors...
             if (empty($this->_f3->get('errors'))) {
 
-                //Redirect
+                $order->setPastry($pastries);
+                $_SESSION['order'] = $order;
+                //$_SESSION['order']->setPastry($pastries);
+                $_SESSION['order']->setDonut($donuts);
+                $_SESSION['order']->setSandwich($sandwiches);
+                $_SESSION['order']->setSpecialty($specialtyItems);
+                $_SESSION['order']->setDrink($drinks);
+
                 header('location: cart');
             }
         }
@@ -157,6 +154,14 @@ class Controller
         $view = new Template();
         echo $view->render('views/menu.html');
     }
+
+
+    function cart()
+    {
+        $view = new Template();
+        echo $view->render('views/cart.html');
+    }
+
 
     function signup()
     {
@@ -232,7 +237,7 @@ class Controller
         //store it in the session array
         $_SESSION['email'] = $emailAdd;
 
-        if (Validation::validEmail($emailAdd)) {
+        if (Validation2::validEmail($emailAdd)) {
 
             $_SESSION['profile']->setEmail($emailAdd);
 
@@ -261,11 +266,13 @@ class Controller
 //        $this->_f3->set('userMembership', $membership);
 //        $_SESSION['membership'] = $membership;
 
-        }
         //redirect route if there are no errors
         if (empty($this->_f3->get('errors'))) {
             header('location: signup_summary');
         }
+
+        }
+
         //Add states data to hive
         $this->_f3->set('locations', DataLayer::getLocation());
 
