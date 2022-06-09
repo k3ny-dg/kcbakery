@@ -240,11 +240,8 @@ class Controller
         $_SESSION['profile']->setCity($city);
 
         //location->state
-        $location = "";
-        if (isset($_POST['location'])) {
-            $location = $_POST['location'];
-        }
-        $_SESSION['location'] = $location;
+        $location = $_POST['location'];
+        $this->_f3->set('userLocation', $location);
         $_SESSION['profile']->setLocation($location);
 
 //        $membership = $_POST['membership'];
