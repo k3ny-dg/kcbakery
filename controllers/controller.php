@@ -158,8 +158,6 @@ class Controller
 
     function cart()
     {
-        //header('location: confirmation');
-
         $view = new Template();
         echo $view->render('views/cart.html');
     }
@@ -174,93 +172,89 @@ class Controller
             } else {
                 $profile = new Membership();
             }
-
-        //Get the data
-        //first
-        $first = $_POST['first'];
-        $this->_f3->set('firstName', $first);
-
-        //If data is first name is valid
-        //if data is valid
-        if (Validation2::validTitle($first)) {
-
             //set the object to $profile
             $_SESSION['profile'] = $profile;
-            $profile->setFirst($first);
 
 
-            //store it in the session array
-            $_SESSION['first'] = $first;
-            $_SESSION['profile']->setFirst('first');
-        } else {
-            $this->_f3->set('errors["first"]', 'Please enter your first name with letters.');
-        }
+
+            //Get the data
+            //first
+            $first = $_POST['first'];
+            $this->_f3->set('firstName', $first);
+
+            //If data is first name is valid
+            //if data is valid
+            if (Validation2::validTitle($first)) {
+                $profile->setFirst($first);
+                $_SESSION['profile'] = $profile;
+            } else {
+                $this->_f3->set('errors["first"]', 'Please enter your first name with letters.');
+            }
 
             //last
             $last = $_POST['last'];
             $this->_f3->set('lastName', $last);
-        if (Validation2::validTitle($last)) {
-            $profile->setLast($last);
+            if (Validation2::validTitle($last)) {
+                $profile->setLast($last);
+                $_SESSION['profile'] = $profile;
+            } else {
+                $this->_f3->set('errors["last"]', 'Please enter your last name with letters.');
+            }
 
+            //phone
+            $phoneNumber = $_POST['phoneNumber'];
+            $this->_f3->set('phoneNumber', $phoneNumber);
+            if (Validation2::validPhoneNumber($phoneNumber)) {
+                $profile->setPhone($phoneNumber);
+                $_SESSION['profile'] = $profile;
+            } else {
+                $this->_f3->set('errors["phoneNumber"]', 'Please enter your telephone number.');
+            }
+            //address
+            $add = "";
+            if (isset($_POST['add'])) {
+                $add = $_POST['add'];
+            }
+            $_SESSION['add'] = $add;
+            $_SESSION['profile']->setCity($add);
+
+            //email
+            $emailAdd = "";
+            if (isset($_POST['emailAdd'])) {
+                $emailAdd = $_POST['emailAdd'];
+            }
             //store it in the session array
-            $_SESSION['last'] = $last;
-            $_SESSION['profile']->setLast('last');
-        } else {
-            $this->_f3->set('errors["last"]', 'Please enter your last name with letters.');
-        }
+            $_SESSION['emailAdd'] = $emailAdd;
+            if (Validation2::validEmailaddr($emailAdd)) {
+                $_SESSION['profile']->setEmailAdd($emailAdd);
+            } else {
+                $this->_f3->set('errors["emailAdd"]', 'Please enter a valid email.');
+            }
 
-        //phone
-        $phoneNumber = $_POST['phoneNumber'];
-        $this->_f3->set('phoneNumber', $phoneNumber);
-        if (Validation2::validPhoneNumber($phoneNumber)) {
+            //city
+            $city = "";
+            if (isset($_POST['city'])) {
+                $city = $_POST['city'];
+            }
+            $_SESSION['city'] = $city;
+            $_SESSION['profile']->setCity($city);
 
-            //store it in the session array
-            $_SESSION['profile']->setPhone('phone');
-        } else {
-            $this->_f3->set('errors["phoneNumber"]', 'Please enter your telephone number.');
-        }
-
-        //email
-        $emailAdd = "";
-        if (isset($_POST['emailAdd'])) {
-            $emailAdd = $_POST['emailAdd'];
-        }
-        //store it in the session array
-        $_SESSION['email'] = $emailAdd;
-
-        if (Validation2::validEmailaddr($emailAdd)) {
-
-            $_SESSION['profile']->setEmail($emailAdd);
-
-        } else {
-            $this->_f3->set('errors["email"]', 'Please enter a valid email.');
-        }
-
-        //city
-        $city = "";
-        if (isset($_POST['city'])) {
-            $city = $_POST['city'];
-        }
-        $_SESSION['city'] = $city;
-        $_SESSION['profile']->setCity($city);
-
-        //location->state
-        $location = "";
-        if (isset($_POST['location'])) {
-            $state = $_POST['location'];
-        }
-
-        $_SESSION['location'] = $location;
-        $_SESSION['profile']->setLocation($location);
+            //location->state
+            $location = "";
+            if (isset($_POST['location'])) {
+                $location = $_POST['location'];
+            }
+            $_SESSION['location'] = $location;
+            $_SESSION['profile']->setLocation($location);
 
 //        $membership = $_POST['membership'];
 //        $this->_f3->set('userMembership', $membership);
 //        $_SESSION['membership'] = $membership;
 
-        //redirect route if there are no errors
-        if (empty($this->_f3->get('errors'))) {
-            header('location: signup_summary');
-        }
+            //redirect route if there are no errors
+            if (empty($this->_f3->get('errors'))) {
+                header('location: signup_summary');
+            }
 
         }
 
@@ -275,13 +269,6 @@ class Controller
     {
         $view = new Template();
         echo $view->render('views/signup_summary.html');
-    }
-
-    function confirm()
-    {
-
-        $view = new Template();
-        echo $view->render('views/confirmation.html');
     }
 
 }
