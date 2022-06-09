@@ -24,7 +24,7 @@
                 </li>
             </ul>
         </nav>
-        <form action="form.php" method="post" class="form-group" id="signup-form">
+        <form action="#" method="post" class="form-group" id="signup-form">
             <!--Get data-->
             <div class="row">
                 <div class="col-6">
@@ -106,23 +106,12 @@
                         </check>
                         <br>
                         <div class="col-12">
+                            <input type="checkbox" id="premium" name="premium">
                             <label class="control-label mt-4">Would you like to join our Premium Membership? </label>
-                            <div class="form-check">
-                                <repeat group="{{ @memberships }}" value="{{ @membership }}">
-                                    <label class="form-check-label" for="membership"><input
-                                            class="form-check-input mx-5"
-                                            type="radio"
-                                            name="membership"
-                                            id="membership"
-                                            value="{{ @membership }}"
-                                    >
-                                        {{ ucfirst(@membership) }}</label><br>
-                                </repeat>
-                            </div>
                         </div>
                     </div>
                     <div class="mt-1">
-                        <p id="premium">**If you clicked yes to our premium membership please add your birthday, create a username and password.</p>
+                        <p>**If you clicked yes to our premium membership please add your birthday, create a username and password.</p>
                     </div>
                     <div class="col-12 mt-3">
                         <label for="user" class="control-label">Create Username:</label>

@@ -33,20 +33,27 @@ class DataLayer
         VALUES(:first, :last, :phoneNumber, :city, :state, :emailAdd, :membership)";
 
 
-//        //2. Prepare the statement
-//        $statement = $dbh->prepare($sql);
-//
-//        //3.Bind the Parameters
-//        $statement->bindParam(':first', $);
-//        $statement->bindParam(':last', $last, PDO::PARAM_STR);
-//        $statement->bindParam(':phoneNumber', $phoneNumber, PDO::PARAM_STR);
-//        $statement->bindParam(':city', $city, PDO::PARAM_STR);
-//        $statement->bindParam(':state', $state, PDO::PARAM_STR);
-//        $statement->bindParam(':emailAdd', $emailAdd, PDO::PARAM_STR);
-//        $statement->bindParam(':membership', $membership, PDO::PARAM_STR);
+        //2. Prepare the statement
+        $statement = $dbh->prepare($sql);
+
+        //3.Bind the Parameters
+        $first = $signup->getFirst();
+        $last = $signup->getLast();
+        $phoneNumber = $signup->getPhoneNumber();
+        $city = $signup->getCity();
+        $state = $signup->getLocation();
+        $emailAdd = $signup->getEmailAdd();
+        $membership = $signup->getMembership();
+        $statement->bindParam(':first', $first, PDO::PARAM_STR);
+        $statement->bindParam(':last', $last, PDO::PARAM_STR);
+        $statement->bindParam(':phoneNumber', $phoneNumber, PDO::PARAM_STR);
+        $statement->bindParam(':city', $city, PDO::PARAM_STR);
+        $statement->bindParam(':state', $state, PDO::PARAM_STR);
+        $statement->bindParam(':emailAdd', $emailAdd, PDO::PARAM_STR);
+        $statement->bindParam(':membership', $membership, PDO::PARAM_STR);
 
         //4. Execute the statement
-        //$statement->execute();
+        $statement->execute();
     }
 
 
