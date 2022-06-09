@@ -52,7 +52,7 @@
             </div>
         </div> <!-- END OF PAGE TITLE -->
 
-        <div class="row">
+        <div class="row text-center">
             <div class="col-3"></div>
             <div id="cart-holder" class= "m-5 col-6 p-5">
                 <h2>Your cart includes:</h2>
@@ -61,9 +61,11 @@
                 <h5>Sandwiches: {{ @SESSION.order->getSandwich() }}</h5>
                 <h5>Specialty Items: {{ @SESSION.order->getSpecialty() }}</h5>
                 <h5>Drinks: {{ @SESSION.order->getDrink() }}</h5>
+                <form>
+                    <a href="confirm"><button class="btn-danger justify-content-center" type="submit">Submit Order</button></a>
+                </form>
             </div>
         </div>
-
     </div>
 </body>
 </html>

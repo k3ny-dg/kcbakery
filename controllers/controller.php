@@ -158,6 +158,8 @@ class Controller
 
     function cart()
     {
+        //header('location: confirmation');
+
         $view = new Template();
         echo $view->render('views/cart.html');
     }
@@ -172,10 +174,6 @@ class Controller
             } else {
                 $profile = new Membership();
             }
-            //set the object to $profile
-            $_SESSION['profile'] = $profile;
-
-
 
         //Get the data
         //first
@@ -185,10 +183,11 @@ class Controller
         //If data is first name is valid
         //if data is valid
         if (Validation2::validTitle($first)) {
+
+            //set the object to $profile
+            $_SESSION['profile'] = $profile;
             $profile->setFirst($first);
 
-            //Store the membership in the session array
-            $_SESSION['profile'] = $profile;
 
             //store it in the session array
             $_SESSION['first'] = $first;
@@ -203,9 +202,6 @@ class Controller
         if (Validation2::validTitle($last)) {
             $profile->setLast($last);
 
-            //Store the membership in the session array
-            $_SESSION['profile'] = $profile;
-
             //store it in the session array
             $_SESSION['last'] = $last;
             $_SESSION['profile']->setLast('last');
@@ -217,13 +213,8 @@ class Controller
         $phoneNumber = $_POST['phoneNumber'];
         $this->_f3->set('phoneNumber', $phoneNumber);
         if (Validation2::validPhoneNumber($phoneNumber)) {
-            $profile->setPhone($phoneNumber);
-
-            //Store the membership in the session array
-            $_SESSION['profile'] = $profile;
 
             //store it in the session array
-            $_SESSION['phoneNumber'] = $phoneNumber;
             $_SESSION['profile']->setPhone('phone');
         } else {
             $this->_f3->set('errors["phoneNumber"]', 'Please enter your telephone number.');
@@ -237,7 +228,7 @@ class Controller
         //store it in the session array
         $_SESSION['email'] = $emailAdd;
 
-        if (Validation2::validEmail($emailAdd)) {
+        if (Validation2::validEmailaddr($emailAdd)) {
 
             $_SESSION['profile']->setEmail($emailAdd);
 
@@ -284,6 +275,13 @@ class Controller
     {
         $view = new Template();
         echo $view->render('views/signup_summary.html');
+    }
+
+    function confirm()
+    {
+
+        $view = new Template();
+        echo $view->render('views/confirmation.html');
     }
 
 }

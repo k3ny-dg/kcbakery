@@ -139,5 +139,11 @@ $f3->route('GET|POST /signup_summary', function($f3){
 
 });
 
+//Define a summary route
+$f3->route('GET|POST /confirm', function($f3){
+    //var_dump($_SESSION);
+    $GLOBALS['con']->confirm();
+});
+
 // Run fat free
 $f3->run();
