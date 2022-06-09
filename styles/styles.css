@@ -116,3 +116,10 @@ p{
     color: white;
     font-size: 12px;
 }
+
+#cart-holder
+{
+    background-color: lavender;
+    border-radius: 20px;
+    border: orangered solid 1px;
+}
