@@ -32,7 +32,7 @@
                         <div class="col-12">
                             <label for="first" class="control-label mt-1">First Name:</label>
                             <input class="form-control" type="text"
-                                   name="first" id="first" placeholder="First Name" value="{{ @firstName }}">
+                                   name="first" id="first" value="{{ @firstName }}">
                         </div>
                         <div class="col-12">
                             <check if="{{ isset(@errors['first']) }}">
@@ -43,7 +43,7 @@
                         <div class="col-12">
                             <label for="last" class="control-label mt-4">Last Name:</label>
                             <input class="form-control" type="text"
-                                   name="last" id="last" placeholder="Last Name" value="{{ @lastName }}">
+                                   name="last" id="last" value="{{ @lastName }}">
                         </div>
                         <div class="col-12">
                             <check if="{{ isset(@errors['last']) }}">
@@ -54,7 +54,7 @@
                         <div class="col-12">
                             <label for="phoneNumber" class="control-label mt-4">Phone Number:</label>
                             <input class="form-control" type="text"
-                                   name="phoneNumber" id="phoneNumber" placeholder="Phone Number"
+                                   name="phoneNumber" id="phoneNumber"
                                    value="{{ @phoneNumber }}">
                         </div>
                         <div class="col-12">
@@ -66,12 +66,12 @@
                         <div class="col-12">
                             <label for="add" class="control-label mt-4">Address:</label>
                             <input class="form-control" type="text"
-                                   name="add" id="add" placeholder="Address" value="{{ @address }}">
+                                   name="add" id="add" value="{{ @address }}">
                         </div>
                         <div class="col-12">
                             <label for="city" class="control-label mt-4">City:</label>
                             <input class="form-control" type="text"
-                                   name="city" id="city" placeholder="City" value="{{ @city }}">
+                                   name="city" id="city" value="{{ @city }}">
                         </div>
                         <div class="col-12">
                             <check if="{{ isset(@errors['city']) }}">
@@ -97,7 +97,6 @@
                         <div class="col-md-12">
                             <label for="emailAdd">Email:</label>
                             <input type="text" class="form-control" name="emailAdd" id="emailAdd"
-                                   placeholder="Email input"
                                    value="{{ @emailAdd }}">
                         </div>
                         <!--display error if there is one -->
@@ -126,7 +125,7 @@
                     <div class="col-12">
                         <label for="pass" class="control-label mt-3">Create Password:</label>
                         <input class="form-control mt-1" type="text"
-                               name="pass" id="pass" placeholder="password" value="{{ @password }}">
+                               name="pass" id="pass" value="{{ @password }}">
                     </div>
                     <div id="passWord" class="col-12 border bg-light mt-3 form-control">
                         <p>**Please enter a password that contains letters and numbers. Must be 8 characters
