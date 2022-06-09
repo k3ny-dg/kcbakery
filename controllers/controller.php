@@ -186,13 +186,7 @@ class Controller
         //if data is valid
         if (Validation2::validTitle($first)) {
             $profile->setFirst($first);
-
-            //Store the membership in the session array
             $_SESSION['profile'] = $profile;
-
-            //store it in the session array
-            $_SESSION['first'] = $first;
-            $_SESSION['profile']->setFirst('first');
         } else {
             $this->_f3->set('errors["first"]', 'Please enter your first name with letters.');
         }
@@ -202,13 +196,7 @@ class Controller
             $this->_f3->set('lastName', $last);
         if (Validation2::validTitle($last)) {
             $profile->setLast($last);
-
-            //Store the membership in the session array
             $_SESSION['profile'] = $profile;
-
-            //store it in the session array
-            $_SESSION['last'] = $last;
-            $_SESSION['profile']->setLast('last');
         } else {
             $this->_f3->set('errors["last"]', 'Please enter your last name with letters.');
         }
@@ -218,16 +206,17 @@ class Controller
         $this->_f3->set('phoneNumber', $phoneNumber);
         if (Validation2::validPhoneNumber($phoneNumber)) {
             $profile->setPhone($phoneNumber);
-
-            //Store the membership in the session array
             $_SESSION['profile'] = $profile;
-
-            //store it in the session array
-            $_SESSION['phoneNumber'] = $phoneNumber;
-            $_SESSION['profile']->setPhone('phone');
         } else {
             $this->_f3->set('errors["phoneNumber"]', 'Please enter your telephone number.');
         }
+        //address
+        $add = "";
+        if (isset($_POST['add'])) {
+            $add = $_POST['add'];
+        }
+        $_SESSION['add'] = $add;
+        $_SESSION['profile']->setCity($add);
 
         //email
         $emailAdd = "";
@@ -235,14 +224,11 @@ class Controller
             $emailAdd = $_POST['emailAdd'];
         }
         //store it in the session array
-        $_SESSION['email'] = $emailAdd;
-
-        if (Validation2::validEmail($emailAdd)) {
-
-            $_SESSION['profile']->setEmail($emailAdd);
-
+        $_SESSION['emailAdd'] = $emailAdd;
+        if (Validation2::validEmailaddr($emailAdd)) {
+            $_SESSION['profile']->setEmailAdd($emailAdd);
         } else {
-            $this->_f3->set('errors["email"]', 'Please enter a valid email.');
+            $this->_f3->set('errors["emailAdd"]', 'Please enter a valid email.');
         }
 
         //city
@@ -256,9 +242,8 @@ class Controller
         //location->state
         $location = "";
         if (isset($_POST['location'])) {
-            $state = $_POST['location'];
+            $location = $_POST['location'];
         }
-
         $_SESSION['location'] = $location;
         $_SESSION['profile']->setLocation($location);
 

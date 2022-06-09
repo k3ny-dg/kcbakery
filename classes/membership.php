@@ -19,6 +19,7 @@ class Membership
     private $_emailAdd;
     private $_location;
     private $_city;
+    private $_add;
 
 
     //constructor
@@ -82,18 +83,35 @@ class Membership
         return $this->_phoneNumber;
     }
 
-    /**Return the phone for dating
+    /**Return the phone for kcbakery
      * @param string $phoneNumber
      */
     public function setPhone(string $phoneNumber): void
     {
-        $this->_phone = $phoneNumber;
+        $this->_phoneNumber = $phoneNumber;
+    }
+
+    /**Get address
+     * @return string
+     */
+    public function getAdd(): string
+    {
+        return $this->_add;
+    }
+
+    /**Return the address for kcbakery
+     * @param string $add
+     * @return void
+     */
+    public function setAdd(string $add): void
+    {
+        $this->_add = $add;
     }
 
     /**Get the email for kcbakery
      * @return string
      */
-    public function getEmail(): string
+    public function getEmailAdd(): string
     {
         return $this->_emailAdd;
     }
@@ -101,7 +119,7 @@ class Membership
     /**Return the email for dating
      * @param string $emailAdd
      */
-    public function setEmail(string $emailAdd): void
+    public function setEmailAdd(string $emailAdd): void
     {
         $this->_emailAdd = $emailAdd;
     }
