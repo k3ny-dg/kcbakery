@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="styles/styles.css">
     <title>Sign-Up Summary</title>
 </head>
-<<<<<<< HEAD
+
 <body class="container border text-center">
 <h1 class="mt-5"> Summary </h1>
 <h3 class="mt-3">Thank you for signing up!</h3>
@@ -44,21 +44,6 @@
 <!--<p>Membership status: {{ @SESSION.profile->getMembership() }}</p>-->
 <<include href="views/navbar.html"></include>
 </div>
-=======
-<body>
 
-<h1> Summary </h1>
-<h3>Thank you for signing up!</h3>
-<p>Name: {{ @SESSION.profile->getFirst() }} {{ @SESSION.profile->getLast() }}</p>
-<p>Phone Number: {{ @SESSION.profile->getPhoneNumber()}}</p>
-<p>Address: {{ @SESSION.profile->getAdd() }}</p>
-<p>City: {{ @SESSION.profile->getCity() }}</p>
-<p>State: {{ @SESSION.profile->getLocation() }}</p>
-<p>Email Address: {{ @SESSION.profile->getEmailAdd() }}</p>
-<p>Membership status: {{ @SESSION.profile->getMembership() }}</p>
-
-
-<a href="{{ @BASE }}">Return to Home</a>
->>>>>>> 5e2214873882837befc59131f43f4a5cc1b88f39
 </body>
 </html>

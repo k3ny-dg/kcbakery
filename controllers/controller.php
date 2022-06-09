@@ -31,8 +31,7 @@ class Controller
             // Pastries are not required
             if (empty($_POST['pastries'])) {
                 $pastries = "none selected";
-            }
-            // User selected pastries
+            } // User selected pastries
             else {
                 // Get pastries from post array
                 $userPastries = $_POST['pastries'];
@@ -41,8 +40,7 @@ class Controller
                 if (Validation2::validPastry($userPastries)) {
 
                     $pastries = implode(", ", $userPastries);
-                }
-                else {
+                } else {
                     $this->_f3->set('errors["pastry"]', 'You spoofed me!');
                 }
             }
@@ -53,8 +51,7 @@ class Controller
 
             if (empty($_POST['donuts'])) {
                 $donuts = "none selected";
-            }
-            else {
+            } else {
 
                 // Get condiments from post array
                 $userDonuts = $_POST['donuts'];
@@ -62,8 +59,7 @@ class Controller
                 // If condiments are valid, convert to string
                 if (Validation2::validDonut($userDonuts)) {
                     $donuts = implode(", ", $userDonuts);
-                }
-                else {
+                } else {
                     $this->_f3->set('errors["donut"]', 'You spoofed me!');
                 }
             }
@@ -75,16 +71,14 @@ class Controller
             // Condiments are not required
             if (empty($_POST['sandwiches'])) {
                 $sandwiches = "none selected";
-            }
-            // User selected condiments
+            } // User selected condiments
             else {
 
                 $userSandwiches = $_POST['sandwiches'];
 
                 if (Validation2::validSandwiches($userSandwiches)) {
                     $sandwiches = implode(", ", $userSandwiches);
-                }
-                else {
+                } else {
                     $this->_f3->set('errors["sandwich"]', 'You spoofed me!');
                 }
             }
@@ -95,14 +89,12 @@ class Controller
 
             if (empty($_POST['specialtyItems'])) {
                 $specialtyItems = "none selected";
-            }
-            else {
+            } else {
                 $userSpec = $_POST['specialtyItems'];
 
                 if (Validation2::validSpecialty($userSpec)) {
                     $specialtyItems = implode(", ", $userSpec);
-                }
-                else {
+                } else {
                     $this->_f3->set('errors["specialty"]', 'You spoofed me!');
                 }
             }
@@ -113,15 +105,13 @@ class Controller
 
             if (empty($_POST['drinks'])) {
                 $drinks = "none selected";
-            }
-            else {
+            } else {
 
                 $userDrinks = $_POST['drinks'];
 
                 if (Validation2::validDrink($userDrinks)) {
                     $drinks = implode(", ", $userDrinks);
-                }
-                else {
+                } else {
                     $this->_f3->set('errors["drink"]', 'You spoofed me!');
                 }
             }
@@ -167,7 +157,6 @@ class Controller
             }
             //set the object to $profile
             $_SESSION['profile'] = $profile;
-
 
 
             //Get the data
@@ -232,12 +221,11 @@ class Controller
             $_SESSION['city'] = $city;
             $_SESSION['profile']->setCity($city);
 
-<<<<<<< HEAD
-        //location->state
-        $location = $_POST['location'];
-        $this->_f3->set('userLocation', $location);
-        $_SESSION['profile']->setLocation($location);
-=======
+            //location->state
+            $location = $_POST['location'];
+            $this->_f3->set('userLocation', $location);
+            $_SESSION['profile']->setLocation($location);
+
             //location->state
             $location = "";
             if (isset($_POST['location'])) {
@@ -245,7 +233,6 @@ class Controller
             }
             $_SESSION['location'] = $location;
             $_SESSION['profile']->setLocation($location);
->>>>>>> 5e2214873882837befc59131f43f4a5cc1b88f39
 
 //        $membership = $_POST['membership'];
 //        $this->_f3->set('userMembership', $membership);
