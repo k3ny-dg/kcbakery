@@ -216,7 +216,7 @@ class Controller
         //phone
         $phoneNumber = $_POST['phoneNumber'];
         $this->_f3->set('phoneNumber', $phoneNumber);
-        if (validPhoneNumber($phoneNumber)) {
+        if (Validation2::validPhoneNumber($phoneNumber)) {
             $profile->setPhone($phoneNumber);
 
             //Store the membership in the session array

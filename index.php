@@ -132,7 +132,7 @@ $f3->route('GET|POST /cart', function ($f3) {
   */
 
 //Define a summary route
-$f3->route('GET|POST /signup_summary', function(){
+$f3->route('GET|POST /signup_summary', function($f3){
     //var_dump($_SESSION);
     var_dump($_SESSION['signup']);
     $GLOBALS['con']->signup_summary();
