@@ -13,15 +13,9 @@
 
 <h1> Summary </h1>
 <h3>Thank you for signing up!</h3>
-<<<<<<< HEAD
-<p>Name: {{ @SESSION.profile->getFirst()}} {{ @SESSION.profile->getLast() }}</p>
-<p>Phone Number: {{ @SESSION.profile->getPhoneNumber() }}</p>
-<p>Address: {{ @SESSION.profile->getAddress() }}</p>
-=======
 <p>Name: {{ @SESSION.profile->getFirst() }} {{ @SESSION.profile->getLast() }}</p>
 <p>Phone Number: {{ @SESSION.profile->getPhoneNumber()}}</p>
-<p>Address: {{ @SESSION.add }}</p>
->>>>>>> 4729f8921c452deab8de35bfc1ae6514ba3b0ad8
+<p>Address: {{ @SESSION.profile->getAdd() }}</p>
 <p>City: {{ @SESSION.profile->getCity() }}</p>
 <p>State: {{ @SESSION.profile->getLocation() }}</p>
 <p>Email Address: {{ @SESSION.profile->getEmailAdd() }}</p>

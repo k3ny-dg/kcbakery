@@ -156,13 +156,6 @@ class Controller
     }
 
 
-    function cart()
-    {
-        $view = new Template();
-        echo $view->render('views/cart.html');
-    }
-
-
     function signup()
     {
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -216,7 +209,7 @@ class Controller
                 $add = $_POST['add'];
             }
             $_SESSION['add'] = $add;
-            $_SESSION['profile']->setCity($add);
+            $_SESSION['profile']->setAdd($add);
 
             //email
             $emailAdd = "";
@@ -270,5 +263,18 @@ class Controller
         $view = new Template();
         echo $view->render('views/signup_summary.html');
     }
+
+    function confirm()
+    {
+        $view = new Template();
+        echo $view->render('views/confirmation.html');
+    }
+
+    function cart()
+    {
+        $view = new Template();
+        echo $view->render('views/cart.html');
+    }
+
 
 }
