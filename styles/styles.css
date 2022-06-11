@@ -11,7 +11,7 @@ body{
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    background: linear-gradient(to bottom right, rgba(22, 54, 215, 0.48) 17%, rgb(127, 73, 145) 72%, rgba(109, 66, 192, 1) 100%) no-repeat;
+    background: linear-gradient(to bottom right, rgba(22, 54, 215, 0.48) 17%, rgb(127, 73, 145) 72%, rgba(109, 66, 192, 1) 100%) no-repeat center;
 }
 h1{
     font-size: 75px;
@@ -114,11 +114,28 @@ a.nav{
 p{
     font-size: 10px;
 }
+
 .err{
     color: red;
-
 }
+
 #premium{
     color: white;
     font-size: 12px;
+}
+
+#cart-holder
+{
+    background-color: lavender;
+    border-radius: 20px;
+    border: solid 2px mediumpurple;
+}
+
+#thanks
+{
+    margin-top: 200px;
+    margin-bottom: 200px;
+    background-color: lavender;
+    border-radius: 20px;
+    border: solid 2px mediumpurple;
 }
