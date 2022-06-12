@@ -27,6 +27,12 @@ h1{
     height: 90px;
     background-color: orange;
 }
+.hide{
+    display: none;
+}
+.show{
+    display: block;
+}
 table, td
 {
     padding: 10px;
