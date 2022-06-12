@@ -25,35 +25,45 @@ class DataLayer
         $this->_dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         $this->_dbh->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
     }
-    function signUp($signup)
+    function saveProfile($profile)
     {
         //1.Define the query
 
-        $sql = "INSERT INTO signup(first, last, phoneNumber, city, state, emailAdd, membership)
-        VALUES(:first, :last, :phoneNumber, :city, :state, :emailAdd, :membership)";
+        $sql = "INSERT INTO signup(first, last, phoneNumber, city, state, emailAdd)
+        VALUES(:first, :last, :phoneNumber, :city, :state, :emailAdd)";
 
 
         //2. Prepare the statement
-        $statement = $dbh->prepare($sql);
+        $statement = $this->_dbh->prepare($sql);
 
         //3.Bind the Parameters
-        $first = $signup->getFirst();
-        $last = $signup->getLast();
-        $phoneNumber = $signup->getPhoneNumber();
-        $city = $signup->getCity();
-        $state = $signup->getLocation();
-        $emailAdd = $signup->getEmailAdd();
-        $membership = $signup->getMembership();
+        $first = $profile->getFirst();
+        $last = $profile->getLast();
+        $phoneNumber = $profile->getPhoneNumber();
+        $city = $profile->getCity();
+        $state = $profile->getLocation();
+        $emailAdd = $profile->getEmailAdd();
+
         $statement->bindParam(':first', $first, PDO::PARAM_STR);
         $statement->bindParam(':last', $last, PDO::PARAM_STR);
         $statement->bindParam(':phoneNumber', $phoneNumber, PDO::PARAM_STR);
         $statement->bindParam(':city', $city, PDO::PARAM_STR);
         $statement->bindParam(':state', $state, PDO::PARAM_STR);
         $statement->bindParam(':emailAdd', $emailAdd, PDO::PARAM_STR);
-        $statement->bindParam(':membership', $membership, PDO::PARAM_STR);
+
 
         //4. Execute the statement
         $statement->execute();
+
+        //5.Process the result
+        $id = $this->_dbh->lastInsertId();
+        //echo "Row inserted: $id";
+        return $id;
+    }
+
+    function saveOrder($order)
+    {
+
     }
 
 
