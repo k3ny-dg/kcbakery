@@ -280,4 +280,10 @@ class Controller
         echo $view->render('views/cart.html');
     }
 
+    function profile()
+    {
+        $view = new Template();
+        echo $view->render('views/profile.html');
+    }
+
 }
