@@ -1,18 +1,6 @@
 <?php
-
-
-/**
- * This class represents all members of the Kcbakery form.
- */
-class Membership
+class Profile
 {
-
-    /**Private fields for the following
-     * first, last, age, phone, gender, email, state, seeking,
-     * bio
-     * @var string
-     */
-
     private $_first;
     private $_last;
     private $_phoneNumber;
@@ -20,32 +8,21 @@ class Membership
     private $_location;
     private $_city;
     private $_add;
-    private $_member;
+    private $_premium;
 
-
-    //constructor
-
-    /**
-     * The constructor for the following fields
-     * first, last, phone, email, and location
-     *
-     */
     public function __construct()
     {
+
         $this->_first = "";
         $this->_last = "";
         $this->_phoneNumber = "";
         $this->_emailAdd = "";
+        $this->_add = "";
         $this->_location = "";
         $this->_city = "";
-        $this->_member = "";
+        $this->_premium = "";
 
     }
-    //getters and setters for each
-
-    /**Get the first name for kcbakery
-     * @return string
-     */
 
     public function getFirst(): string
     {
@@ -166,7 +143,6 @@ class Membership
     {
         $this->_premium = $premium;
     }
-
 
 
 }

@@ -9,6 +9,9 @@
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="styles/styles.css">
     <title>KC Bakery</title>
+    <!-- Favicon -->
+    <link rel = "icon" type = "image/png" href="images/roll.png">
+
 
 </head>
 <body class="container">
@@ -31,7 +34,7 @@
                     <div class="row">
                         <div class="col-12">
                             <label for="first" class="control-label mt-1">First Name:</label>
-                            <input class="form-control" type="text"
+                            <input class="form-control" type="text" placeholder="First Name"
                                    name="first" id="first" value="{{ @firstName }}">
                         </div>
                         <div class="col-12">
@@ -42,7 +45,7 @@
                         </div>
                         <div class="col-12">
                             <label for="last" class="control-label mt-4">Last Name:</label>
-                            <input class="form-control" type="text"
+                            <input class="form-control" type="text" placeholder="Last Name"
                                    name="last" id="last" value="{{ @lastName }}">
                         </div>
                         <div class="col-12">
@@ -54,7 +57,7 @@
                         <div class="col-12">
                             <label for="phoneNumber" class="control-label mt-4">Phone Number:</label>
                             <input class="form-control" type="text"
-                                   name="phoneNumber" id="phoneNumber"
+                                   name="phoneNumber" id="phoneNumber" placeholder="xxxxxxxxxx"
                                    value="{{ @phoneNumber }}">
                         </div>
                         <div class="col-12">
@@ -65,12 +68,12 @@
                         </div>
                         <div class="col-12">
                             <label for="add" class="control-label mt-4">Address:</label>
-                            <input class="form-control" type="text"
+                            <input class="form-control" type="text" placeholder="Address"
                                    name="add" id="add" value="{{ @address }}">
                         </div>
                         <div class="col-12">
                             <label for="city" class="control-label mt-4">City:</label>
-                            <input class="form-control" type="text"
+                            <input class="form-control" type="text" placeholder="City"
                                    name="city" id="city" value="{{ @city }}">
                         </div>
                         <div class="col-12">
@@ -96,7 +99,7 @@
 
                         <div class="col-md-12">
                             <label for="emailAdd">Email:</label>
-                            <input type="text" class="form-control" name="emailAdd" id="emailAdd"
+                            <input type="text" class="form-control" name="emailAdd" id="emailAdd" placeholder="someone@example.com"
                                    value="{{ @emailAdd }}">
                         </div>
                         <!--display error if there is one -->
@@ -110,36 +113,39 @@
                         </div>
                     </div>
                     <div class="mt-1">
-                        <p>**If you clicked yes to our premium membership please add your birthday, create a username and password.</p>
+                        <p>**If you clicked yes to our premium membership please add your birthday.</p>
+                    </div>
+                    <div>
+                        <input type="text" id="invisible" class="hide ml-3" placeholder="Date of Birth">
                     </div>
                     <div class="col-12 mt-3">
                         <label for="user" class="control-label">Create Username:</label>
                         <input class="form-control mt-1" type="text"
                                name="user" id="user" placeholder="username" value="{{ @username }}">
                     </div>
-                    <div id="userName" class="col-12 border bg-light mt-3 form-control">
-                        <p>**Please enter a username that contains letters and numbers. Must be 8 characters
-                            long. It is not case-sensitive.</p>
-                    </div>
+
 
                     <div class="col-12">
                         <label for="pass" class="control-label mt-3">Create Password:</label>
-                        <input class="form-control mt-1" type="text"
+                        <input class="form-control mt-1" type="text" placeholder="password"
                                name="pass" id="pass" value="{{ @password }}">
                     </div>
-                    <div id="passWord" class="col-12 border bg-light mt-3 form-control">
-                        <p>**Please enter a password that contains letters and numbers. Must be 8 characters
-                            long. It is not case-sensitive.</p>
-                    </div>
+
                 </div><!--End of Row-->
                     <div class="col-12">
                         <button class="btn btn-success float-right my-4 px-5"type="submit">Next</button>
                     </div>
-                </div>
-            </div>
         </form>
     </div>
 </div>
 <script src="script/valid_form.js"></script>
+<script src="//code.jquery.com/jquery-latest.min.js"></script>
+<script>
+    $(function (){
+        $('#premium').click(function (){
+            $('#invisible').toggleClass("show");
+        });
+    });
+</script>
 </body>
 </html>

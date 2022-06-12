@@ -13,6 +13,7 @@ body{
     background-size: cover;
     background: linear-gradient(to bottom right, rgba(22, 54, 215, 0.48) 17%, rgb(127, 73, 145) 72%, rgba(109, 66, 192, 1) 100%) no-repeat center;
 }
+
 h1{
     font-size: 75px;
     color: white;
@@ -25,6 +26,12 @@ h1{
 .jumbotron{
     height: 90px;
     background-color: orange;
+}
+.hide{
+    display: none;
+}
+.show{
+    display: block;
 }
 table, td
 {

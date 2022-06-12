@@ -157,7 +157,7 @@ class Controller
     }
 
 
-    function signup()
+    function signUp()
     {
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             //if is set to premium will have discounts in the summary
@@ -244,9 +244,7 @@ class Controller
             $_SESSION['profile']->setLocation($location);
 
 
-            $membership = $_POST['membership'];
-            $this->_f3->set('userMembership', $membership);
-            $_SESSION['profile']->setMembership($membership);
+
 
             //redirect route if there are no errors
             if (empty($this->_f3->get('errors'))) {
@@ -264,6 +262,8 @@ class Controller
 
     function signup_summary()
     {
+        $profile_id = $GLOBALS['dataLayer']->saveProfile($_SESSION['profile']);
+        $this->_f3->set('profileId', $profile_id);
         $view = new Template();
         echo $view->render('views/signup_summary.html');
     }
