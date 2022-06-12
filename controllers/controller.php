@@ -24,7 +24,9 @@ class Controller
     {
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
+
             $order = new MenuItem();
+            $price = 0.0;
 
             $pastries = "";
 
@@ -40,6 +42,8 @@ class Controller
                 if (Validation2::validPastry($userPastries)) {
 
                     $pastries = implode(", ", $userPastries);
+                    $price = sizeof($userPastries) * 3;
+
                 } else {
                     $this->_f3->set('errors["pastry"]', 'You spoofed me!');
                 }
@@ -59,6 +63,7 @@ class Controller
                 // If condiments are valid, convert to string
                 if (Validation2::validDonut($userDonuts)) {
                     $donuts = implode(", ", $userDonuts);
+                    $price = $price + sizeof($userDonuts) * 2;
                 } else {
                     $this->_f3->set('errors["donut"]', 'You spoofed me!');
                 }
@@ -78,6 +83,7 @@ class Controller
 
                 if (Validation2::validSandwiches($userSandwiches)) {
                     $sandwiches = implode(", ", $userSandwiches);
+                    $price = $price + sizeof($userSandwiches) * 4;
                 } else {
                     $this->_f3->set('errors["sandwich"]', 'You spoofed me!');
                 }
@@ -94,6 +100,7 @@ class Controller
 
                 if (Validation2::validSpecialty($userSpec)) {
                     $specialtyItems = implode(", ", $userSpec);
+                    $price = $price + sizeof($userSpec) * 3.5;
                 } else {
                     $this->_f3->set('errors["specialty"]', 'You spoofed me!');
                 }
@@ -111,6 +118,8 @@ class Controller
 
                 if (Validation2::validDrink($userDrinks)) {
                     $drinks = implode(", ", $userDrinks);
+                    $price = $price + sizeof($userDonuts) * 2.5;
+
                 } else {
                     $this->_f3->set('errors["drink"]', 'You spoofed me!');
                 }
@@ -126,6 +135,7 @@ class Controller
                 $_SESSION['order']->setSandwich($sandwiches);
                 $_SESSION['order']->setSpecialty($specialtyItems);
                 $_SESSION['order']->setDrink($drinks);
+                $_SESSION['order']->setPrice($price);
 
                 header('location: cart');
             }
@@ -140,6 +150,7 @@ class Controller
         $this->_f3->set('specialityImage', DataLayer::getSpecialtyImage());
         $this->_f3->set('drink', DataLayer::getDrink());
         $this->_f3->set('drinkImage', DataLayer::getDrinkImage());
+
 
         $view = new Template();
         echo $view->render('views/menu.html');
@@ -221,16 +232,12 @@ class Controller
             $_SESSION['city'] = $city;
             $_SESSION['profile']->setCity($city);
 
-<<<<<<< HEAD
-=======
 
             //location->state
             $location = $_POST['location'];
             $this->_f3->set('userLocation', $location);
             $_SESSION['profile']->setLocation($location);
 
-
->>>>>>> b863c04230d065aa02cb48e34a6e67db1dc5371c
             //location->state
             $location = $_POST['location'];
             $this->_f3->set('userLocation', $location);
@@ -272,6 +279,5 @@ class Controller
         $view = new Template();
         echo $view->render('views/cart.html');
     }
-
 
 }

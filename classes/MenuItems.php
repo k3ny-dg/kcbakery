@@ -9,6 +9,7 @@ class MenuItem
     private string $_sandwich;
     private string $_specialty;
     private string $_drink;
+    private float $_price;
 
     /**
      * @return string
@@ -89,6 +90,24 @@ class MenuItem
     {
         $this->_drink = $drink;
     }
+
+    /**
+     * @return float
+     */
+    public function getPrice(): float
+    {
+        return $this->_price;
+    }
+
+    /**
+     * @param float $price
+     */
+    public function setPrice(float $price): void
+    {
+        $this->_price = $price;
+    }
+
+
 
 
 
