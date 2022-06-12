@@ -26,31 +26,12 @@ h1{
     height: 90px;
     background-color: orange;
 }
-#create{
-    font-size: 20px;
-}
-.hide{
-    display: none;
-}
-.show{
-    display: block;
-}
-p{
-    font-size: 12px;
-}
 table, td
 {
     padding: 10px;
     background-color: white;
     border: 1px black solid;
     width: 500px;
-}
-.order_now {
-    background-color: #cb86a8;
-    width: 200px;
-    padding: 15px;
-    border-radius: 25px;
-    color: black;
 }
 .mt-2{
     height: 900px;
@@ -95,6 +76,7 @@ img {
     margin-bottom: 20px;
     font-family: cursive;
     font-size: 45px;
+    color: darkslateblue;
 }
 
 .add-btn
@@ -130,6 +112,10 @@ a.nav{
     width: 60px;
 }
 
+p{
+    font-size: 10px;
+}
+
 .err{
     color: red;
 }
@@ -150,6 +136,13 @@ a.nav{
 {
     margin-top: 200px;
     margin-bottom: 200px;
+    background-color: lavender;
+    border-radius: 20px;
+    border: solid 2px mediumpurple;
+}
+
+.solidbackground
+{
     background-color: lavender;
     border-radius: 20px;
     border: solid 2px mediumpurple;
