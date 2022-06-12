@@ -158,13 +158,13 @@ class Membership
     {
         $this->_location = $location;
     }
-    public function getPremium(): string
+    public function getMembership(): string
     {
-        return $this->_premium;
+        return $this->_member;
     }
-    public function setPremium($premium): void
+    public function setMembership($member): void
     {
-        $this->_premium = $premium;
+        $this->_member = $member;
     }
 
 

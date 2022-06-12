@@ -9,6 +9,8 @@ class Profile
     private $_city;
     private $_add;
     private $_premium;
+    private $_user;
+    private $_pass;
 
     public function __construct()
     {
@@ -21,6 +23,8 @@ class Profile
         $this->_location = "";
         $this->_city = "";
         $this->_premium = "";
+        $this->_user = "";
+        $this->_pass = "";
 
     }
 
@@ -135,6 +139,25 @@ class Profile
     {
         $this->_location = $location;
     }
+
+    public function getUser(): string
+    {
+        return $this->_user;
+    }
+    public function setUser(string $user): void
+    {
+        $this->_user = $user;
+    }
+    public function getPass(): string
+    {
+        return $this->_pass;
+    }
+    public function setPass(string $pass): void
+    {
+        $this->_pass = $pass;
+    }
+
+
     public function getPremium(): string
     {
         return $this->_premium;

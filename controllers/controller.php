@@ -243,6 +243,21 @@ class Controller
             $this->_f3->set('userLocation', $location);
             $_SESSION['profile']->setLocation($location);
 
+            //username
+            $user = "";
+            if (isset($_POST['user'])) {
+                $user = $_POST['user'];
+            }
+            $this->_f3->set('user', $user);
+            $_SESSION['profile']->setUser($user);
+
+            //pass
+            $pass = "";
+            if (isset($_POST['pass'])) {
+                $pass = $_POST['pass'];
+            }
+            $this->_f3->set('pass', $pass);
+            $_SESSION['profile']->setPass($pass);
 
 
 
