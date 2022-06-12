@@ -6,7 +6,10 @@
 
 class Validation2
 {
-
+    /**This function validates the name (first and last) with Title
+     * @param $name
+     * @return bool
+     */
     static function validTitle($name)
     {
         if ($name == "") {
@@ -17,13 +20,16 @@ class Validation2
             return true;
         }
     }
+    /*
+     *
+     */
 
     static function validPhoneNumber($phoneNumber)
     {
         return strlen($phoneNumber) == 10;
     }
 
-//validate email
+    //validate email
     static function validEmailaddr($email)
     {
         if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
@@ -31,6 +37,16 @@ class Validation2
         } else {
             return false;
         }
+    }
+
+    //valid date of birth
+    static function validDob($dob)
+    {
+        if(preg_match_all("/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/"))
+        {
+            return true;
+        }
+        return false;
     }
 
 
