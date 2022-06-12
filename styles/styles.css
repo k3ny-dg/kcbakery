@@ -26,12 +26,31 @@ h1{
     height: 90px;
     background-color: orange;
 }
+#create{
+    font-size: 20px;
+}
+.hide{
+    display: none;
+}
+.show{
+    display: block;
+}
+p{
+    font-size: 12px;
+}
 table, td
 {
     padding: 10px;
     background-color: white;
     border: 1px black solid;
     width: 500px;
+}
+.order_now {
+    background-color: #cb86a8;
+    width: 200px;
+    padding: 15px;
+    border-radius: 25px;
+    color: black;
 }
 .mt-2{
     height: 900px;
@@ -109,10 +128,6 @@ a.nav{
 #favicon
 {
     width: 60px;
-}
-
-p{
-    font-size: 10px;
 }
 
 .err{

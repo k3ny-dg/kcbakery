@@ -221,27 +221,22 @@ class Controller
             $_SESSION['city'] = $city;
             $_SESSION['profile']->setCity($city);
 
-<<<<<<< HEAD
-=======
-            //location->state
-            $location = $_POST['location'];
-            $this->_f3->set('userLocation', $location);
-            $_SESSION['profile']->setLocation($location);
->>>>>>> 4159d34cb6e0ab9cd2eab7c04b1bed739fe0f8c2
 
             //location->state
             $location = $_POST['location'];
             $this->_f3->set('userLocation', $location);
             $_SESSION['profile']->setLocation($location);
-<<<<<<< HEAD
 
 
-=======
->>>>>>> 4159d34cb6e0ab9cd2eab7c04b1bed739fe0f8c2
+            //location->state
+            $location = $_POST['location'];
+            $this->_f3->set('userLocation', $location);
+            $_SESSION['profile']->setLocation($location);
 
-//        $membership = $_POST['membership'];
-//        $this->_f3->set('userMembership', $membership);
-//        $_SESSION['membership'] = $membership;
+
+            $membership = $_POST['membership'];
+            $this->_f3->set('userMembership', $membership);
+            $_SESSION['profile']->setMembership($membership);
 
             //redirect route if there are no errors
             if (empty($this->_f3->get('errors'))) {
