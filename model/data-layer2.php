@@ -46,6 +46,7 @@ class DataLayer
         $user = $profile->getUser();
         $pass = $profile->getPass();
 
+
         $statement->bindParam(':first', $first, PDO::PARAM_STR);
         $statement->bindParam(':last', $last, PDO::PARAM_STR);
         $statement->bindParam(':phoneNumber', $phoneNumber, PDO::PARAM_STR);
@@ -56,6 +57,7 @@ class DataLayer
         $statement->bindParam(':pass', $pass, PDO::PARAM_STR);
 
 
+
         //4. Execute the statement
         $statement->execute();
 
@@ -63,11 +65,6 @@ class DataLayer
         $id = $this->_dbh->lastInsertId();
         //echo "Row inserted: $id";
         return $id;
-    }
-
-    function saveOrder($order)
-    {
-
     }
 
 

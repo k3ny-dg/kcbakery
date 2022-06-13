@@ -146,7 +146,6 @@ p{
     background-color: lavender;
     border-radius: 20px;
     border: solid 2px mediumpurple;
-    font-family: Palatino, serif;
 }
 
 .solidbackground
@@ -154,11 +153,4 @@ p{
     background-color: lavender;
     border-radius: 20px;
     border: solid 2px mediumpurple;
-    font-family: Palatino, serif;
-}
-
-#order-history
-{
-    width: 100%;
-    border-radius: 20px;
 }

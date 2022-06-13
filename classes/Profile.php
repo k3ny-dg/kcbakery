@@ -8,7 +8,6 @@ class Profile
     private $_location;
     private $_city;
     private $_add;
-    private $_premium;
     private $_user;
     private $_pass;
 
@@ -156,16 +155,5 @@ class Profile
     {
         $this->_pass = $pass;
     }
-
-
-    public function getPremium(): string
-    {
-        return $this->_premium;
-    }
-    public function setPremium($premium): void
-    {
-        $this->_premium = $premium;
-    }
-
 
 }

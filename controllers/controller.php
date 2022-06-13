@@ -281,6 +281,9 @@ class Controller
         $this->_f3->set('profileId', $profile_id);
         $view = new Template();
         echo $view->render('views/signup_summary.html');
+
+        //clear the session array
+        session_destroy();
     }
 
     function confirm()

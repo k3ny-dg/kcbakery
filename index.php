@@ -6,17 +6,14 @@ error_reporting(E_ALL);
 
 // Require the autoload file
 require_once('vendor/autoload.php');
+
+//Start a session
+session_start();
 /*
 * Author:  Cherie Menchaca & Keny Dutton-Gillespie
 * File Name: index.php
 * File Description: Controller Page for our Bakery Website (KC Bakery)
 */
-
-// Require the autoload file
-require_once('vendor/autoload.php');
-
-//Start a session
-session_start();
 
 //Test dataLayer class
 $dataLayer = new DataLayer();
@@ -55,15 +52,10 @@ $f3->route('GET|POST /signup_summary', function($f3){
 
 });
 
-//Define a confirmation route
+//Define a summary route
 $f3->route('GET|POST /confirmation', function($f3){
     //var_dump($_SESSION);
     $GLOBALS['con']->confirm();
-});
-
-//Define a profile route
-$f3->route('GET|POST /profile', function($f3){
-    $GLOBALS['con']->profile();
 });
 
 // Run fat free
