@@ -55,10 +55,15 @@ $f3->route('GET|POST /signup_summary', function($f3){
 
 });
 
-//Define a summary route
+//Define a confirmation route
 $f3->route('GET|POST /confirmation', function($f3){
     //var_dump($_SESSION);
     $GLOBALS['con']->confirm();
+});
+
+//Define a profile route
+$f3->route('GET|POST /profile', function($f3){
+    $GLOBALS['con']->profile();
 });
 
 // Run fat free
