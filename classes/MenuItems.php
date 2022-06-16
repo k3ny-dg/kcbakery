@@ -106,13 +106,4 @@ class MenuItem
     {
         $this->_price = $price;
     }
-
-
-
-
-
-
-
-
 }
-
