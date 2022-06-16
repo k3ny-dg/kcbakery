@@ -29,8 +29,8 @@ class DataLayer
     {
         //1.Define the query
 
-        $sql = "INSERT INTO signup(first, last, phoneNumber, city, state, emailAdd, user, pass)
-        VALUES(:first, :last, :phoneNumber, :city, :state, :emailAdd, :user, :pass)";
+        $sql = "INSERT INTO signup(first, last, phoneNumber, city, state, emailAdd, membership, user, pass)
+        VALUES(:first, :last, :phoneNumber, :city, :state, :emailAdd, :member, :user, :pass)";
 
 
         //2. Prepare the statement
@@ -45,6 +45,7 @@ class DataLayer
         $emailAdd = $profile->getEmailAdd();
         $user = $profile->getUser();
         $pass = $profile->getPass();
+        $member = $member->getMembership();
 
 
         $statement->bindParam(':first', $first, PDO::PARAM_STR);
@@ -55,6 +56,7 @@ class DataLayer
         $statement->bindParam(':emailAdd', $emailAdd, PDO::PARAM_STR);
         $statement->bindParam(':user', $user, PDO::PARAM_STR);
         $statement->bindParam(':pass', $pass, PDO::PARAM_STR);
+        $statement->bindParam(':member', $member, PDO::PARAM_STR);
 
 
 
