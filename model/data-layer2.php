@@ -36,7 +36,7 @@ class DataLayer
         //2. Prepare the statement
         $statement = $this->_dbh->prepare($sql);
 
-        //3.Bind the Parameters
+
         $first = $profile->getFirst();
         $last = $profile->getLast();
         $phoneNumber = $profile->getPhoneNumber();
@@ -47,7 +47,7 @@ class DataLayer
         $pass = $profile->getPass();
         $member = $member->getMembership();
 
-
+        //3.Bind the Parameters
         $statement->bindParam(':first', $first, PDO::PARAM_STR);
         $statement->bindParam(':last', $last, PDO::PARAM_STR);
         $statement->bindParam(':phoneNumber', $phoneNumber, PDO::PARAM_STR);
@@ -67,6 +67,35 @@ class DataLayer
         $id = $this->_dbh->lastInsertId();
         //echo "Row inserted: $id";
         return $id;
+    }
+
+    function orderHistory($order)
+    {
+        //Define sql query
+        $sql="SELECT order_id, menu_items, date from order_base ORDER BY profile_id";
+
+        //2. Prepare the statement
+        $statement = $this->_dbh->prepare($sql);
+
+        $order_id = $order->getOrderId();
+        $menu_items = $order->getMenuItems();
+        $date = $order->getDate();
+        $profile_id = $order->getProfileId();
+
+        //3.Bind the Parameters
+        $statement->bindParam(':order_id', $order_id, PDO::PARAM_STR);
+        $statement->bindParam(':menu_items', $menu_items, PDO::PARAM_STR);
+        $statement->bindParam(':date', $date, PDO::PARAM_STR);
+        $statement->bindParam(':profile_id', $profile_id, PDO::PARAM_STR);
+
+        //4. Execute the statement
+        $statement->execute();
+
+        //5.Process the result
+        $id = $this->_dbh->lastInsertId();
+        //echo "Row inserted: $id";
+        return $id;
+
     }
 
 

@@ -12,6 +12,18 @@ class Premium extends Membership
      */
     private $_dob;
 
+    //constructor
+
+    /**
+     * This is the constructor for the following
+     * Birthdate
+     */
+    public function __construct()
+    {
+        $this->_dob = "";
+
+    }
+
     /**This function gets the dob
      * @return string
      */

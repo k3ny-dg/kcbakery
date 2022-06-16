@@ -12,8 +12,8 @@ File Description: Menu page for KC Bakery site
 
     <br>
     <form action="#" method="post" class="solidbackground">
-    <div class="row text-center m-5"> <!-- PASTRIES START -->
-        <div class="col-md-12">
+        <div class="row text-center m-5"> <!-- PASTRIES START -->
+            <div class="col-md-12">
                 <h4 class="submenu_title">Pastries</h4>
                 <div class="row">
                     <repeat group="{{ @pastryImage }}" value="{{ @image }}">
@@ -36,129 +36,129 @@ File Description: Menu page for KC Bakery site
                         <span class="text-danger">{{ @errors['pastry'] }}</span>
                     </check>
                 </div>
-        </div>
-    </div> <!-- END OF PASTRIES -->
+            </div>
+        </div> <!-- END OF PASTRIES -->
 
-    <br>
+        <br>
 
-    <div class="row text-center m-5"> <!-- DONUT START -->
-        <div class="col-md-12">
-            <h4 class="submenu_title">Donut</h4>
-            <div class="row">
+        <div class="row text-center m-5"> <!-- DONUT START -->
+            <div class="col-md-12">
+                <h4 class="submenu_title">Donut</h4>
+                <div class="row">
 
-                <repeat group="{{ @donutImage }}" value="{{ @image }}">
-                    <div class="col-md-3 item-holder">
-                        <img class="menu-item" src="{{ 'images/'.@image }}">
-                    </div>
-                </repeat>
+                    <repeat group="{{ @donutImage }}" value="{{ @image }}">
+                        <div class="col-md-3 item-holder">
+                            <img class="menu-item" src="{{ 'images/'.@image }}">
+                        </div>
+                    </repeat>
 
-                <repeat group="{{ @donut }}" value="{{ @donutTag }}">
-                    <div class="col-md-3 item-holder">
-                        <!--<h5>{{@pastryTag}}</h5> -->
-                        <label><input type="checkbox" name="donuts[]" class="form-check-input menu-check"
-                                      value="{{@donutTag}}">
-                            {{ucfirst(@donutTag)}} - $2</label>
-                        <!--<button type="button" class="add-btn btn btn-danger" value="Donut">+</button> -->
-                    </div>
+                    <repeat group="{{ @donut }}" value="{{ @donutTag }}">
+                        <div class="col-md-3 item-holder">
+                            <!--<h5>{{@pastryTag}}</h5> -->
+                            <label><input type="checkbox" name="donuts[]" class="form-check-input menu-check"
+                                          value="{{@donutTag}}">
+                                {{ucfirst(@donutTag)}} - $2</label>
+                            <!--<button type="button" class="add-btn btn btn-danger" value="Donut">+</button> -->
+                        </div>
 
+                        <!-- display error if there is one -->
+                        <check if="{{ isset(@errors['donut']) }}">
+                            <span class="text-danger">{{ @errors['donut'] }}</span>
+                        </check>
+                    </repeat>
+                </div>
+            </div>
+        </div> <!-- END OF DONUT -->
+
+        <br>
+
+        <div class="row text-center m-5">  <!-- SANDWICH START -->
+            <div class="col-md-12">
+                <h4 class="submenu_title">Sandwiches</h4>
+                <div class="row">
+
+                    <repeat group="{{ @sandwichImage }}" value="{{ @image }}">
+                        <div class="col-md-3 item-holder">
+                            <img class="menu-item" src="{{ 'images/'.@image }}">
+                        </div>
+                    </repeat>
+
+                    <repeat group="{{ @sandwich }}" value="{{ @sandwichTag }}">
+                        <div class="col-md-3 item-holder">
+                            <!--<h5>{{@pastryTag}}</h5> -->
+                            <label><input type="checkbox" name="sandwiches[]" class="form-check-input menu-check"
+                                          value="{{@sandwichTag}}">
+                                {{ucfirst(@sandwichTag)}} - $4</label>
+                            <!--<button type="button" class="add-btn btn btn-danger" value="Donut">+</button> -->
+                        </div>
+                    </repeat>
                     <!-- display error if there is one -->
-                    <check if="{{ isset(@errors['donut']) }}">
-                        <span class="text-danger">{{ @errors['donut'] }}</span>
+                    <check if="{{ isset(@errors['sandwich']) }}">
+                        <span class="text-danger">{{ @errors['sandwich'] }}</span>
                     </check>
-                </repeat>
+                </div>
             </div>
-        </div>
-    </div> <!-- END OF DONUT -->
+        </div><!-- END OF SANDWICHES -->
 
-    <br>
+        <br>
 
-    <div class="row text-center m-5">  <!-- SANDWICH START -->
-        <div class="col-md-12">
-            <h4 class="submenu_title">Sandwiches</h4>
-            <div class="row">
+        <div class="row text-center m-5"> <!-- SPECIALTY ITEMS -->
+            <div class="col-md-12">
+                <h4 class="submenu_title">Specialty Items</h4>
+                <div class="row">
 
-                <repeat group="{{ @sandwichImage }}" value="{{ @image }}">
-                    <div class="col-md-3 item-holder">
-                        <img class="menu-item" src="{{ 'images/'.@image }}">
-                    </div>
-                </repeat>
+                    <repeat group="{{ @specialityImage }}" value="{{ @image }}">
+                        <div class="col-md-3 item-holder">
+                            <img class="menu-item" src="{{ 'images/'.@image }}">
+                        </div>
+                    </repeat>
 
-                <repeat group="{{ @sandwich }}" value="{{ @sandwichTag }}">
-                    <div class="col-md-3 item-holder">
-                        <!--<h5>{{@pastryTag}}</h5> -->
-                        <label><input type="checkbox" name="sandwiches[]" class="form-check-input menu-check"
-                                      value="{{@sandwichTag}}">
-                            {{ucfirst(@sandwichTag)}} - $4</label>
-                        <!--<button type="button" class="add-btn btn btn-danger" value="Donut">+</button> -->
-                    </div>
-                </repeat>
-                <!-- display error if there is one -->
-                <check if="{{ isset(@errors['sandwich']) }}">
-                    <span class="text-danger">{{ @errors['sandwich'] }}</span>
-                </check>
+                    <repeat group="{{ @specialty }}" value="{{ @specialtyTag }}">
+                        <div class="col-md-3 item-holder">
+                            <!--<h5>{{@pastryTag}}</h5> -->
+                            <label><input type="checkbox" name="specialtyItems[]" class="form-check-input menu-check"
+                                          value="{{@specialtyTag}}">
+                                {{ucfirst(@specialtyTag)}} - $3.50</label>
+                            <!--<button type="button" class="add-btn btn btn-danger" value="Donut">+</button> -->
+                        </div>
+                    </repeat>
+                    <!-- display error if there is one -->
+                    <check if="{{ isset(@errors['specialty']) }}">
+                        <span class="text-danger">{{ @errors['specialty'] }}</span>
+                    </check>
+                </div>
             </div>
-        </div>
-    </div><!-- END OF SANDWICHES -->
+        </div> <!-- END OF SPECIALTY -->
 
-    <br>
+        <br>
 
-    <div class="row text-center m-5"> <!-- SPECIALTY ITEMS -->
-        <div class="col-md-12">
-            <h4 class="submenu_title">Specialty Items</h4>
-            <div class="row">
+        <div class="row text-center m-5">  <!-- DRINKS -->
+            <div class="col-md-12">
+                <h4 class="submenu_title">Drinks</h4>
+                <div class="row">
 
-                <repeat group="{{ @specialityImage }}" value="{{ @image }}">
-                    <div class="col-md-3 item-holder">
-                        <img class="menu-item" src="{{ 'images/'.@image }}">
-                    </div>
-                </repeat>
+                    <repeat group="{{ @drinkImage }}" value="{{ @image }}">
+                        <div class="col-md-3 item-holder">
+                            <img class="menu-item" src="{{ 'images/'.@image }}">
+                        </div>
+                    </repeat>
 
-                <repeat group="{{ @specialty }}" value="{{ @specialtyTag }}">
-                    <div class="col-md-3 item-holder">
-                        <!--<h5>{{@pastryTag}}</h5> -->
-                        <label><input type="checkbox" name="specialtyItems[]" class="form-check-input menu-check"
-                                      value="{{@specialtyTag}}">
-                            {{ucfirst(@specialtyTag)}} - $3.50</label>
-                        <!--<button type="button" class="add-btn btn btn-danger" value="Donut">+</button> -->
-                    </div>
-                </repeat>
-                <!-- display error if there is one -->
-                <check if="{{ isset(@errors['specialty']) }}">
-                    <span class="text-danger">{{ @errors['specialty'] }}</span>
-                </check>
+                    <repeat group="{{ @drink }}" value="{{ @drinkTag }}">
+                        <div class="col-md-3 item-holder">
+                            <!--<h5>{{@pastryTag}}</h5> -->
+                            <label><input type="checkbox" name="drinks[]" class="form-check-input menu-check"
+                                          value="{{@drinkTag}}">
+                                {{ucfirst(@drinkTag)}} - $2.50</label>
+                            <!--<button type="button" class="add-btn btn btn-danger" value="Donut">+</button> -->
+                        </div>
+                    </repeat>
+                    <!-- display error if there is one -->
+                    <check if="{{ isset(@errors['drink']) }}">
+                        <span class="text-danger">{{ @errors['drink'] }}</span>
+                    </check>
+                </div>
             </div>
-        </div>
-    </div> <!-- END OF SPECIALTY -->
-
-    <br>
-
-    <div class="row text-center m-5">  <!-- DRINKS -->
-        <div class="col-md-12">
-            <h4 class="submenu_title">Drinks</h4>
-            <div class="row">
-
-                <repeat group="{{ @drinkImage }}" value="{{ @image }}">
-                    <div class="col-md-3 item-holder">
-                        <img class="menu-item" src="{{ 'images/'.@image }}">
-                    </div>
-                </repeat>
-
-                <repeat group="{{ @drink }}" value="{{ @drinkTag }}">
-                    <div class="col-md-3 item-holder">
-                        <!--<h5>{{@pastryTag}}</h5> -->
-                        <label><input type="checkbox" name="drinks[]" class="form-check-input menu-check"
-                                      value="{{@drinkTag}}">
-                            {{ucfirst(@drinkTag)}} - $2.50</label>
-                        <!--<button type="button" class="add-btn btn btn-danger" value="Donut">+</button> -->
-                    </div>
-                </repeat>
-                <!-- display error if there is one -->
-                <check if="{{ isset(@errors['drink']) }}">
-                    <span class="text-danger">{{ @errors['drink'] }}</span>
-                </check>
-            </div>
-        </div>
-    </div> <!-- END OF DRINKS -->
+        </div> <!-- END OF DRINKS -->
 
         <div class="col-xs-3 text-center pb-5">
             <button class="btn btn-danger" type="submit">Go to Cart</button>

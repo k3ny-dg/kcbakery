@@ -175,6 +175,5 @@ class Membership
     {
         $this->_pass = $pass;
     }
-
-
 }
+

@@ -20,7 +20,8 @@ class Membership
     private $_location;
     private $_city;
     private $_add;
-    private $_member;
+    private $_user;
+    private $_pass;
 
 
     //constructor
@@ -38,8 +39,8 @@ class Membership
         $this->_emailAdd = "";
         $this->_location = "";
         $this->_city = "";
-        $this->_member = "";
-
+        $this->_user = "";
+        $this->_pass = "";
     }
     //getters and setters for each
 
@@ -158,15 +159,23 @@ class Membership
     {
         $this->_location = $location;
     }
-    public function getMembership(): string
-    {
-        return $this->_member;
-    }
-    public function setMembership($member): void
-    {
-        $this->_member = $member;
-    }
 
+    public function getUser(): string
+    {
+        return $this->_user;
+    }
+    public function setUser(string $user): void
+    {
+        $this->_user = $user;
+    }
+    public function getPass(): string
+    {
+        return $this->_pass;
+    }
+    public function setPass(string $pass): void
+    {
+        $this->_pass = $pass;
+    }
 
 
 }

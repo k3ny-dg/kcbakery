@@ -13,34 +13,34 @@
     <title>KC Bakery</title>
 </head>
 <body>
-    <div class ="container">
+<div class ="container">
 
-        <!--Navbar-->
-        <include href="views/navbar.html"></include>
+    <!--Navbar-->
+    <include href="views/navbar.html"></include>
 
-        <div class="row"> <!-- PAGE TITLE -->
-            <div class="col-md-12 ml-5">
-                <h2 class="pt-5 text-center">Cart</h2>
-            </div>
-        </div> <!-- END OF PAGE TITLE -->
+    <div class="row"> <!-- PAGE TITLE -->
+        <div class="col-md-12 ml-5">
+            <h2 class="pt-5 text-center">Cart</h2>
+        </div>
+    </div> <!-- END OF PAGE TITLE -->
 
-        <div class="row text-center">
-            <div class="col-3"></div>
-            <div id="cart-holder" class= "m-5 col-6 p-5">
-                <h2>Your cart includes:</h2>
-                <h5>Pastries: {{ @SESSION.order->getPastry() }} </h5>
-                <h5>Donuts: {{ @SESSION.order->getDonut() }}</h5>
-                <h5>Sandwiches: {{ @SESSION.order->getSandwich() }}</h5>
-                <h5>Specialty Items: {{ @SESSION.order->getSpecialty() }}</h5>
-                <h5>Drinks: {{ @SESSION.order->getDrink() }}</h5>
-                <h5>Total Cost: ${{ @SESSION.order->getPrice() }}</h5>
+    <div class="row text-center">
+        <div class="col-3"></div>
+        <div id="cart-holder" class= "m-5 col-6 p-5">
+            <h2>Your cart includes:</h2>
+            <h5>Pastries: {{ @SESSION.order->getPastry() }} </h5>
+            <h5>Donuts: {{ @SESSION.order->getDonut() }}</h5>
+            <h5>Sandwiches: {{ @SESSION.order->getSandwich() }}</h5>
+            <h5>Specialty Items: {{ @SESSION.order->getSpecialty() }}</h5>
+            <h5>Drinks: {{ @SESSION.order->getDrink() }}</h5>
+            <h5>Total Cost: ${{ @SESSION.order->getPrice() }}</h5>
 
-                <form action="confirmation" method="post">
-                    <button class="btn-danger justify-content-center" type="submit">Submit Order</button>
-                </form>
+            <form action="confirmation" method="post">
+                <button class="btn-danger justify-content-center" type="submit">Submit Order</button>
+            </form>
 
-            </div>
         </div>
     </div>
+</div>
 </body>
 </html>
