@@ -1,6 +1,4 @@
-
 <?php
-
 //class Profile
 //{
 //    private $_first;
@@ -12,9 +10,7 @@
 //    private $_add;
 //    private $_user;
 //    private $_pass;
-
-//    private $_premium;
-
+//
 //    public function __construct()
 //    {
 //
@@ -147,20 +143,17 @@
 //    {
 //        return $this->_user;
 //    }
-
 //    public function setUser(string $user): void
 //    {
 //        $this->_user = $user;
 //    }
-
-//
-
 //    public function getPass(): string
 //    {
 //        return $this->_pass;
 //    }
-
 //    public function setPass(string $pass): void
 //    {
 //        $this->_pass = $pass;
 //    }
+//
+//}

@@ -1,5 +1,6 @@
 <?php
 
+
 /**
  * This class represents all members of the Kcbakery form.
  */
@@ -175,5 +176,6 @@ class Membership
     {
         $this->_pass = $pass;
     }
-}
 
+
+}

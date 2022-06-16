@@ -12,6 +12,7 @@ class Premium extends Membership
      */
     private $_dob;
 
+
     //constructor
 
     /**

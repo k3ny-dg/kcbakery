@@ -9,7 +9,7 @@ class MenuItem
     private $_sandwich;
     private $_specialty;
     private  $_drink;
-    private $_price;
+    //private $_price;
 
     public function __construct()
     {
@@ -18,7 +18,7 @@ class MenuItem
         $this->_sandwich= "";
         $this->_specialty= "";
         $this->_drink= "";
-        $this->_price= 0.00;
+        //$this->_price= 0.00;
     }
 
     /**
@@ -101,19 +101,19 @@ class MenuItem
         $this->_drink = $drink;
     }
 
-    /**
-     * @return float
-     */
-    public function getPrice(): float
-    {
-        return $this->_price;
-    }
-
-    /**
-     * @param float $price
-     */
-    public function setPrice(float $price): void
-    {
-        $this->_price = $price;
-    }
+//    /**
+//     * @return float
+//     */
+//    public function getPrice(): float
+//    {
+//        return $this->_price;
+//    }
+//
+//    /**
+//     * @param float $price
+//     */
+//    public function setPrice(float $price): void
+//    {
+//        $this->_price = $price;
+//    }
 }

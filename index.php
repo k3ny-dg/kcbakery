@@ -12,9 +12,6 @@ require_once('vendor/autoload.php');
 * File Description: Controller Page for our Bakery Website (KC Bakery)
 */
 
-// Require the autoload file
-require_once('vendor/autoload.php');
-
 //Start a session
 session_start();
 

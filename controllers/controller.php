@@ -92,7 +92,7 @@ class Controller
                 // If condiments are valid, convert to string
                 if (Validation2::validDonut($userDonuts)) {
                     $donuts = implode(", ", $userDonuts);
-                    $price = $price + sizeof($userDonuts) * 2;
+                    //$price = $price + sizeof($userDonuts) * 2;
                 } else {
                     $this->_f3->set('errors["donut"]', 'You spoofed me!');
                 }
@@ -112,7 +112,7 @@ class Controller
 
                 if (Validation2::validSandwiches($userSandwiches)) {
                     $sandwiches = implode(", ", $userSandwiches);
-                    $price = $price + sizeof($userSandwiches) * 4;
+                    //$price = $price + sizeof($userSandwiches) * 4;
                 } else {
                     $this->_f3->set('errors["sandwich"]', 'You spoofed me!');
                 }
@@ -129,7 +129,7 @@ class Controller
 
                 if (Validation2::validSpecialty($userSpec)) {
                     $specialtyItems = implode(", ", $userSpec);
-                    $price = $price + sizeof($userSpec) * 3.5;
+                    //$price = $price + sizeof($userSpec) * 3.5;
                 } else {
                     $this->_f3->set('errors["specialty"]', 'You spoofed me!');
                 }
@@ -147,7 +147,7 @@ class Controller
 
                 if (Validation2::validDrink($userDrinks)) {
                     $drinks = implode(", ", $userDrinks);
-                    $price = $price + sizeof($userDrinks) * 2.5;
+                    //$price = $price + sizeof($userDrinks) * 2.5;
 
                 } else {
                     $this->_f3->set('errors["drink"]', 'You spoofed me!');
@@ -157,18 +157,16 @@ class Controller
             //If there are no errors...
             if (empty($this->_f3->get('errors'))) {
 
-                if($price > 0) {
 
-                    //$order->setPastry($pastries);
-                   //$_SESSION['order'] = $order;
-                    $_SESSION['order']->setDonut($donuts);
-                    $_SESSION['order']->setSandwich($sandwiches);
-                    $_SESSION['order']->setSpecialty($specialtyItems);
-                    $_SESSION['order']->setDrink($drinks);
-                    $_SESSION['order']->setPrice($price);
 
-                    header('location: cart');
-                }
+                $_SESSION['order']->setPastry($pastries);
+                $_SESSION['order']->setDonut($donuts);
+                $_SESSION['order']->setSandwich($sandwiches);
+                $_SESSION['order']->setSpecialty($specialtyItems);
+                $_SESSION['order']->setDrink($drinks);
+//                $_SESSION['order']->setPrice($price);
+
+                header('location: cart');
             }
         }
         $this->_f3->set('pastry', DataLayer::getPastryItem());
@@ -305,6 +303,12 @@ class Controller
         $view = new Template();
         echo $view->render('views/sign_up.html');
     }
+    function order_summary()
+    {
+
+    }
+
+
 
     function signup_summary()
     {
@@ -325,6 +329,8 @@ class Controller
 
     function cart()
     {
+        $order_id = $GLOBALS['dataLayer']->menuItem($_SESSION['order']);
+        $this->_f3->set('orderId', $order_id);
         $view = new Template();
         echo $view->render('views/cart.html');
     }

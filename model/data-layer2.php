@@ -29,8 +29,8 @@ class DataLayer
     {
         //1.Define the query
 
-        $sql = "INSERT INTO signup(first, last, phoneNumber, city, state, emailAdd, membership, user, pass)
-        VALUES(:first, :last, :phoneNumber, :city, :state, :emailAdd, :member, :user, :pass)";
+        $sql = "INSERT INTO signup(first, last, phoneNumber, city, state, emailAdd, user, pass)
+        VALUES(:first, :last, :phoneNumber, :city, :state, :emailAdd, :user, :pass)";
 
 
         //2. Prepare the statement
@@ -45,7 +45,6 @@ class DataLayer
         $emailAdd = $profile->getEmailAdd();
         $user = $profile->getUser();
         $pass = $profile->getPass();
-        $member = $member->getMembership();
 
         //3.Bind the Parameters
         $statement->bindParam(':first', $first, PDO::PARAM_STR);
@@ -56,7 +55,6 @@ class DataLayer
         $statement->bindParam(':emailAdd', $emailAdd, PDO::PARAM_STR);
         $statement->bindParam(':user', $user, PDO::PARAM_STR);
         $statement->bindParam(':pass', $pass, PDO::PARAM_STR);
-        $statement->bindParam(':member', $member, PDO::PARAM_STR);
 
 
 
@@ -68,25 +66,35 @@ class DataLayer
         //echo "Row inserted: $id";
         return $id;
     }
+    //
 
-    function orderHistory($order)
+    function menuItem($order)
     {
         //Define sql query
-        $sql="SELECT order_id, menu_items, date from order_base ORDER BY profile_id";
+        $sql="INSERT INTO menu_item(pastries, donuts, sandwiches, specialityItems, drinks) 
+                VALUES (:pastries, :donuts, :sandwiches, :specialtyItems, :drinks)";
 
         //2. Prepare the statement
         $statement = $this->_dbh->prepare($sql);
 
-        $order_id = $order->getOrderId();
-        $menu_items = $order->getMenuItems();
-        $date = $order->getDate();
-        $profile_id = $order->getProfileId();
+        $pastries = $order->getPastry();
+        $donuts = $order->getDonut();
+        $sandwiches = $order->getSandwich();
+        $specialityItems = $order->getSpecialty();
+        $drinks = $order->getDrink();
+
+
+
 
         //3.Bind the Parameters
-        $statement->bindParam(':order_id', $order_id, PDO::PARAM_STR);
-        $statement->bindParam(':menu_items', $menu_items, PDO::PARAM_STR);
-        $statement->bindParam(':date', $date, PDO::PARAM_STR);
-        $statement->bindParam(':profile_id', $profile_id, PDO::PARAM_STR);
+        $statement->bindParam(':pastries', $pastries, PDO::PARAM_STR);
+        $statement->bindParam(':donuts', $donuts, PDO::PARAM_STR);
+        $statement->bindParam(':sandwiches', $sandwiches, PDO::PARAM_STR);
+        $statement->bindParam(':specialtyItems', $specialityItems, PDO::PARAM_STR);
+        $statement->bindParam(':drinks', $drinks, PDO::PARAM_STR);
+
+
+
 
         //4. Execute the statement
         $statement->execute();
@@ -98,7 +106,19 @@ class DataLayer
 
     }
 
+    function summaryOrders($summary_order)
+    {
+        $sql =  "SELECT * FROM summaryOrder";
 
+        //2. Prepare the statement
+        $statement = $this->_dbh->prepare($sql);
+
+
+        //Execute the statment
+        $statement->execute();
+
+        return $statement->fetchAll(PDO::FETCH_ASSOC);
+    }
     static function getLocation()
     {
         return array("Alabama", "Alaska", "Arizona", "Arkansas", "California",
