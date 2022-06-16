@@ -4,12 +4,22 @@ class MenuItem
 {
     //private $_item;
     //private $_cost;
-    private string $_pastry;
-    private string $_donut;
-    private string $_sandwich;
-    private string $_specialty;
-    private string $_drink;
-    private float $_price;
+    private $_pastry;
+    private $_donut;
+    private $_sandwich;
+    private $_specialty;
+    private  $_drink;
+    private $_price;
+
+    public function __construct()
+    {
+        $this->_pastry= "";
+        $this->_donut= "";
+        $this->_sandwich= "";
+        $this->_specialty= "";
+        $this->_drink= "";
+        $this->_price= 0.00;
+    }
 
     /**
      * @return string
