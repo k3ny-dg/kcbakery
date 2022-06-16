@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles/styles.css">
+
+    <!-- Favicon -->
+    <link rel = "icon" id="favicon" type = "image/png" href="images/roll.png">
+
+    <title>KC Bakery</title>
+</head>
+<body>
+<div class ="container">
+
+    <!--Navbar-->
+    <include href="views/navbar.html"></include>
+
+    <div class="row text-center">
+        <div class="col-3"></div>
+        <div id="cart-holder" class= "m-5 col-6 p-5 text-center align-content-center">
+            <form action="menu" method="post" >
+                <label for="enter-user" class="d-block"> Please enter username to begin order:</label>
+                    <input class="d-block" type="text" id="enter-user" value="{{ @username }}">
+
+                <button class="btn-danger justify-content-center" type="submit">Start Order</button>
+            </form>
+
+        </div>
+    </div>
+</div>
+</body>
+</html>

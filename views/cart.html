@@ -35,7 +35,7 @@
             <h5>Drinks: {{ @SESSION.order->getDrink() }}</h5>
             <h5>Total Cost: ${{ @SESSION.order->getPrice() }}</h5>
 
-            <form action="confirmation" method="post">
+            <form action="confirm" method="post">
                 <button class="btn-danger justify-content-center" type="submit">Submit Order</button>
             </form>
 

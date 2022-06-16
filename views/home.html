@@ -23,27 +23,7 @@ File Description: Home Page for our Bakery Website (KC Bakery)
 <!--Body container-->
 <body class="container">
 <!--Navbar-->
-<nav class="navbar navbar-expand-md mt-5 bg-dark">
-    <ul id="myNav" class="navbar-nav">
-        <li class="nav-item">
-            <a class="nav ml-3 bg-white px-4"href="{{ @BASE }}">Home</a>
-        </li>
-        <li class="nav-item">
-            <a href="menu" class="nav ml-3 bg-white px-4">Menu</a>
-        </li>
-        <li class="nav-item">
-            <a href="sign_up" class="nav ml-3 bg-white px-4">Sign Up</a>
-        </li>
-    </ul>
-    <!--Login -->
-    <div class="login-container row mx-n5">
-        <form class="col-12">
-            <input type="text" placeholder="Username" name="username">
-            <input type="text" placeholder="Password" name="psw">
-            <button type="submit">Login</button>
-        </form>
-    </div>
-</nav>
+<include href="views/navbar.html"></include>
 
 <!-- ABOUT SECTION-->
 <div>
@@ -70,13 +50,7 @@ File Description: Home Page for our Bakery Website (KC Bakery)
         </div>
         <img src="images/logo.png" id="logo" alt="logo for our site">
         <div class="col-11">
-            <button class="mt-4 order_now" onclick="location.href='menu'">Shop Now!</button>
-        </div>
-        <div class="col-11">
-            <button class="mt-5 order_now" onclick="location.href='home'">Location</button>
-        </div>
-        <div class="col-11">
-            <button class="mt-5  order_now" onclick="location.href='menu'">Catering</button>
+            <button class="mt-4 order_now btn-lg" onclick="location.href='username'">Order Now!</button>
         </div>
     </div>
 </div>
