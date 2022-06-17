@@ -21,7 +21,7 @@ class Membership
     private $_city;
     private $_add;
     private $_user;
-    private $_pass;
+
 
 
     //constructor
@@ -167,14 +167,6 @@ class Membership
     public function setUser(string $user): void
     {
         $this->_user = $user;
-    }
-    public function getPass(): string
-    {
-        return $this->_pass;
-    }
-    public function setPass(string $pass): void
-    {
-        $this->_pass = $pass;
     }
 
 

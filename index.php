@@ -32,7 +32,7 @@ $f3->route('GET /', function () {
 // Define a default route
 $f3->route('POST|GET /username', function () {
 
-    $GLOBALS['con']->username();
+    //$GLOBALS['con']->username();
 
 });
 

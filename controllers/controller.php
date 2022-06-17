@@ -21,34 +21,36 @@ class Controller
     }
 
 
-    function username()
-    {
-        if($_SERVER['REQUEST_METHOD'] == 'POST') {
+//    function username()
+//    {
+//        if($_SERVER['REQUEST_METHOD'] == 'POST') {
+//
+//            //global $order;
+//            //$order = new MenuItem();
+//
+//            $user = "";
+//            if (isset($_POST['user'])) {
+//                $user = $_POST['user'];
+//            }
+//            $this->_f3->set('user', $user);
+//
+//            $order>setUser($user);
+//
+//            $_SESSION['order']=$order;
+//
+//
+//
+//            //Redirect to interests route if there are no errors
+//            if (empty($this->_f3->get('errors'))) {
+//
+//                header("location: home.html");
+//            }
+//
+//        }
+//        $view = new Template();
+//        echo $view->render('views/menu.html');
+//    }
 
-            global $order;
-            $order = new MenuItem();
-
-            $user = "";
-            if (isset($_POST['user'])) {
-                $user = $_POST['user'];
-            }
-            $this->_f3->set('user', $user);
-
-            $order>setUser($user);
-
-            $_SESSION['order']=$order;
-
-            if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-                //Redirect to interests route if there are no errors
-                if (empty($this->_f3->get('errors'))) {
-
-                    header("location: menu.html");
-                }
-            }
-        }
-        $view = new Template();
-        echo $view->render('views/username.html');
-    }
 
 
     function menu()
@@ -56,7 +58,8 @@ class Controller
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
             $price = 0.0;
-
+            $order = new MenuItem();
+            $_SESSION['order'] = $order;
             $pastries = "";
 
             // Pastries are not required
@@ -74,7 +77,7 @@ class Controller
                     $price = sizeof($userPastries) * 3;
 
                 } else {
-                    $this->_f3->set('errors["pastry"]', 'You spoofed me!');
+                    $this->_f3->set('errors["pastries"]', 'You spoofed me!');
                 }
             }
 
@@ -92,7 +95,7 @@ class Controller
                 // If condiments are valid, convert to string
                 if (Validation2::validDonut($userDonuts)) {
                     $donuts = implode(", ", $userDonuts);
-                    //$price = $price + sizeof($userDonuts) * 2;
+                    $price = $price + sizeof($userDonuts) * 2;
                 } else {
                     $this->_f3->set('errors["donut"]', 'You spoofed me!');
                 }
@@ -112,7 +115,7 @@ class Controller
 
                 if (Validation2::validSandwiches($userSandwiches)) {
                     $sandwiches = implode(", ", $userSandwiches);
-                    //$price = $price + sizeof($userSandwiches) * 4;
+                    $price = $price + sizeof($userSandwiches) * 4;
                 } else {
                     $this->_f3->set('errors["sandwich"]', 'You spoofed me!');
                 }
@@ -129,7 +132,7 @@ class Controller
 
                 if (Validation2::validSpecialty($userSpec)) {
                     $specialtyItems = implode(", ", $userSpec);
-                    //$price = $price + sizeof($userSpec) * 3.5;
+                    $price = $price + sizeof($userSpec) * 3.5;
                 } else {
                     $this->_f3->set('errors["specialty"]', 'You spoofed me!');
                 }
@@ -147,7 +150,7 @@ class Controller
 
                 if (Validation2::validDrink($userDrinks)) {
                     $drinks = implode(", ", $userDrinks);
-                    //$price = $price + sizeof($userDrinks) * 2.5;
+                    $price = $price + sizeof($userDrinks) * 2.5;
 
                 } else {
                     $this->_f3->set('errors["drink"]', 'You spoofed me!');
@@ -183,6 +186,8 @@ class Controller
 
         $view = new Template();
         echo $view->render('views/menu.html');
+
+
     }
 
 

@@ -29,8 +29,8 @@ class DataLayer
     {
         //1.Define the query
 
-        $sql = "INSERT INTO signup(first, last, phoneNumber, city, state, emailAdd, user, pass)
-        VALUES(:first, :last, :phoneNumber, :city, :state, :emailAdd, :user, :pass)";
+        $sql = "INSERT INTO signup(first, last, phoneNumber, city, state, emailAdd, user)
+        VALUES(:first, :last, :phoneNumber, :city, :state, :emailAdd, :user)";
 
 
         //2. Prepare the statement
@@ -44,7 +44,7 @@ class DataLayer
         $state = $profile->getLocation();
         $emailAdd = $profile->getEmailAdd();
         $user = $profile->getUser();
-        $pass = $profile->getPass();
+
 
         //3.Bind the Parameters
         $statement->bindParam(':first', $first, PDO::PARAM_STR);
@@ -54,7 +54,7 @@ class DataLayer
         $statement->bindParam(':state', $state, PDO::PARAM_STR);
         $statement->bindParam(':emailAdd', $emailAdd, PDO::PARAM_STR);
         $statement->bindParam(':user', $user, PDO::PARAM_STR);
-        $statement->bindParam(':pass', $pass, PDO::PARAM_STR);
+
 
 
 
@@ -105,6 +105,7 @@ class DataLayer
         return $id;
 
     }
+
 
     function summaryOrders($summary_order)
     {
