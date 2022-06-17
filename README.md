@@ -34,6 +34,7 @@ A website for a bakery that allows patrons to place an order for pickup at a sma
 <ul>
     <li>Data can be added into the database with the signup page </li>
     <li>Data can also be added by placing an order through the menu page</li>
+    <li>We were not able to add viewing data into our site</li>
 </ul>
 <li>Has a history of commits from both team members to a Git repository. Commits are clearly commented.</li>
 <ul>
