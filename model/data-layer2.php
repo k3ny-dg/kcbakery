@@ -26,12 +26,11 @@ class DataLayer
         $this->_dbh->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
     }
 
-<<<<<<< HEAD
-    /**This function save the Profile of the sign up form
-=======
+
+
+
     /**
      * Inserts the user's signup information into the signup database
->>>>>>> 06970681c90fde384a410cf762f062b357cce514
      * @param $profile
      * @return false|string
      */
@@ -78,14 +77,11 @@ class DataLayer
     }
     //
 
-<<<<<<< HEAD
-    /**This function validates menu_items order
-=======
+
     /**
      * Inserts the menu items into the menu_items
      * database
      *
->>>>>>> 06970681c90fde384a410cf762f062b357cce514
      * @param $order
      * @return false|string
      */
@@ -123,13 +119,9 @@ class DataLayer
 
     }
 
-<<<<<<< HEAD
-    /**This function summary order that fetches all orders
-=======
     /**
      * Returns a summary of former orders
      * from the summaryOrder database
->>>>>>> 06970681c90fde384a410cf762f062b357cce514
      * @param $summary_order
      * @return array|false
      */
@@ -147,13 +139,10 @@ class DataLayer
         return $statement->fetchAll(PDO::FETCH_ASSOC);
     }
 
-<<<<<<< HEAD
-    /**This function gets the location (states)
-=======
+
     /**
      * Returns all 50 state options
      * that a user has an option of selecting from
->>>>>>> 06970681c90fde384a410cf762f062b357cce514
      * @return string[]
      */
     static function getLocation()
@@ -170,29 +159,18 @@ class DataLayer
             "Washington", "West Virginia", "Wisconsin", "Wyoming");
     }
 
-<<<<<<< HEAD
-    /**This function returns get Pastry
-     * @return string[]
-     */
-
-=======
     /**
      * Returns an array of the pastry options
      * @return string[]
      */
->>>>>>> 06970681c90fde384a410cf762f062b357cce514
+
     static function getPastryItem()
     {
         return array('Croissant','Blueberry Muffin', 'Scone', 'Danish');
 
     }
-
-<<<<<<< HEAD
-    /**This function returns images for Pastry
-=======
     /**
      * Returns an array of the image file that corresponds with each pastry item
->>>>>>> 06970681c90fde384a410cf762f062b357cce514
      * @return string[]
      */
     static function getPastryImage()
@@ -200,12 +178,8 @@ class DataLayer
         return array('almond.png', 'blueberry_muffin.png', 'scone.jpeg', 'danish.jpeg');
     }
 
-<<<<<<< HEAD
-    /**This function returns get Donuts
-=======
     /**
      * Returns an array of the donut types
->>>>>>> 06970681c90fde384a410cf762f062b357cce514
      * @return string[]
      */
     static function getDonutItem()
@@ -213,12 +187,9 @@ class DataLayer
         return array('Cinnamon Sugar', 'Mochi', 'Chocolate Sprinkle', 'Coconut Cream Donut');
     }
 
-<<<<<<< HEAD
-    /**This function gets Donut images
-=======
+
     /**
      * Returns an array of the image file that corresponds with each donut item
->>>>>>> 06970681c90fde384a410cf762f062b357cce514
      * @return string[]
      */
     static function getDonutImage()
@@ -226,12 +197,9 @@ class DataLayer
         return array('cin_donut.png', 'mochi_donut.png','choc_sprink_donut.png','coconut_donut.png');
     }
 
-<<<<<<< HEAD
-    /**This function gets Sandwich
-=======
+
     /**
      * Returns an array of the types of sandwiches
->>>>>>> 06970681c90fde384a410cf762f062b357cce514
      * @return string[]
      */
     static function getSandwich()
@@ -239,13 +207,9 @@ class DataLayer
         return array('Katsu', 'Strawberry', 'Potato', 'Egg Salad');
     }
 
-<<<<<<< HEAD
-    /**This function get Sandwich images
-=======
     /**
      * Returns an array of the image file that corresponds with each
      * sandwich item
->>>>>>> 06970681c90fde384a410cf762f062b357cce514
      * @return string[]
      */
     static function getSandwichImage()
@@ -253,12 +217,9 @@ class DataLayer
         return array('katsu_sandwich.png', 'strawberry_sandwich.png','potato_sandwich.png','egg_salad.jpeg');
     }
 
-<<<<<<< HEAD
-    /**This function getSpecialty
-=======
+
     /**
      * Returns an array of each specialty item
->>>>>>> 06970681c90fde384a410cf762f062b357cce514
      * @return string[]
      */
     static function getSpecialty()
@@ -266,13 +227,10 @@ class DataLayer
         return array('Tiramisu', 'Tart', 'Butter Mochi', 'Meringue');
     }
 
-<<<<<<< HEAD
-    /**This function get Specialty image
-=======
+
     /**
      * Returns an array of the image file that corresponds
      * with each specialty item
->>>>>>> 06970681c90fde384a410cf762f062b357cce514
      * @return string[]
      */
     static function getSpecialtyImage()
@@ -280,12 +238,8 @@ class DataLayer
         return array('tiramisu.png', 'tart_rasp.png', 'butter_mochi.png', 'tart.png');
     }
 
-<<<<<<< HEAD
-    /**This function get drink
-=======
     /**
      * Returns an array of each drink option
->>>>>>> 06970681c90fde384a410cf762f062b357cce514
      * @return string[]
      */
     static function getDrink()
@@ -293,13 +247,10 @@ class DataLayer
         return array('Coffee', 'Tea', 'Hot Chocolate', 'London Fog');
     }
 
-<<<<<<< HEAD
-    /**This function getDrink image
-=======
+
     /**
      * Returns an array of the image file that corresponds with
      * each drink option
->>>>>>> 06970681c90fde384a410cf762f062b357cce514
      * @return string[]
      */
     static function getDrinkImage()

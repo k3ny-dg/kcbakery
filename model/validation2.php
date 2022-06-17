@@ -21,11 +21,6 @@ class Validation2
         }
     }
 
-    /**This function validates phone number
-     * @param $phoneNumber
-     * @return bool
-     */
-
     /**
      * Validates the phone number
      * Phone number must have 10 digits
@@ -36,13 +31,6 @@ class Validation2
     {
         return strlen($phoneNumber) == 10;
     }
-<<<<<<< HEAD
-    /**This function validates email address
-     * @param $email
-     * @return bool
-     */
-    //validate email
-=======
 
     /**
      * Validates email
@@ -50,7 +38,7 @@ class Validation2
      * @param $email
      * @return bool
      */
->>>>>>> 06970681c90fde384a410cf762f062b357cce514
+
     static function validEmailaddr($email)
     {
         if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
@@ -59,13 +47,13 @@ class Validation2
             return false;
         }
     }
-<<<<<<< HEAD
+
     /**This function valid date of birth
      * @param $dob
      * @return bool
      */
     //valid date of birth
-=======
+
 
     /**
      * Validates user inputted birthday
@@ -73,7 +61,7 @@ class Validation2
      * @param $dob
      * @return bool
      */
->>>>>>> 06970681c90fde384a410cf762f062b357cce514
+
     static function validDob($dob)
     {
         if(preg_match_all("/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/"))
@@ -83,13 +71,10 @@ class Validation2
         return false;
     }
 
-<<<<<<< HEAD
-    /**This function valid pastry
-=======
+
     /**
      * Validates pastry array
      * Ensures there will not be spoofing
->>>>>>> 06970681c90fde384a410cf762f062b357cce514
      * @param $userPastryArray
      * @return bool
      */
@@ -106,13 +91,10 @@ class Validation2
         return true;
     }
 
-<<<<<<< HEAD
-    /**This function valid donut
-=======
+
     /**
      * Validates donut array
      * Ensures there will not be spoofing
->>>>>>> 06970681c90fde384a410cf762f062b357cce514
      * @param $userDonutArray
      * @return bool
      */
@@ -129,13 +111,9 @@ class Validation2
         return true;
     }
 
-<<<<<<< HEAD
-    /**This function valid sandwiches
-=======
     /**
      * Validates sandwich array
      * Ensures there will not be spoofing
->>>>>>> 06970681c90fde384a410cf762f062b357cce514
      * @param $userSandwichArray
      * @return bool
      */
@@ -152,13 +130,10 @@ class Validation2
         return true;
     }
 
-<<<<<<< HEAD
-    /**This function valid specialty
-=======
+
     /**
      * Validates specialty array
      * Ensures there will not be spoofing
->>>>>>> 06970681c90fde384a410cf762f062b357cce514
      * @param $userSpecialArray
      * @return bool
      */
@@ -174,14 +149,9 @@ class Validation2
         }
         return true;
     }
-
-<<<<<<< HEAD
-    /**This validates drink
-=======
     /**
      * Validates drink array
      * Ensures there will not be spoofing
->>>>>>> 06970681c90fde384a410cf762f062b357cce514
      * @param $userDrinkArray
      * @return bool
      */

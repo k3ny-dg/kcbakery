@@ -269,12 +269,12 @@ class Controller
             $_SESSION['profile']->setUser($user);
 
             //pass
-            $pass = "";
-            if (isset($_POST['pass'])) {
-                $pass = $_POST['pass'];
-            }
-            $this->_f3->set('pass', $pass);
-            $_SESSION['profile']->setPass($pass);
+//            $pass = "";
+//            if (isset($_POST['pass'])) {
+//                $pass = $_POST['pass'];
+//            }
+//            $this->_f3->set('pass', $pass);
+//            $_SESSION['profile']->setPass($pass);
 
 
 
@@ -292,6 +292,9 @@ class Controller
         echo $view->render('views/sign_up.html');
     }
 
+    /**This function is for our signup_summary for profile_id
+     * @return void
+     */
 
     function signup_summary()
     {
@@ -304,12 +307,18 @@ class Controller
         session_destroy();
     }
 
+    /**This function confirm page
+     * @return void
+     */
     function confirm()
     {
         $view = new Template();
         echo $view->render('views/confirmation.html');
     }
 
+    /**This function is for the cart summary
+     * @return void
+     */
     function cart()
     {
         $order_id = $GLOBALS['dataLayer']->menuItem($_SESSION['order']);
@@ -318,6 +327,9 @@ class Controller
         echo $view->render('views/cart.html');
     }
 
+    /**This is for our profile page that is our admin page
+     * @return void
+     */
     function profile()
     {
         $view = new Template();

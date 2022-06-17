@@ -1,15 +1,12 @@
 <?php
 
-
-/**
- * This class represents all members of the Kcbakery form.
- */
-class Membership
+class Profile
 {
 
+
     /**Private fields for the following
-     * first, last, age, phone, gender, email, location, city,
-     * add, user, and pass
+     * first, last, age, phone, gender, email, state, seeking,
+     * bio
      * @var string
      */
 
@@ -22,7 +19,6 @@ class Membership
     private $_add;
     private $_user;
     private $_pass;
-
 
 
     //constructor
@@ -80,6 +76,7 @@ class Membership
     }
 
     //phoneNumber
+
     /**Get the phone number for kcbakery
      * @return string
      */
@@ -166,6 +163,7 @@ class Membership
     {
         return $this->_user;
     }
+
     public function setUser(string $user): void
     {
         $this->_user = $user;
@@ -175,8 +173,10 @@ class Membership
     {
         return $this->_pass;
     }
+
     public function setPass(string $pass): void
     {
         $this->_pass = $pass;
     }
+
 }
