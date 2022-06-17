@@ -4,22 +4,36 @@
  328/kcbakery/controllers/controllers.php
  */
 
+/**
+ * This class is the controller where it will
+ * the private $_f3 be passed in the index.  This file also
+ * contains validation
+ */
 class Controller
 {
 
     private $_f3;
 
+    /**This is the constructor for Controller
+     * @param $f3
+     */
     function __construct($f3)
     {
         $this->_f3 = $f3;
     }
 
+    /**This function is for our home
+     * @return void
+     */
     function home()
     {
         $view = new Template();
         echo $view->render('views/home.html');
     }
 
+    /**This function is for our menu
+     * @return void
+     */
     function menu()
     {
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -157,7 +171,9 @@ class Controller
 
     }
 
-
+    /**This function is for our signUp page form
+     * @return void
+     */
     function signUp()
     {
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {

@@ -1,8 +1,14 @@
 <?php
-
+/*
+ 328/kcbakery/classes/Membership.php
+ */
 
 /**
- * This class represents all members of the Kcbakery form.
+ * The Membership class creates a Membership object
+ * that will hold basic user input
+ *
+ * @author Keny Dutton-Gillespie and Cherie Menchaca
+ * @version 1.0
  */
 class Membership
 {
@@ -21,7 +27,7 @@ class Membership
     private $_city;
     private $_add;
     private $_user;
-    private $_pass;
+
 
 
     //constructor
@@ -160,6 +166,10 @@ class Membership
         $this->_location = $location;
     }
 
+    /**
+     * Return site user's chosen username
+     * @return string $user
+     */
     public function getUser(): string
     {
         return $this->_user;
@@ -167,14 +177,6 @@ class Membership
     public function setUser(string $user): void
     {
         $this->_user = $user;
-    }
-    public function getPass(): string
-    {
-        return $this->_pass;
-    }
-    public function setPass(string $pass): void
-    {
-        $this->_pass = $pass;
     }
 
 
