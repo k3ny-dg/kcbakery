@@ -1,4 +1,18 @@
 <?php
+/*
+ 328/kcbakery/classes/Membership.php
+ */
+
+
+/**
+ * The MenuItem class creates a MenuItem object
+ * that will hold different types of menu items
+ * that will be implemented in the menu
+ *
+ * @author Keny Dutton-Gillespie and Cherie Menchaca
+ * @version 1.0
+ *
+ */
 
 class MenuItem
 {
@@ -22,7 +36,8 @@ class MenuItem
     }
 
     /**
-     * @return string
+     * Returns the options for pastries from the DataLayer
+     * @return string pastry options
      */
     public function getPastry(): string
     {
@@ -30,6 +45,8 @@ class MenuItem
     }
 
     /**
+     * Sets the user's selections of what pastries
+     * they would like to include in their order
      * @param string $pastry
      */
     public function setPastry(string $pastry): void
@@ -38,7 +55,8 @@ class MenuItem
     }
 
     /**
-     * @return string
+     * Returns the options for donuts from the DataLayer
+     * @return string donut options
      */
     public function getDonut(): string
     {
@@ -46,6 +64,8 @@ class MenuItem
     }
 
     /**
+     * Sets the user's selections of what donuts
+     * they would like to include in their order
      * @param string $donut
      */
     public function setDonut(string $donut): void
@@ -54,7 +74,8 @@ class MenuItem
     }
 
     /**
-     * @return string
+     * Returns the options for sandwiches from the DataLayer
+     * @return string sandwich options
      */
     public function getSandwich(): string
     {
@@ -62,6 +83,8 @@ class MenuItem
     }
 
     /**
+     * Sets the user's selections of what sandwiches
+     * they would like to include in their order
      * @param string $sandwich
      */
     public function setSandwich(string $sandwich): void
@@ -70,7 +93,8 @@ class MenuItem
     }
 
     /**
-     * @return string
+     * Returns the options for specialty items from the DataLayer
+     * @return string specialty item options
      */
     public function getSpecialty(): string
     {
@@ -78,6 +102,8 @@ class MenuItem
     }
 
     /**
+     * Sets the user's selections of what specialty item
+     * they would like to include in their order
      * @param string $specialty
      */
     public function setSpecialty(string $specialty): void
@@ -86,7 +112,8 @@ class MenuItem
     }
 
     /**
-     * @return string
+     * Returns the options for drinks from the DataLayer
+     * @return string drink options
      */
     public function getDrink(): string
     {
@@ -94,6 +121,8 @@ class MenuItem
     }
 
     /**
+     * Sets the user's selections of what drinks
+     * they would like to include in their order
      * @param string $drink
      */
     public function setDrink(string $drink): void
@@ -102,7 +131,10 @@ class MenuItem
     }
 
     /**
-     * @return float
+     * Returns the total of the order created
+     * by the user
+     *
+     * @return float total of the entire order
      */
     public function getPrice(): float
     {
@@ -110,6 +142,8 @@ class MenuItem
     }
 
     /**
+     * Sets the total price of the order
+     *
      * @param float $price
      */
     public function setPrice(float $price): void

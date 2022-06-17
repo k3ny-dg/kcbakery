@@ -24,12 +24,23 @@ class Validation2
      *
      */
 
+    /**
+     * Validates the phone number
+     * Phone number must have 10 digits
+     * @param $phoneNumber
+     * @return bool
+     */
     static function validPhoneNumber($phoneNumber)
     {
         return strlen($phoneNumber) == 10;
     }
 
-    //validate email
+    /**
+     * Validates email
+     * Email must meet the validate email filter params
+     * @param $email
+     * @return bool
+     */
     static function validEmailaddr($email)
     {
         if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
@@ -39,7 +50,12 @@ class Validation2
         }
     }
 
-    //valid date of birth
+    /**
+     * Validates user inputted birthday
+     * DOB must match regex pattern
+     * @param $dob
+     * @return bool
+     */
     static function validDob($dob)
     {
         if(preg_match_all("/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/"))
@@ -49,7 +65,12 @@ class Validation2
         return false;
     }
 
-
+    /**
+     * Validates pastry array
+     * Ensures there will not be spoofing
+     * @param $userPastryArray
+     * @return bool
+     */
     static function validPastry($userPastryArray)
     {
         $validPastryArray = DataLayer::getPastryItem();
@@ -63,6 +84,12 @@ class Validation2
         return true;
     }
 
+    /**
+     * Validates donut array
+     * Ensures there will not be spoofing
+     * @param $userDonutArray
+     * @return bool
+     */
     static function validDonut($userDonutArray)
     {
         $validDonutArray = DataLayer::getDonutItem();
@@ -76,6 +103,12 @@ class Validation2
         return true;
     }
 
+    /**
+     * Validates sandwich array
+     * Ensures there will not be spoofing
+     * @param $userSandwichArray
+     * @return bool
+     */
     static function validSandwiches($userSandwichArray)
     {
         $validSandwichArray = DataLayer::getSandwich();
@@ -89,6 +122,12 @@ class Validation2
         return true;
     }
 
+    /**
+     * Validates specialty array
+     * Ensures there will not be spoofing
+     * @param $userSpecialArray
+     * @return bool
+     */
     static function validSpecialty($userSpecialArray)
     {
         $validSpecialArray = DataLayer::getSpecialty();
@@ -102,6 +141,12 @@ class Validation2
         return true;
     }
 
+    /**
+     * Validates drink array
+     * Ensures there will not be spoofing
+     * @param $userDrinkArray
+     * @return bool
+     */
     static function validDrink($userDrinkArray)
     {
         $validDrinkArray = DataLayer::getDrink();

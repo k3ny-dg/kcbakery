@@ -1,9 +1,19 @@
 <?php
+/*
+ 328/kcbakery/classes/Membership.php
+ */
 
 
 /**
- * This class represents the Premium class that extends Membership
+ * The Premium class creates a Premium object
+ * that will hold user input only allotted for
+ * premium users
+ *
+ * This class extends the Membership class
+ * @author Cherie Menchaca and Keny Dutton-Gillespie
+ * @version 1.0
  */
+
 class Premium extends Membership
 {
     /**These are the fields for premium

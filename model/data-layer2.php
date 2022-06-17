@@ -25,6 +25,12 @@ class DataLayer
         $this->_dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         $this->_dbh->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
     }
+
+    /**
+     * Inserts the user's signup information into the signup database
+     * @param $profile
+     * @return false|string
+     */
     function saveProfile($profile)
     {
         //1.Define the query
@@ -68,6 +74,13 @@ class DataLayer
     }
     //
 
+    /**
+     * Inserts the menu items into the menu_items
+     * database
+     *
+     * @param $order
+     * @return false|string
+     */
     function menuItem($order)
     {
         //Define sql query
@@ -84,16 +97,12 @@ class DataLayer
         $drinks = $order->getDrink();
 
 
-
-
         //3.Bind the Parameters
         $statement->bindParam(':pastries', $pastries, PDO::PARAM_STR);
         $statement->bindParam(':donuts', $donuts, PDO::PARAM_STR);
         $statement->bindParam(':sandwiches', $sandwiches, PDO::PARAM_STR);
         $statement->bindParam(':specialtyItems', $specialityItems, PDO::PARAM_STR);
         $statement->bindParam(':drinks', $drinks, PDO::PARAM_STR);
-
-
 
 
         //4. Execute the statement
@@ -106,7 +115,12 @@ class DataLayer
 
     }
 
-
+    /**
+     * Returns a summary of former orders
+     * from the summaryOrder database
+     * @param $summary_order
+     * @return array|false
+     */
     function summaryOrders($summary_order)
     {
         $sql =  "SELECT * FROM summaryOrder";
@@ -120,6 +134,12 @@ class DataLayer
 
         return $statement->fetchAll(PDO::FETCH_ASSOC);
     }
+
+    /**
+     * Returns all 50 state options
+     * that a user has an option of selecting from
+     * @return string[]
+     */
     static function getLocation()
     {
         return array("Alabama", "Alaska", "Arizona", "Arkansas", "California",
@@ -134,54 +154,95 @@ class DataLayer
             "Washington", "West Virginia", "Wisconsin", "Wyoming");
     }
 
-
-
+    /**
+     * Returns an array of the pastry options
+     * @return string[]
+     */
     static function getPastryItem()
     {
         return array('Croissant','Blueberry Muffin', 'Scone', 'Danish');
 
     }
 
+    /**
+     * Returns an array of the image file that corresponds with each pastry item
+     * @return string[]
+     */
     static function getPastryImage()
     {
         return array('almond.png', 'blueberry_muffin.png', 'scone.jpeg', 'danish.jpeg');
     }
 
+    /**
+     * Returns an array of the donut types
+     * @return string[]
+     */
     static function getDonutItem()
     {
         return array('Cinnamon Sugar', 'Mochi', 'Chocolate Sprinkle', 'Coconut Cream Donut');
     }
 
+    /**
+     * Returns an array of the image file that corresponds with each donut item
+     * @return string[]
+     */
     static function getDonutImage()
     {
         return array('cin_donut.png', 'mochi_donut.png','choc_sprink_donut.png','coconut_donut.png');
     }
 
+    /**
+     * Returns an array of the types of sandwiches
+     * @return string[]
+     */
     static function getSandwich()
     {
         return array('Katsu', 'Strawberry', 'Potato', 'Egg Salad');
     }
 
+    /**
+     * Returns an array of the image file that corresponds with each
+     * sandwich item
+     * @return string[]
+     */
     static function getSandwichImage()
     {
         return array('katsu_sandwich.png', 'strawberry_sandwich.png','potato_sandwich.png','egg_salad.jpeg');
     }
 
+    /**
+     * Returns an array of each specialty item
+     * @return string[]
+     */
     static function getSpecialty()
     {
         return array('Tiramisu', 'Tart', 'Butter Mochi', 'Meringue');
     }
 
+    /**
+     * Returns an array of the image file that corresponds
+     * with each specialty item
+     * @return string[]
+     */
     static function getSpecialtyImage()
     {
         return array('tiramisu.png', 'tart_rasp.png', 'butter_mochi.png', 'tart.png');
     }
 
+    /**
+     * Returns an array of each drink option
+     * @return string[]
+     */
     static function getDrink()
     {
         return array('Coffee', 'Tea', 'Hot Chocolate', 'London Fog');
     }
 
+    /**
+     * Returns an array of the image file that corresponds with
+     * each drink option
+     * @return string[]
+     */
     static function getDrinkImage()
     {
        return array('coffee.png', 'black_tea.png', 'hotchocolate.jpeg', 'london_fog.png') ;
