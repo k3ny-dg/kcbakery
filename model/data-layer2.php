@@ -25,6 +25,11 @@ class DataLayer
         $this->_dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         $this->_dbh->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
     }
+
+    /**This function save the Profile of the sign up form
+     * @param $profile
+     * @return false|string
+     */
     function saveProfile($profile)
     {
         //1.Define the query
@@ -68,6 +73,10 @@ class DataLayer
     }
     //
 
+    /**This function validates menu_items order
+     * @param $order
+     * @return false|string
+     */
     function menuItem($order)
     {
         //Define sql query
@@ -106,7 +115,10 @@ class DataLayer
 
     }
 
-
+    /**This function summary order that fetches all orders
+     * @param $summary_order
+     * @return array|false
+     */
     function summaryOrders($summary_order)
     {
         $sql =  "SELECT * FROM summaryOrder";
@@ -120,6 +132,10 @@ class DataLayer
 
         return $statement->fetchAll(PDO::FETCH_ASSOC);
     }
+
+    /**This function gets the location (states)
+     * @return string[]
+     */
     static function getLocation()
     {
         return array("Alabama", "Alaska", "Arizona", "Arkansas", "California",
@@ -134,7 +150,9 @@ class DataLayer
             "Washington", "West Virginia", "Wisconsin", "Wyoming");
     }
 
-
+    /**This function returns get Pastry
+     * @return string[]
+     */
 
     static function getPastryItem()
     {
@@ -142,46 +160,73 @@ class DataLayer
 
     }
 
+    /**This function returns images for Pastry
+     * @return string[]
+     */
     static function getPastryImage()
     {
         return array('almond.png', 'blueberry_muffin.png', 'scone.jpeg', 'danish.jpeg');
     }
 
+    /**This function returns get Donuts
+     * @return string[]
+     */
     static function getDonutItem()
     {
         return array('Cinnamon Sugar', 'Mochi', 'Chocolate Sprinkle', 'Coconut Cream Donut');
     }
 
+    /**This function gets Donut images
+     * @return string[]
+     */
     static function getDonutImage()
     {
         return array('cin_donut.png', 'mochi_donut.png','choc_sprink_donut.png','coconut_donut.png');
     }
 
+    /**This function gets Sandwich
+     * @return string[]
+     */
     static function getSandwich()
     {
         return array('Katsu', 'Strawberry', 'Potato', 'Egg Salad');
     }
 
+    /**This function get Sandwich images
+     * @return string[]
+     */
     static function getSandwichImage()
     {
         return array('katsu_sandwich.png', 'strawberry_sandwich.png','potato_sandwich.png','egg_salad.jpeg');
     }
 
+    /**This function getSpecialty
+     * @return string[]
+     */
     static function getSpecialty()
     {
         return array('Tiramisu', 'Tart', 'Butter Mochi', 'Meringue');
     }
 
+    /**This function get Specialty image
+     * @return string[]
+     */
     static function getSpecialtyImage()
     {
         return array('tiramisu.png', 'tart_rasp.png', 'butter_mochi.png', 'tart.png');
     }
 
+    /**This function get drink
+     * @return string[]
+     */
     static function getDrink()
     {
         return array('Coffee', 'Tea', 'Hot Chocolate', 'London Fog');
     }
 
+    /**This function getDrink image
+     * @return string[]
+     */
     static function getDrinkImage()
     {
        return array('coffee.png', 'black_tea.png', 'hotchocolate.jpeg', 'london_fog.png') ;

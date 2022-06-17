@@ -20,15 +20,20 @@ class Validation2
             return true;
         }
     }
-    /*
-     *
+
+    /**This function validates phone number
+     * @param $phoneNumber
+     * @return bool
      */
 
     static function validPhoneNumber($phoneNumber)
     {
         return strlen($phoneNumber) == 10;
     }
-
+    /**This function validates email address
+     * @param $email
+     * @return bool
+     */
     //validate email
     static function validEmailaddr($email)
     {
@@ -38,7 +43,10 @@ class Validation2
             return false;
         }
     }
-
+    /**This function valid date of birth
+     * @param $dob
+     * @return bool
+     */
     //valid date of birth
     static function validDob($dob)
     {
@@ -49,7 +57,10 @@ class Validation2
         return false;
     }
 
-
+    /**This function valid pastry
+     * @param $userPastryArray
+     * @return bool
+     */
     static function validPastry($userPastryArray)
     {
         $validPastryArray = DataLayer::getPastryItem();
@@ -63,6 +74,10 @@ class Validation2
         return true;
     }
 
+    /**This function valid donut
+     * @param $userDonutArray
+     * @return bool
+     */
     static function validDonut($userDonutArray)
     {
         $validDonutArray = DataLayer::getDonutItem();
@@ -76,6 +91,10 @@ class Validation2
         return true;
     }
 
+    /**This function valid sandwiches
+     * @param $userSandwichArray
+     * @return bool
+     */
     static function validSandwiches($userSandwichArray)
     {
         $validSandwichArray = DataLayer::getSandwich();
@@ -89,6 +108,10 @@ class Validation2
         return true;
     }
 
+    /**This function valid specialty
+     * @param $userSpecialArray
+     * @return bool
+     */
     static function validSpecialty($userSpecialArray)
     {
         $validSpecialArray = DataLayer::getSpecialty();
@@ -102,6 +125,10 @@ class Validation2
         return true;
     }
 
+    /**This validates drink
+     * @param $userDrinkArray
+     * @return bool
+     */
     static function validDrink($userDrinkArray)
     {
         $validDrinkArray = DataLayer::getDrink();

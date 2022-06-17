@@ -20,39 +20,6 @@ class Controller
         echo $view->render('views/home.html');
     }
 
-
-//    function username()
-//    {
-//        if($_SERVER['REQUEST_METHOD'] == 'POST') {
-//
-//            //global $order;
-//            //$order = new MenuItem();
-//
-//            $user = "";
-//            if (isset($_POST['user'])) {
-//                $user = $_POST['user'];
-//            }
-//            $this->_f3->set('user', $user);
-//
-//            $order>setUser($user);
-//
-//            $_SESSION['order']=$order;
-//
-//
-//
-//            //Redirect to interests route if there are no errors
-//            if (empty($this->_f3->get('errors'))) {
-//
-//                header("location: home.html");
-//            }
-//
-//        }
-//        $view = new Template();
-//        echo $view->render('views/menu.html');
-//    }
-
-
-
     function menu()
     {
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -308,11 +275,6 @@ class Controller
         $view = new Template();
         echo $view->render('views/sign_up.html');
     }
-    function order_summary()
-    {
-
-    }
-
 
 
     function signup_summary()

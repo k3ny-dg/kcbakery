@@ -169,5 +169,12 @@ class Membership
         $this->_user = $user;
     }
 
-
+    public function getPass(): string
+    {
+        return $this->_pass;
+    }
+    public function setPass(string $pass): void
+    {
+        $this->_pass = $pass;
+    }
 }

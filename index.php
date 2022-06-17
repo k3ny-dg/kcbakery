@@ -29,12 +29,6 @@ $f3->route('GET /', function () {
 
 });
 
-// Define a default route
-$f3->route('POST|GET /username', function () {
-
-    //$GLOBALS['con']->username();
-
-});
 
 // Define a menu route
 $f3->route('GET|POST /menu', function ($f3) {
